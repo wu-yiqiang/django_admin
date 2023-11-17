@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 # === 图纸管理系统 models
 # 传感器分类--sensor， 项目--project， 资料-data， 图纸信息-drawing
 

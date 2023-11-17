@@ -7,6 +7,8 @@ from DrawingManagementSystem.views import SensorViewSet, ProjectViewSet, DataVie
 router = DefaultRouter()
 
 # ====2.注册相应的url====
+# 用户登录
+# router.register('Login', LoginViewSet, basename='Login') # http://127.0.0.1:8080/DrawingApi/v1/Sensors/
 # 注册Sensor对象
 router.register('Sensors', SensorViewSet, basename='Sensors') # http://127.0.0.1:8080/DrawingApi/v1/Sensors/
 # 注册Sensor对象
