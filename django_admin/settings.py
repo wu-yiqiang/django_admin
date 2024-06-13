@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -139,5 +139,37 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     )
+}
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),   # 设置token有效时间
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),  # 刷新token有效时间
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'UPDATE_LAST_LOGIN': False,  # 设置为True会在用户登录时，更新user表中的last_login字段
+
+    'ALGORITHM': 'HS256',  # 加密算法
+    # 'SIGNING_KEY': settings.SECRET_KEY,  # 签名密钥
+    'SIGNING_KEY': SECRET_KEY,  # 签名密钥
+    'VERIFYING_KEY': None,  # 验证密钥，用于验证生成令牌的内容
+    'AUDIENCE': None,  # 设置为None时，此字段将从token中排除，并且不会进行验证
+    'ISSUER': None,  # 设置为None时，此字段将从token中排除，并且不会进行验证
+    'JWK_URL': None,  # 设置为None时，此字段将从token中排除，并且在验证期间不使用
+    'LEEWAY': 0,  # 用来给到期时间留一些余地
+
+    'AUTH_HEADER_TYPES': ('Bearer',),  # 认证的标签头，类似jwt token中的jwt
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',  # 身份验证的授权标头名称
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',  # 生成token中声明将用于存储用户标识符
+    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
+
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_TYPE_CLAIM': 'token_type',  # 用于存储token类型的声明名称
+    'TOKEN_TYPE_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+    'JTI_CLAIM': 'jti',  # 用于存储令牌的唯一标识符的声明名称
+    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
