@@ -5,6 +5,7 @@ from django.db import models
 
 class User(AbstractUser, BaseModel):
     mobile = models.CharField(verbose_name="手机号", default=12557080823, max_length=11)
+    login_type = models.BooleanField(default=0, verbose_name="用户类型", max_length=1)
     avatar = models.ImageField(verbose_name="用户头像", blank=True, null=True, validators="")
     class Meta:
         db_table = 'users'
