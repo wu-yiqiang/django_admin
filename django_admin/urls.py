@@ -31,5 +31,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # 互动模式
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # 文档模式
-    path('api/users/', include('users.urls')),
+    path('itf/lms/web/', include('users.urls')),
 ]

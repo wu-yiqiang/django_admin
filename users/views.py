@@ -29,15 +29,16 @@ class LoginView(TokenObtainPairView):
 
 class RegisterView(APIView):
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
-        if not all([username, password]):
-            return Response({'error':'用户名和密码不能为空'}, status=status.HTTP_400_BAD_REQUEST)
-        if User.objects.filter(username=username).exists():
-            return Response({'error':'用户已存在'}, status=status.HTTP_400_BAD_REQUEST)
-        if 8<=len(password) <= 16:
-            return Response({'error': '密码长度不够'}, status=status.HTTP_400_BAD_REQUEST)
-        user = User.objects.create_user(username=username, password=password)
+        if not all([email, password]):
+            return Response({'msg':'用户名和密码不能为空'}, status=status.HTTP_400_BAD_REQUEST)
+        if User.objects.filter(email=email).exists():
+            return Response({'msg':'用户已存在'}, status=status.HTTP_400_BAD_REQUEST)
+        if 8 > len(password) | len(password) > 16:
+            return Response({'msg': '密码长度不够'}, status=status.HTTP_400_BAD_REQUEST)
+        user = User(email=email, username=email, password=password,is_superuser=False)
+        user.save()
         res = {
             'username': user.username,
             'mobile': user.mobile,
