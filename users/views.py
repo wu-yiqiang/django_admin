@@ -11,6 +11,7 @@ from users.models import User
 
 
 class LoginView(TokenObtainPairView):
+
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         try:
