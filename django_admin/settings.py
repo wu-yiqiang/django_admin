@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&o+ozke2rp@q3k@5t$jyfbgo^f)h4td4)xc07c-5vjyqai)0v2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*",]
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
+    "rest_framework_jwt",
+    "corsheaders",
     "user.apps.UserConfig",
     "role.apps.RoleConfig",
     "menu.apps.MenuConfig",
@@ -45,11 +48,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware", # 必须放在common中间件之前
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "user.middleware.JwtAuthMiddleware"
 ]
 
 ROOT_URLCONF = 'django_admin.urls'
@@ -129,3 +134,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True # 指定所有域名IP都可以访问
+CORS_ALLOW_CREDENTIALS = True # 允许携带cookie
+CORS_ALLOW_METHODS = [
+    "POST",
+    "GET",
+    "DELETE",
+    "PATCH",
+    "PUT"
+] #允许请求的方法
+
+
