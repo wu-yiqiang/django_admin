@@ -1,7 +1,7 @@
 import json
 from django.shortcuts import render, HttpResponse
 from django.views import View
-from rest_framework.settings import api_settings
+from rest_framework_jwt.settings import api_settings
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from user.models import SysUser
@@ -24,7 +24,6 @@ class LoginView(View):
             payload = jwt_payload_handler(user)
             token = jwt_encode_handler(payload)
             return HttpResponse(token)
-
         except Exception as e:
             print(e)
             return HttpResponse(USER_RERROR.USER_OR_PASSWORD_ERROR['msg'])
