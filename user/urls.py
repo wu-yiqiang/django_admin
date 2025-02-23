@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import path
-from user.views import LoginView, UserView
+from user.views import LoginView, CreateView, LogoutView, UpdateView
 
-app_name ='user'
+app_name = 'user'
 urlpatterns = [
-   path('login', LoginView.as_view(), name='user_login'),
-   path('lists', UserView.as_view(), name='user_lists'),
+    path('login', LoginView.as_view(), name='user_login'),
+    path('logout', LogoutView.as_view(), name='user_logout'),
+    path('create', CreateView.as_view(), name='user_create'),
+    path('update', UpdateView.as_view(), name='user_update'),
+    # path('lists', UserCreate.as_view(), name='user_lists'),
 ]

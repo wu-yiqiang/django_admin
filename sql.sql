@@ -1,11 +1,97 @@
-# user表数据
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('1','python222','123456','20240906202303.jpg','caofeng2014@126.com','18862857104','2024-08-08','1','2024-08-08','2024-08-08','超级管理员');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('3','1','123456','20240808230603.jpg','caofeng2014@126.com','18862857104','2024-08-08','0','2024-08-08','2024-08-14','测试用户');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('6','4','123456','20240808230603.jpg',NULL,NULL,NULL,'1',NULL,NULL,NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('7','5','123456','20240808230603.jpg',NULL,NULL,NULL,'1',NULL,NULL,NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('8','6','123456','20240808230603.jpg',NULL,NULL,NULL,'0',NULL,NULL,NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('11','9','123456','20240808230603.jpg',NULL,NULL,NULL,'1',NULL,NULL,NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('14','666','123456','default.jpg','caofeng2014@126.com','18862857104',NULL,'1','2024-08-13',NULL,'33');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('15','jack','123456','default.jpg','caofeng2014@126.com','18862857104',NULL,'1','2024-08-13','2024-09-06','禁用用户测试4');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('16','12323232','123456','default.jpg','1@126.com','18862857104',NULL,'1','2024-08-18','2024-08-18','115');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`,`phonenumber`, `login_date`, `status`, `create_time`, `update_time`, `remark`) values ('17','marry','123456','default.jpg','111@qq.com','15586521012',NULL,'1','2024-09-05',NULL,'555');
+-- user表数据
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('1', 'python222', '123456', '20240906202303.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '1',
+        '2024-08-08', '2024-08-08', '超级管理员');
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('3', '1', '123456', '20240808230603.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '0', '2024-08-08',
+        '2024-08-14', '测试用户');
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('6', '4', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('7', '5', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('8', '6', '123456', '20240808230603.jpg', NULL, NULL, NULL, '0', NULL, NULL, NULL);
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('11', '9', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('14', '666', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13', NULL,
+        '33');
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('15', 'jack', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13',
+        '2024-09-06', '禁用用户测试4');
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('16', '12323232', '123456', 'default.jpg', '1@126.com', '18862857104', NULL, '1', '2024-08-18', '2024-08-18',
+        '115');
+insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`)
+values ('17', 'marry', '123456', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555');
+
+-- 菜单表
+insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `component`, `menu_type`, `perms`,
+                        `create_time`, `update_time`, `remark`)
+values (1, '系统管理', 'system', 0, 1, '/sys', '', 'M', '', '2024-07-04', '2024-07-04', '系统管理目录'),
+       (2, '业务管理', 'monitor', 0, 2, '/bsns', '', 'M', '', '2024-07-04', '2024-07-04', '业务管理目录'),
+       (3, '用户管理', 'user', 1, 1, '/sys/user', 'sys/user/index', 'C', 'system:user:list', '2024-07-04', '2024-07-04',
+        '用户管理菜单'),
+       (4, '角色管理', 'peoples', 1, 2, '/sys/role', 'sys/role/index', 'C', 'system:role:list', '2024-07-04',
+        '2024-07-04', '角色管理菜单'),
+       (5, '菜单管理', 'treetable', 1, 3, '/sys/menu', 'sys/menu/index', 'C', 'system:menu:list', '2024-07-04',
+        '2024-07-04', '菜单管理菜单'),
+       (6, '部门管理', 'tree', 2, 1, '/bsns/department', 'bsns/Department', 'C', '', '2024-07-04', '2024-07-04',
+        '部门管理菜单'),
+       (7, '岗位管理', 'post', 2, 2, '/bsns/post', 'bsns/Post', 'C', '', '2024-07-04', '2024-07-04', '岗位管理菜单');
+
+-- 角色表
+insert into `sys_role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`)
+values (1, '超级管理员', 'admin', '2024-07-04', '2024-07-04', '拥有系统最高权限'),
+       (2, '普通角色', 'common', '2024-07-04', '2024-07-04', '普通角色'),
+       (3, '测试角色', 'test', '2024-07-04', '2024-07-04', '测试角色'),
+       (4, '是', NULL, '2024-07-04', '2024-07-04', NULL),
+       (5, '3', NULL, '2024-07-04', '2024-07-04', NULL),
+       (6, '4', NULL, '2024-07-04', '2024-07-04', NULL),
+       (19, '测2', 'cc2', '2024-07-04', '2024-07-04', 'eewew2'),
+       (20, 'ccc测试', 'test2', '2024-07-04', '2024-07-04', 'xxx'),
+       (21, '今天测试角色', 'todytest', '2024-07-04', '2024-07-04', 'ccc'),
+       (22, '12', '123', '2024-07-04', '2024-08-29', '12');
+
+
+insert into `sys_role_menu`(`id`, `menu_id`, `role_id`)
+values (102, 2, 2),
+       (103, 6, 2),
+       (104, 7, 2),
+       (106, 1, 1),
+       (107, 3, 1),
+       (108, 4, 1),
+       (109, 5, 1),
+       (110, 2, 1),
+       (111, 6, 1),
+       (112, 7, 1),
+       (114, 1, 6),
+       (115, 5, 6),
+       (116, 2, 6),
+       (117, 6, 6),
+       (118, 7, 6);
+insert into `sys_user_role`(`id`, `role_id`, `user_id`)
+values (1, 1, 1),
+       (2, 2, 1),
+       (13, 5, 6),
+       (17, 2, 6),
+       (18, 3, 6),
+       (19, 20, 6),
+       (20, 2, 8),
+       (21, 20, 8),
+       (22, 5, 8),
+       (23, 2, 17),
+       (24, 2, 3),
+       (25, 3, 3),
+       (26, 4, 3),
+       (27, 2, 15);
