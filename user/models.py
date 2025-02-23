@@ -17,7 +17,7 @@ class SysUser(models.Model):
     login_date = models.DateField(null=True, verbose_name="登陆时间")
     status = models.IntegerField(null=True, verbose_name="状态值")
     create_time = models.DateField(null=True, verbose_name="创建时间")
-    update_time = models.DateField(null=True, verbose_name="更新时间")
+    update_time = models.DateField(null=True, auto_now=True, verbose_name="更新时间")
     remark = models.CharField(max_length=1200, null=True, verbose_name="备注")
 
     class Meta:

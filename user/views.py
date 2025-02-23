@@ -1,13 +1,16 @@
 import json
+from datetime import datetime
 from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
 from django.views import View
 from pycparser.ply.yacc import token
 from rest_framework_jwt.settings import api_settings
 from role.models import SysRole
-from service_error.common import COMMON_RERROR
+from service_success.common import COMMON_SUCCESS
 from service_error.user import USER_RERROR
+from service_success.common import COMMON_SUCCESS
 from user.models import SysUser, SysUserSerializer
+from rest_framework import authtoken
 
 
 class LoginView(View):
@@ -44,14 +47,26 @@ class CreateView(View):
         return HttpResponse("新增用户")
 
 
+class UpdatePasswordView(View):
+    def post(self, request):
+        params = json.loads(request.body)
+        user = SysUser.objects.get(username=params['username'])
+        user.password = params['password']
+        user.save()
+        return JsonResponse(COMMON_SUCCESS.OPEARTIN_SUCCESS)
+
+
 class UpdateView(View):
     # def get(self, request):
     #     return HttpResponse("获取用户列表")
     def put(self, request):
-        print("更新用户数据")
+        print("更新用户数据", request)
         return HttpResponse("更新用户数据")
 
 
 class LogoutView(View):
     def post(self, request):
+        print("更新用户数据", request.session.get('user_id'))
+        tokens = authtoken.models.Token.objects.filter(expires__lt=datetime.now())
+        tokens.delete()
         return HttpResponse("sssssss")

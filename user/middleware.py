@@ -5,6 +5,7 @@ from django.http import JsonResponse, HttpResponse
 from django.utils.deprecation import MiddlewareMixin
 from rest_framework_jwt.settings import api_settings
 from service_error.common import COMMON_RERROR
+from service_error.user import USER_RERROR
 
 
 class JwtAuthMiddleware(MiddlewareMixin):
@@ -15,7 +16,11 @@ class JwtAuthMiddleware(MiddlewareMixin):
             try:
                 token = request.META.get('HTTP_AUTHORIZATION')
                 jwt_decode_handler = api_settings.JWT_DECODE_HANDLER
-                jwt_decode_handler(token)
+                user_dict = jwt_decode_handler(token)
+                user_id = user_dict['user_id']
+                if (user_id is None or user_id == ""):
+                    return JsonResponse(USER_RERROR.USER_IS_EMPTY)
+                request.session['user_id'] = user_id
             except jwt.ExpiredSignatureError as e:
                 return JsonResponse(COMMON_RERROR.TOKEN_EXPIRED)
             except jwt.InvalidTokenError as e:
