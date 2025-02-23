@@ -13,12 +13,18 @@ from user.models import SysUser, SysUserSerializer
 from rest_framework import authtoken
 
 
+class RegisterView(View):
+    def post(self, request):
+        pass
+
+
 class LoginView(View):
     def post(self, request):
-        try:
-            params = json.loads(request.body)
-        except Exception as e:
-            return HttpResponse(COMMON_RERROR.DATA_PARSE_ERROR['msg'])
+        params = json.loads(request.body)
+        if params['username'] is None:
+            return JsonResponse(USER_RERROR.USERNAME_IS_EMPTY)
+        if params['password'] is None:
+            return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
         username = params.get("username")
         password = params.get('password')
         if username is None or password is None:
@@ -50,9 +56,16 @@ class CreateView(View):
 class UpdatePasswordView(View):
     def post(self, request):
         params = json.loads(request.body)
-        user = SysUser.objects.get(username=params['username'])
-        user.password = params['password']
-        user.save()
+        if params['username'] is None:
+            return JsonResponse(USER_RERROR.USERNAME_IS_EMPTY)
+        if params['password'] is None:
+            return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
+        try:
+            user = SysUser.objects.get(username=params['username'])
+            user.password = params['password']
+            user.save()
+        except Exception as e:
+            return JsonResponse(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
         return JsonResponse(COMMON_SUCCESS.OPEARTIN_SUCCESS)
 
 
@@ -69,4 +82,4 @@ class LogoutView(View):
         print("更新用户数据", request.session.get('user_id'))
         tokens = authtoken.models.Token.objects.filter(expires__lt=datetime.now())
         tokens.delete()
-        return HttpResponse("sssssss")
+        return JsonResponse(COMMON_SUCCESS.EXIT_SUCCESS)

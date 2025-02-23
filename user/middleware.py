@@ -10,7 +10,7 @@ from service_error.user import USER_RERROR
 
 class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        white_list = ['/user/login']
+        white_list = ['/user/login', '/user/register']
         path = request.path
         if path not in white_list and not path.startswith('/media'):
             try:

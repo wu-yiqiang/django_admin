@@ -2,7 +2,7 @@ from math import trunc
 
 from django.db import models
 from rest_framework import serializers
-
+from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 from common.db import BaseModel
 
 
