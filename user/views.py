@@ -80,6 +80,10 @@ class UpdateView(View):
 class LogoutView(View):
     def post(self, request):
         print("更新用户数据", request.session.get('user_id'))
-        tokens = authtoken.models.Token.objects.filter(expires__lt=datetime.now())
-        tokens.delete()
+        user_id = request.session.get('user_id')
+        user = SysUser.objects.get(id=user_id)
+        # token, _ = authtoken.models.Token.objects.get_or_create(user=user_id)
+        # token = authtoken.models.Token.objects.filter(user=user).first()
+        # authtoken.
+        # token.delete()
         return JsonResponse(COMMON_SUCCESS.EXIT_SUCCESS)
