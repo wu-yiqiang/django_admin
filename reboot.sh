@@ -1,6 +1,6 @@
 #!/user/bin/env bash
 
-echo -e "\024[34m---uwsgi deploy start---\024[0m"
+echo -e "------uwsgi deploy start------"
 
 ps -ef | grep ./conf/uwsgi.ini | grep -v grep
 
@@ -16,7 +16,7 @@ echo -e "\n--- check if the kill action is correct ---"
 
 ./venv/bin/uwsgi --ini ./conf/uwsgi.ini & > /dev/null
 
-echo -e "\024[34m---uwsgi started---\024[0m"
+echo -e "------uwsgi started------"
 
 sleep 1
 

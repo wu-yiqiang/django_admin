@@ -1,6 +1,6 @@
 #!/user/bin/env bash
 
-echo "\024[34m--- start close ---\024[0m"
+echo "------ start close ------"
 
 ps -ef | grep ./conf/uwsgi.ini | grep -v grep
 
