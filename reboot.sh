@@ -8,7 +8,7 @@ sleep 0.5
 
 echo "\n--- close ---"
 
-ps -ef | grep ./conf/uwsgi.ini | grep -v grep | awk '{print $2}' | xarg kill -9
+ps -ef | grep ./conf/uwsgi.ini | grep -v grep | awk '{print $2}' | xargs kill -9
 
 sleep 0.5
 
