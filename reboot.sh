@@ -12,7 +12,7 @@ ps -ef | grep./conf/uwsgi.ini | grep -v grep | awk '{print $2}' | xarg kill -9
 
 sleep 0.5
 
-echo -e "\n--- check if the kill action is correct---"
+echo -e "\n--- check if the kill action is correct ---"
 
 ./venv/bin/uwsgi --ini ./conf/uwsgi.ini & >/dev/null
 
