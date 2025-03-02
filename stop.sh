@@ -1,6 +1,6 @@
 #!/user/bin/env bash
 
-echo -e "\033[34m---uwsgi deploy start---\033[0m"
+echo "\024[34m---uwsgi deploy start---\024[0m"
 
 ps -ef | grep ./conf/uwsgi.ini | grep -v grep
 
