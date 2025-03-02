@@ -14,7 +14,7 @@ sleep 0.5
 
 echo -e "\n--- check if the kill action is correct---"
 
-/enus/django_admin/bin/uwsgi --ini ./conf/uwsgi.ini & >/dev/null
+./venv/bin/uwsgi --ini ./conf/uwsgi.ini & >/dev/null
 
 echo -e "\033[34m---uwsgi started---\033[0m"
 
