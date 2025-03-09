@@ -22,10 +22,10 @@ class JwtAuthMiddleware(MiddlewareMixin):
                     return JsonResponse(USER_RERROR.USER_IS_EMPTY)
                 request.session['user_id'] = user_id
             except jwt.ExpiredSignatureError as e:
-                return JsonResponse(COMMON_RERROR.TOKEN_EXPIRED)
+                return JsonResponse(COMMON_RERROR.TOKEN_EXPIRED, status=401)
             except jwt.InvalidTokenError as e:
-                return JsonResponse(COMMON_RERROR.TOKEN_VERIFICATION_FAILED)
+                return JsonResponse(COMMON_RERROR.TOKEN_VERIFICATION_FAILED, status=401)
             except Exception as e:
-                return JsonResponse(COMMON_RERROR.TOKEN_VERIFICATION_EXCEPTION)
+                return JsonResponse(COMMON_RERROR.TOKEN_VERIFICATION_EXCEPTION, status=500)
         else:
             return None

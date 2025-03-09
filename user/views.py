@@ -1,5 +1,8 @@
 import json
+import math
 from datetime import datetime
+from tokenize import Number
+
 from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
 from django.template.backends.django import reraise
@@ -92,78 +95,22 @@ class LogoutView(View):
 
 class GetAssetsView(View):
     def get(self, request):
-        datas = [
-            {
-                'id': 1,
+        page_size = request.GET.get("pageSize")
+        page_no = request.GET.get("pageNo")
+        datas = []
+        for i in range(1, int(page_size)):
+            item_dict = {
+                'id': math.radians(),
                 'title': "椅子",
                 'categopry': "办公用品",
                 'department': "人事行政部",
-                'number': "FZC00124534",
+                'number': "FZC00",
                 'status': 0,
                 'assetsStatus': 1,
                 'belong': "sutter",
                 'updator': "Tom",
-                'update': "2025-11-23 12:34",
+                'update': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             },
-            {
-                'id': 2,
-                'title': "计算器",
-                'categopry': "办公用品",
-                'department': "人事行政部",
-                'number': "FZC00124543",
-                'status': 1,
-                'assetsStatus': 1,
-                'belong': "sutter",
-                'updator': "Tom",
-                'update': "2025-11-23 12:34",
-            },
-            {
-                'id': 9,
-                'title': "会议桌",
-                'categopry': "办公用品",
-                'department': "人事行政部",
-                'number': "FZC00124533",
-                'status': 0,
-                'assetsStatus': 1,
-                'belong': "sutter",
-                'updator': "Tom",
-                'update': "2025-11-23 12:34",
-            },
-            {
-                'id': 3,
-                'title': "苹果笔记本",
-                'categopry': "电脑",
-                'department': "开发部",
-                'number': "FZC00124533",
-                'status': 0,
-                'assetsStatus': 1,
-                'belong': "sutter",
-                'updator': "Tom",
-                'update': "2025-11-23 12:34",
-            },
-            {
-                'id': 4,
-                'title': '惠普服务器',
-                'categopry': "服务器",
-                'department': "系统一部",
-                'number': "FZC00156567",
-                'status': 0,
-                'assetsStatus': 0,
-                'belong': "sutter",
-                'updator': "Tom",
-                'update': "2025-11-23 12:34",
-            },
-            {
-                'id': 5,
-                'title': '戴尔台式机',
-                'categopry': "台式机",
-                'department': "开发部",
-                'number': "FZC00124553",
-                'status': 1,
-                'assetsStatus': 1,
-                'belong': "sutter",
-                'updator': "Tom",
-                'update': "2025-11-23 12:34",
-            },
-        ]
+            datas.append(item_dict)
+        print(datas)
         return JsonResponse({'code': 200, 'data': json.dumps(datas), 'msg': 'success'})
