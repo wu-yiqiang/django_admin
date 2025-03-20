@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&o+ozke2rp@q3k@5t$jyfbgo^f)h4td4)xc07c-5vjyqai)0v2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*", ]
 
@@ -65,12 +65,20 @@ WSGI_APPLICATION = 'django_admin.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'django_admin',
+    #     "USER": 'mydjango',
+    #     "PASSWORD": 'mydjango@mydjango',
+    #     "HOST": '185.198.166.245',
+    #     "PORT": '3306',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_admin',
-        "USER": 'mydjango',
-        "PASSWORD": 'mydjango@mydjango',
-        "HOST": '185.198.166.245',
+        "USER": 'root',
+        "PASSWORD": 'root@root',
+        "HOST": '127.0.0.1',
         "PORT": '3306',
     }
 }
