@@ -1,39 +1,42 @@
 -- user表数据
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`, `is_deleted`)
 values ('1', 'python222', '123456', '20240906202303.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '1',
-        '2024-08-08', '2024-08-08', '超级管理员');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
+        '2024-08-08', '2024-08-08', '超级管理员', FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
 values ('3', '1', '123456', '20240808230603.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '0', '2024-08-08',
-        '2024-08-14', '测试用户');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
-values ('6', '4', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
-values ('7', '5', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
-values ('8', '6', '123456', '20240808230603.jpg', NULL, NULL, NULL, '0', NULL, NULL, NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
-values ('11', '9', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL);
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
+        '2024-08-14', '测试用户', FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`, `is_deleted`)
+values ('6', '4', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
+values ('7', '5', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
+values ('8', '6', '123456', '20240808230603.jpg', NULL, NULL, NULL, '0', NULL, NULL, NULL,FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
+values ('11', '9', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
 values ('14', '666', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13', NULL,
-        '33');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
+        '33',FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
 values ('15', 'jack', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13',
-        '2024-09-06', '禁用用户测试4');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
+        '2024-09-06', '禁用用户测试4',FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
 values ('16', '12323232', '123456', 'default.jpg', '1@126.com', '18862857104', NULL, '1', '2024-08-18', '2024-08-18',
-        '115');
-insert into `sys_user` (`id`, `username`, `password`, `avatar`, `email`, `phonenumber`, `login_date`, `status`,
-                        `create_time`, `update_time`, `remark`)
-values ('17', 'marry', '123456', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555');
+        '115',FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
+values ('17', 'marry', '123456', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
+insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
+                        `create_time`, `update_time`, `remark`,`is_deleted`)
+values ('18', 'sutter.wu@outlook.com', '1234@Abcd', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
 
 -- 菜单表
 insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `component`, `menu_type`, `perms`,
@@ -80,7 +83,7 @@ values (102, 2, 2),
        (116, 2, 6),
        (117, 6, 6),
        (118, 7, 6);
-insert into `sys_user_role`(`id`, `role_id`, `user_id`)
+insert into `user_role`(`id`, `role_id`, `user_id`)
 values (1, 1, 1),
        (2, 2, 1),
        (13, 5, 6),

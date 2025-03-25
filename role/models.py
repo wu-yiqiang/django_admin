@@ -3,7 +3,7 @@ from math import trunc
 from django.db import models
 from rest_framework import serializers
 from common.db import BaseModel
-from user.models import SysUser
+from user.models import User
 
 
 # Create your models here.
@@ -29,7 +29,7 @@ class SysUserSerializer(serializers.ModelSerializer):
 class SysUserRole(models.Model):
     id = models.AutoField(primary_key=True)
     role = models.ForeignKey(SysRole, on_delete=models.PROTECT)
-    user = models.ForeignKey(SysUser, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
         db_table = 'sys_user_role'

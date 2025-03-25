@@ -13,8 +13,9 @@ from role.models import SysRole
 from service_success.common import COMMON_SUCCESS
 from service_error.user import USER_RERROR
 from service_success.common import COMMON_SUCCESS
-from user.models import SysUser, SysUserSerializer
+from user.models import User, SysUserSerializer
 from rest_framework import authtoken
+from common.response import Response
 
 
 class RegisterView(View):
@@ -34,7 +35,7 @@ class LoginView(View):
         if username is None or password is None:
             return HttpResponse(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED['msg'])
         try:
-            user = SysUser.objects.get(username=username, password=password)
+            user = User.objects.get(username=username, password=password)
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
             jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
             payload = jwt_payload_handler(user)
@@ -45,8 +46,8 @@ class LoginView(View):
         except Exception as e:
             print(e)
             return HttpResponse(USER_RERROR.USER_OR_PASSWORD_ERROR['msg'])
-        return JsonResponse(
-            {"code": 200, "data": {"token": token, "info": SysUserSerializer(user).data, "msg": 'success'}})
+        data = {**SysUserSerializer(user).data, 'token': token}
+        return Response(data=data)
 
 
 class CreateView(View):
@@ -65,12 +66,12 @@ class UpdatePasswordView(View):
         if params['password'] is None:
             return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
         try:
-            user = SysUser.objects.get(username=params['username'])
+            user = User.objects.get(username=params['username'])
             user.password = params['password']
             user.save()
         except Exception as e:
             return JsonResponse(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
-        return JsonResponse(COMMON_SUCCESS.OPEARTIN_SUCCESS)
+        # return JsonResponse(COMMON_SUCCESS.OPEARTIN_SUCCESS)
 
 
 class UpdateView(View):
@@ -85,12 +86,12 @@ class LogoutView(View):
     def post(self, request):
         print("更新用户数据", request.session.get('user_id'))
         user_id = request.session.get('user_id')
-        user = SysUser.objects.get(id=user_id)
+        user = User.objects.get(id=user_id)
         # token, _ = authtoken.models.Token.objects.get_or_create(user=user_id)
         # token = authtoken.models.Token.objects.filter(user=user).first()
         # authtoken.
         # token.delete()
-        return JsonResponse(COMMON_SUCCESS.EXIT_SUCCESS)
+        # return JsonResponse(COMMON_SUCCESS.EXIT_SUCCESS)
 
 
 class GetAssetsView(View):
