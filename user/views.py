@@ -10,9 +10,7 @@ from django.views import View
 from pycparser.ply.yacc import token
 from rest_framework_jwt.settings import api_settings
 from role.models import SysRole
-from service_success.common import COMMON_SUCCESS
 from service_error.user import USER_RERROR
-from service_success.common import COMMON_SUCCESS
 from user.models import User, SysUserSerializer
 from rest_framework import authtoken
 from common.response import Response
@@ -55,7 +53,16 @@ class CreateView(View):
     #     return HttpResponse("获取用户列表")
     def post(self, request):
         print("萨达")
-        return HttpResponse("新增用户")
+        user = json.loads(request.body)
+        print(user)
+        User.objects.create(username=user['username'], password=user['password'], avatar=user['avatar'],
+                            email=user['email'], phone_number=user['phoneNumber'], status=user['status'])
+        return Response()
+
+
+class pageView(View):
+    def post(self, request):
+        return Response()
 
 
 class UpdatePasswordView(View):
