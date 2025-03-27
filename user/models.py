@@ -30,3 +30,5 @@ class SysUserSerializer(serializers.ModelSerializer):
             'remark',
             'create_time', 'update_time']
         fields = '__all__'
+        # exclude = ['password']
+        exclude = ('password',)

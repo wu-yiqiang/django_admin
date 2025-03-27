@@ -3,6 +3,7 @@ import math
 from datetime import datetime
 from tokenize import Number
 
+from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
 from django.template.backends.django import reraise
@@ -10,10 +11,11 @@ from django.views import View
 from pycparser.ply.yacc import token
 from rest_framework_jwt.settings import api_settings
 from role.models import SysRole
+from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from user.models import User, SysUserSerializer
 from rest_framework import authtoken
-from common.response import Response
+from common.response import ResponseSuccess, ResponseError
 
 
 class RegisterView(View):
@@ -24,16 +26,18 @@ class RegisterView(View):
 class LoginView(View):
     def post(self, request):
         params = json.loads(request.body)
-        if params['username'] is None:
+        if params['email'] is None:
             return JsonResponse(USER_RERROR.USERNAME_IS_EMPTY)
         if params['password'] is None:
             return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
-        username = params.get("username")
+        email = params.get("email")
         password = params.get('password')
-        if username is None or password is None:
-            return HttpResponse(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED['msg'])
+        if email is None or password is None:
+            return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
+        print(email)
         try:
-            user = User.objects.get(username=username, password=password)
+            user = User.objects.get(email=email, password=password)
+            print('user', user)
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
             jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
             payload = jwt_payload_handler(user)
@@ -43,26 +47,38 @@ class LoginView(View):
                     user.id) + ")")
         except Exception as e:
             print(e)
-            return HttpResponse(USER_RERROR.USER_OR_PASSWORD_ERROR['msg'])
+            return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
         data = {**SysUserSerializer(user).data, 'token': token}
-        return Response(data=data)
+        return ResponseSuccess(data=data)
 
 
 class CreateView(View):
     # def get(self, request):
     #     return HttpResponse("获取用户列表")
     def post(self, request):
-        print("萨达")
         user = json.loads(request.body)
-        print(user)
         User.objects.create(username=user['username'], password=user['password'], avatar=user['avatar'],
                             email=user['email'], phone_number=user['phoneNumber'], status=user['status'])
-        return Response()
+        return ResponseSuccess()
 
 
-class pageView(View):
+class SearchPageView(View):
     def post(self, request):
-        return Response()
+        params = json.loads(request.body)
+        pageSize = params.get('pageSize')
+        pageNo = params.get('pageNo')
+        if not all([pageSize, pageNo]):
+            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
+        userLists = Paginator(User.objects.all(), pageSize).page(pageNo)
+        total = User.objects.all().count()
+        users = list(userLists.object_list.values())
+        data = {'lists': users, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
+        return ResponseSuccess(data=data)
+
+
+class SearchListsView(View):
+    def post(self, request):
+        return ResponseSuccess()
 
 
 class UpdatePasswordView(View):

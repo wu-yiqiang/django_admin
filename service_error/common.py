@@ -7,3 +7,4 @@ class COMMON_RERROR:
     TOKEN_EXPIRED = {'code': 10000002, 'msg': "Token Expired", "data": None}
     TOKEN_VERIFICATION_FAILED = {'code': 10000003, 'msg': "Token Verification Failed", 'data': None}
     TOKEN_VERIFICATION_EXCEPTION = {'code': 10000004, 'msg': "Token Verification Exception", 'data': None}
+    PAGENATE_PARAMS_IS_EMPTY = {'code': 10000005, 'msg': "Pagenate Params Is Empty", 'data': None}
