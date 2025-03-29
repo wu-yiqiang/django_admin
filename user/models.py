@@ -29,6 +29,5 @@ class SysUserSerializer(serializers.ModelSerializer):
             'id', 'username', 'password', 'avatar', 'email', 'phone_number', 'login_date', 'status', 'is_deleted',
             'remark',
             'create_time', 'update_time']
-        fields = '__all__'
-        # exclude = ['password']
-        exclude = ('password',)
+        # fields = '__all__'
+        exclude = ['password']

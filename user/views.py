@@ -71,7 +71,7 @@ class SearchPageView(View):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         userLists = Paginator(User.objects.all(), pageSize).page(pageNo)
         total = User.objects.all().count()
-        users = list(userLists.object_list.values())
+        users = SysUserSerializer(userLists.object_list.values(), many=True).data
         data = {'lists': users, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
 
