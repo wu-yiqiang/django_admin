@@ -10,6 +10,8 @@ from django.template.backends.django import reraise
 from django.views import View
 from pycparser.ply.yacc import token
 from rest_framework_jwt.settings import api_settings
+from tutorial.quickstart.serializers import UserSerializer
+
 from role.models import SysRole
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
@@ -100,9 +102,24 @@ class UpdatePasswordView(View):
 class UpdateView(View):
     # def get(self, request):
     #     return HttpResponse("获取用户列表")
-    def put(self, request):
-        print("更新用户数据", request)
-        return HttpResponse("更新用户数据")
+    def post(self, request):
+        data = json.loads(request.body)
+        id = data.get('id')
+        print("更新用户数据", id)
+        user = User.objects.filter(id=id).update(username=data['username'], password=data['password'],
+                                                 avatar=data['avatar'], phone_number=data['phone_number'],
+                                                 email=data['email'], status=data['status'])
+        print("更新用户数据", request.body)
+        return ResponseSuccess()
+
+
+class DetailView(View):
+    def post(self, request, user_id):
+        if user_id is None:
+            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+        user = User.objects.get(id=user_id)
+        users = SysUserSerializer(user).data
+        return ResponseSuccess(data=users)
 
 
 class LogoutView(View):

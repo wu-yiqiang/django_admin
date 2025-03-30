@@ -5,23 +5,23 @@ values ('1', 'python222', '123456', '20240906202303.jpg', 'caofeng2014@126.com',
         '2024-08-08', '2024-08-08', '超级管理员', FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('3', '1', '123456', '20240808230603.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '0', '2024-08-08',
+values ('3', 'Tom', '123456', '20240808230603.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '0', '2024-08-08',
         '2024-08-14', '测试用户', FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values ('6', '4', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+values ('6', 'Nacy', '123456', '20240808230603.jpg', 'Nacy@outlook.com', NULL, NULL, '1', NULL, NULL, NULL,FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('7', '5', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+values ('7', 'Aliyamama', '123456', '20240808230603.jpg', 'Aliyamama@outlook.com', NULL, NULL, '1', NULL, NULL, NULL,FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('8', '6', '123456', '20240808230603.jpg', NULL, NULL, NULL, '0', NULL, NULL, NULL,FALSE);
+values ('8', 'Alsaadi', '123456', '20240808230603.jpg', 'Alsaadi@outlook.com', NULL, NULL, '0', NULL, NULL, NULL,FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('11', '9', '123456', '20240808230603.jpg', NULL, NULL, NULL, '1', NULL, NULL, NULL,FALSE);
+values ('11', 'Mouhammad', '123456', '20240808230603.jpg', 'Mouhammad@outlook.com', NULL, NULL, '1', NULL, NULL, NULL,FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('14', '666', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13', NULL,
+values ('14', 'Yassir', '123456', 'default.jpg', 'caofeng2014@126.com', '18862857104', NULL, '1', '2024-08-13', NULL,
         '33',FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
@@ -29,7 +29,7 @@ values ('15', 'jack', '123456', 'default.jpg', 'caofeng2014@126.com', '188628571
         '2024-09-06', '禁用用户测试4',FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('16', '12323232', '123456', 'default.jpg', '1@126.com', '18862857104', NULL, '1', '2024-08-18', '2024-08-18',
+values ('16', 'Zoe', '123456', 'default.jpg', '1@126.com', '18862857104', NULL, '1', '2024-08-18', '2024-08-18',
         '115',FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
