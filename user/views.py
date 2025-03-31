@@ -36,7 +36,6 @@ class LoginView(View):
         password = params.get('password')
         if email is None or password is None:
             return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
-        print(email)
         try:
             user = User.objects.get(email=email, password=password)
             print('user', user)
@@ -71,8 +70,8 @@ class SearchPageView(View):
         pageNo = params.get('pageNo')
         if not all([pageSize, pageNo]):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
-        userLists = Paginator(User.objects.all(), pageSize).page(pageNo)
-        total = User.objects.all().count()
+        userLists = Paginator(User.objects.filter(is_deleted=0), pageSize).page(pageNo)
+        total = User.objects.filter(is_deleted=0).count()
         users = SysUserSerializer(userLists.object_list.values(), many=True).data
         data = {'lists': users, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
@@ -120,6 +119,16 @@ class DetailView(View):
         user = User.objects.get(id=user_id)
         users = SysUserSerializer(user).data
         return ResponseSuccess(data=users)
+
+
+class DeleteView(View):
+    def delete(self, request, user_id):
+        if user_id is None:
+            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+        user = User.objects.get(id=user_id)
+        user.is_deleted = 1
+        user.save()
+        return ResponseSuccess()
 
 
 class LogoutView(View):

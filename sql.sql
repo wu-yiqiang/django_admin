@@ -36,7 +36,7 @@ insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_numb
 values ('17', 'marry', '123456', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
-values ('18', 'sutter.wu@outlook.com', '1234@Abcd', 'default.jpg', '111@qq.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
+values ('18', 'sutter.wu', '1234@Abcd', 'default.jpg', 'sutter.wu@outlook.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
 
 -- 菜单表
 insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `component`, `menu_type`, `perms`,
@@ -54,17 +54,17 @@ values (1, '系统管理', 'system', 0, 1, '/sys', '', 'M', '', '2024-07-04', '2
        (7, '岗位管理', 'post', 2, 2, '/bsns/post', 'bsns/Post', 'C', '', '2024-07-04', '2024-07-04', '岗位管理菜单');
 
 -- 角色表
-insert into `sys_role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`)
-values (1, '超级管理员', 'admin', '2024-07-04', '2024-07-04', '拥有系统最高权限'),
-       (2, '普通角色', 'common', '2024-07-04', '2024-07-04', '普通角色'),
-       (3, '测试角色', 'test', '2024-07-04', '2024-07-04', '测试角色'),
-       (4, '是', NULL, '2024-07-04', '2024-07-04', NULL),
-       (5, '3', NULL, '2024-07-04', '2024-07-04', NULL),
-       (6, '4', NULL, '2024-07-04', '2024-07-04', NULL),
-       (19, '测2', 'cc2', '2024-07-04', '2024-07-04', 'eewew2'),
-       (20, 'ccc测试', 'test2', '2024-07-04', '2024-07-04', 'xxx'),
-       (21, '今天测试角色', 'todytest', '2024-07-04', '2024-07-04', 'ccc'),
-       (22, '12', '123', '2024-07-04', '2024-08-29', '12');
+insert into `role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, '超级管理员', '1', '2024-07-04', '2024-07-04', '拥有系统最高权限',0),
+       (2, '普通角色', '10', '2024-07-04', '2024-07-04', '普通角色',0),
+       (3, '测试角色', '100', '2024-07-04', '2024-07-04', '测试角色', 0),
+       (4, '是', '1000', '2024-07-04', '2024-07-04', NULL, 0),
+       (5, '3', '10000', '20247-07-04', '2024-07-04', NULL, 0),
+       (6, '4', '100000', '2024-07-04', '2024-07-04', NULL, 0),
+       (19, '测2', '10000', '2024-07-04', '2024-07-04', 'eewew2', 0),
+       (20, 'ccc测试', 'test2', '2024-07-04', '2024-07-04', 'xxx', 0),
+       (21, '今天测试角色', 'todytest', '2024-07-04', '2024-07-04', 'ccc', 0),
+       (22, '12', '123', '2024-07-04', '2024-08-29', '12', 0);
 
 
 insert into `sys_role_menu`(`id`, `menu_id`, `role_id`)

@@ -13,7 +13,7 @@ class SysUser(models.Model):
     password = models.CharField(max_length=100, verbose_name="密码")
     avatar = models.CharField(max_length=255, null=True, verbose_name="头像")
     email = models.CharField(max_length=100, null=True, verbose_name="Email")
-    phonenumber = models.CharField(max_length=11, null=True, verbose_name="电话号码")
+    phone_number = models.CharField(max_length=11, null=True, verbose_name="电话号码")
     login_date = models.DateField(null=True, verbose_name="登陆时间")
     status = models.IntegerField(null=True, verbose_name="状态值")
     create_time = models.DateField(null=True, verbose_name="创建时间")

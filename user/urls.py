@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from user.views import LoginView, CreateView, LogoutView, UpdateView, UpdatePasswordView, RegisterView, GetAssetsView, \
-    SearchPageView, SearchListsView, DetailView
+    SearchPageView, SearchListsView, DetailView, DeleteView
 
 app_name = 'user'
 urlpatterns = [
@@ -12,6 +12,7 @@ urlpatterns = [
     path('page', SearchPageView.as_view(), name='user_page_list'),
     path('lists', SearchListsView.as_view(), name='user_list'),
     path('update', UpdateView.as_view(), name='user_update'),
+    path('delete/<int:user_id>', DeleteView.as_view(), name='user_delete'),
     path("detail/<int:user_id>", DetailView.as_view(), name='user_detail'),
     path('update/password', UpdatePasswordView.as_view(), name='user_update'),
     path('assets/page', GetAssetsView.as_view(), name='user_assets'),
