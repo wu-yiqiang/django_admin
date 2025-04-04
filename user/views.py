@@ -59,7 +59,7 @@ class CreateView(View):
     def post(self, request):
         user = json.loads(request.body)
         User.objects.create(username=user['username'], password=user['password'], avatar=user['avatar'],
-                            email=user['email'], phone_number=user['phoneNumber'], status=user['status'])
+                            email=user['email'], phone_number=user['phone_number'], status=user['status'])
         return ResponseSuccess()
 
 

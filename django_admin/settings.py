@@ -1,6 +1,7 @@
 from datetime import timedelta
 from pathlib import Path
 import datetime
+from socket import socket
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -149,3 +150,7 @@ JWT_AUTH = {
     # 反爬小措施前缀
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
+
+PROTOCOL = 'http'
+IP = '192.168.1.222'
+PORT = '8000'
