@@ -6,7 +6,7 @@ from role.models import SysRole
 
 
 # Create your models here.
-class SysMenu(models.Model):
+class SysMenu(BaseModel):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, null=True, verbose_name="按钮名")
     icon = models.CharField(max_length=100, null=True, verbose_name="图标")
@@ -16,16 +16,35 @@ class SysMenu(models.Model):
     component = models.CharField(max_length=200, null=True, verbose_name="组件路径")
     menu_type = models.CharField(max_length=1, null=True, verbose_name="菜单类型")
     perms = models.CharField(max_length=100, null=True, verbose_name="权限标识")
-    create_time = models.DateField(null=True, verbose_name="创建时间")
-    update_time = models.DateField(null=True, verbose_name="更新时间")
-    remark = models.CharField(max_length=1200, null=True, verbose_name="备注")
 
     def __lt__(self, other):
-        return self.order_name < other.order_name
+        return self.order_num < other.order_num
 
     class Meta:
         db_table = 'sys_menu'
         verbose_name = "菜单表"
+
+
+class SysMenuSerializer(serializers.ModelSerializer):
+    children = serializers.SerializerMethodField()
+
+    def get_children(self, obj):
+        print("111")
+        if hasattr(obj, "children"):
+            serializerMenuList: list[SysMenuSerializer2] = list()
+            for sysMenu in obj.children:
+                serializerMenuList.append(SysMenuSerializer2(sysMenu).data)
+            return serializerMenuList
+
+    class Meta:
+        model = SysMenu
+        fields = '__all__'
+
+
+class SysMenuSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = SysMenu
+        fields = '__all__'
 
 
 class SysRoleMenu(models.Model):
