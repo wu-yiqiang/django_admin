@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "user.apps.UserConfig",
     "role.apps.RoleConfig",
     "menu.apps.MenuConfig",
+    "maintains.apps.MaintainsConfig",
 ]
 
 MIDDLEWARE = [

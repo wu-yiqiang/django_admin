@@ -9,3 +9,4 @@ class COMMON_RERROR:
     TOKEN_VERIFICATION_EXCEPTION = {'code': 10000004, 'msg': "Token Verification Exception", 'data': None}
     PAGENATE_PARAMS_IS_EMPTY = {'code': 10000005, 'msg': "Pagenate Params Is Empty", 'data': None},
     FILE_UPLOAD_IS_FAILED = {'code': 10000006, 'msg': "File Upload Failed", 'data': None}
+    ID_IS_EMPTY = {'code': 10000007, 'msg': "Query ID Is Empty", 'data': None}
