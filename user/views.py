@@ -164,3 +164,30 @@ class GetAssetsView(View):
             datas.append(item_dict)
         print(datas)
         return JsonResponse({'code': 200, 'data': json.dumps(datas), 'msg': 'success'})
+
+
+from openpyxl import Workbook
+
+
+class ExportView(View):
+    def get(self, request):
+        response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename=students.xlsx'
+
+        # 创建Workbook和Sheet
+        workbook = Workbook()
+        worksheet = workbook.active
+
+        # 写入表头
+        worksheet.cell(row=1, column=1, value='姓名')
+        worksheet.cell(row=1, column=2, value='邮箱')
+
+        # 写入数据
+        students = User.objects.all()
+        for i, student in enumerate(students, start=2):
+            worksheet.cell(row=i, column=1, value=student.username)
+            worksheet.cell(row=i, column=2, value=student.email)
+
+        workbook.save(response)
+
+        return response
