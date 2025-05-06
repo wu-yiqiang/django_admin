@@ -172,22 +172,25 @@ from openpyxl import Workbook
 class ExportView(View):
     def get(self, request):
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename=students.xlsx'
-
+        response['Content-Disposition'] = 'attachment;filename=user.xlsx'
         # 创建Workbook和Sheet
         workbook = Workbook()
         worksheet = workbook.active
-
         # 写入表头
-        worksheet.cell(row=1, column=1, value='姓名')
-        worksheet.cell(row=1, column=2, value='邮箱')
-
+        worksheet.cell(row=1, column=1, value='username')
+        worksheet.cell(row=1, column=2, value='email')
+        worksheet.cell(row=1, column=3, value='phone_number')
+        worksheet.cell(row=1, column=4, value='remark')
         # 写入数据
-        students = User.objects.all()
-        for i, student in enumerate(students, start=2):
-            worksheet.cell(row=i, column=1, value=student.username)
-            worksheet.cell(row=i, column=2, value=student.email)
-
+        users = User.objects.all()
+        for i, user in enumerate(users, start=2):
+            worksheet.cell(row=i, column=1, value=user.username)
+            worksheet.cell(row=i, column=2, value=user.email)
+            worksheet.cell(row=i, column=3, value=user.phone_number)
+            worksheet.cell(row=i, column=4, value=user.remark)
         workbook.save(response)
-
         return response
+
+
+def ExportExcel():
+    pass

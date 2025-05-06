@@ -37,8 +37,10 @@ class SearchPageView(View):
 
 
 class SearchListsView(View):
-    def post(self, request):
-        return ResponseSuccess()
+    def get(self, request):
+        roleLists = SysRole.objects.filter(is_deleted=0)
+        roles = SysRoleSerializer(roleLists.all(), many=True).data
+        return ResponseSuccess(data=roles)
 
 
 class UpdateView(View):
