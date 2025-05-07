@@ -47,7 +47,6 @@ class UpdateView(View):
     def post(self, request):
         data = json.loads(request.body)
         id = data.get('id')
-        print("更新用户数据", id)
         user = User.objects.filter(id=id).update(username=data['username'], password=data['password'],
                                                  avatar=data['avatar'], phone_number=data['phone_number'],
                                                  email=data['email'], status=data['status'])
