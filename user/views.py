@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
 from django.views import View
 from rest_framework_jwt.settings import api_settings
-from role.models import SysRole, SysUserRole
+from role.models import SysRole, SysUserRole, SysRoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from user.models import User, SysUserSerializer
@@ -97,16 +97,15 @@ class UpdatePasswordView(View):
 
 
 class UpdateView(View):
-    # def get(self, request):
-    #     return HttpResponse("获取用户列表")
     def post(self, request):
         data = json.loads(request.body)
         id = data.get('id')
-        print("更新用户数据", id)
         user = User.objects.filter(id=id).update(username=data['username'], password=data['password'],
                                                  avatar=data['avatar'], phone_number=data['phone_number'],
                                                  email=data['email'], status=data['status'])
-        print("更新用户数据", request.body)
+        SysUserRole.objects.filter(user_id=id).delete()
+        for roleId in data['role']:
+            SysUserRole.objects.update_or_create(user_id=id, role_id=roleId)
         return ResponseSuccess()
 
 
@@ -116,7 +115,9 @@ class DetailView(View):
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
         user = User.objects.get(id=user_id)
         users = SysUserSerializer(user).data
-        return ResponseSuccess(data=users)
+        roles = list(SysUserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
+        data = {**users, 'role': roles}
+        return ResponseSuccess(data=data)
 
 
 class DeleteView(View):
