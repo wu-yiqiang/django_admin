@@ -23,14 +23,13 @@ class TreeListView(View):
         resultMenuList: list[SysMenu] = list()
         for menu in sysMenuList:
             # 寻找子节点
-            print("eee", sysMenuList)
             for e in sysMenuList:
                 if e.parent_id == menu.id:
                     if not hasattr(menu, "children"):
                         menu.children = list()
                     menu.children.append(e)
             # 判断父节点，添加到集合
-            if menu.parent_id == 0:
+            if menu.parent_id is None:
                 resultMenuList.append(menu)
         return resultMenuList
 
@@ -84,7 +83,8 @@ class DeleteView(View):
     def delete(self, request, menu_id):
         if menu_id is None:
             return ResponseError(MENU_RERROR.MENU_ID_IS_EMPTY)
-        role = SysMenu.objects.get(id=menu_id)
-        role.is_deleted = 1
-        role.save()
+        # role = SysMenu.objects.get(id=menu_id)
+        # role.is_deleted = 1
+        # role.save()
+        SysMenu.objects.filter(id=menu_id).delete()
         return ResponseSuccess()

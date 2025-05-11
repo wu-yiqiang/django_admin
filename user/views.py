@@ -1,6 +1,7 @@
 import json
 import math
 from datetime import datetime
+
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
@@ -71,6 +72,7 @@ class SearchPageView(View):
         userLists = Paginator(User.objects.filter(is_deleted=0), pageSize).page(pageNo)
         total = User.objects.filter(is_deleted=0).count()
         users = SysUserSerializer(userLists.object_list.values(), many=True).data
+        # roles = list(SysUserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
         data = {'lists': users, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
 
@@ -83,24 +85,24 @@ class SearchListsView(View):
 class UpdatePasswordView(View):
     def post(self, request):
         params = json.loads(request.body)
-        if params['username'] is None:
-            return JsonResponse(USER_RERROR.USERNAME_IS_EMPTY)
+        if params['id'] is None:
+            return JsonResponse(USER_RERROR.USER_IS_EMPTY)
         if params['password'] is None:
             return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
         try:
-            user = User.objects.get(username=params['username'])
+            user = User.objects.get(id=params['id'])
             user.password = params['password']
             user.save()
         except Exception as e:
-            return JsonResponse(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
-        # return JsonResponse(COMMON_SUCCESS.OPEARTIN_SUCCESS)
+            return ResponseError(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
+        return ResponseSuccess()
 
 
 class UpdateView(View):
     def post(self, request):
         data = json.loads(request.body)
         id = data.get('id')
-        user = User.objects.filter(id=id).update(username=data['username'], password=data['password'],
+        user = User.objects.filter(id=id).update(username=data['username'], password='1234@Abcd',
                                                  avatar=data['avatar'], phone_number=data['phone_number'],
                                                  email=data['email'], status=data['status'])
         SysUserRole.objects.filter(user_id=id).delete()
@@ -127,19 +129,13 @@ class DeleteView(View):
         user = User.objects.get(id=user_id)
         user.is_deleted = 1
         user.save()
+        SysUserRole.objects.filter(user_id=user_id).delete()
         return ResponseSuccess()
 
 
 class LogoutView(View):
     def post(self, request):
-        print("更新用户数据", request.session.get('user_id'))
-        user_id = request.session.get('user_id')
-        user = User.objects.get(id=user_id)
-        # token, _ = authtoken.models.Token.objects.get_or_create(user=user_id)
-        # token = authtoken.models.Token.objects.filter(user=user).first()
-        # authtoken.
-        # token.delete()
-        # return JsonResponse(COMMON_SUCCESS.EXIT_SUCCESS)
+        return ResponseSuccess()
 
 
 class GetAssetsView(View):
