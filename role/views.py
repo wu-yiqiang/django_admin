@@ -13,12 +13,9 @@ from common.response import ResponseSuccess, ResponseError
 
 
 class CreateView(View):
-    # def get(self, request):
-    #     return HttpResponse("获取用户列表")
     def post(self, request):
-        user = json.loads(request.body)
-        User.objects.create(username=user['username'], password=user['password'], avatar=user['avatar'],
-                            email=user['email'], phone_number=user['phoneNumber'], status=user['status'])
+        role = json.loads(request.body)
+        SysRole.objects.create(name=role['name'], code=role['code'], remark=role['remark'])
         return ResponseSuccess()
 
 
@@ -47,10 +44,8 @@ class UpdateView(View):
     def post(self, request):
         data = json.loads(request.body)
         id = data.get('id')
-        user = User.objects.filter(id=id).update(username=data['username'], password=data['password'],
-                                                 avatar=data['avatar'], phone_number=data['phone_number'],
-                                                 email=data['email'], status=data['status'])
-        print("更新用户数据", request.body)
+        user = SysRole.objects.filter(id=id).update(name=data['name'], code=data['code'],
+                                                    remark=data['remark'])
         return ResponseSuccess()
 
 
