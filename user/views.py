@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse
 from django.views import View
 from rest_framework_jwt.settings import api_settings
+
+from menu.models import SysRoleMenu, SysMenu
 from role.models import SysRole, SysUserRole, SysRoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
@@ -43,7 +45,19 @@ class LoginView(View):
         except Exception as e:
             print(e)
             return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
-        data = {**SysUserSerializer(user).data, 'token': token}
+        roles = list(SysUserRole.objects.filter(user_id=user.id).all().values_list('role_id', flat=True))
+        menus = []
+        rolesDetails = []
+        for role in roles:
+            menu = list(SysRoleMenu.objects.filter(role_id=role).all().values_list('menu_id', flat=True))
+            menus = list(set(menus + menu))
+            roleDetail = SysRole.objects.filter(id=role).all().values()
+            rolesDetails = list(rolesDetails + list(roleDetail))
+        menusDetails = []
+        for menu in menus:
+            detail = SysMenu.objects.filter(id=menu).all().values()
+            menusDetails = list(menusDetails + list(detail))
+        data = {**SysUserSerializer(user).data, 'token': token, 'roles': rolesDetails, 'menus': menusDetails}
         return ResponseSuccess(data=data)
 
 
