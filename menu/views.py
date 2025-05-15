@@ -13,7 +13,7 @@ class CreateView(View):
         menu = json.loads(request.body)
         SysMenu.objects.create(name=menu['name'], icon="", parent_id=menu['parent_id'],
                                path=menu['path'], order_num=menu['order_num'],
-                               menu_type=menu['menu_type'], perms=menu['perms'])
+                               menu_type=menu['menu_type'], code=menu['code'])
         return ResponseSuccess()
 
 
@@ -66,7 +66,7 @@ class UpdateView(View):
         menu = SysMenu.objects.filter(id=id).update(name=menu['name'], icon="", parent_id=menu['parent_id'],
                                                     path=menu['path'],
                                                     order_num=menu['order_num'],
-                                                    menu_type=menu['menu_type'], perms=menu['perms'])
+                                                    menu_type=menu['menu_type'], code=menu['code'])
         return ResponseSuccess()
 
 
