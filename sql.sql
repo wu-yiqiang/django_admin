@@ -39,20 +39,20 @@ insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_numb
 values ('18', 'sutter.wu', '1234@Abcd', 'default.jpg', 'sutter.wu@outlook.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
 
 -- 菜单表
-insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `component`, `menu_type`, `perms`,
+insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `menu_type`, `code`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values (1, '系统管理', 'system', 0, 1, '/setting', '/', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0),
-       (2, '业务管理', 'monitor', 0, 2, '/basicData', '/', '1', 'BasicData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
-       (3, '用户管理', 'user', 1, 1, '/setting/user', '/setting/user/index', '2', 'user', '2024-07-04', '2024-07-04',
+values (1, '系统管理', 'system', 0, 1, '/setting', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0),
+       (2, '业务管理', 'monitor', 0, 2, '/basicData',1', 'BasicData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
+       (3, '用户管理', 'user', 1, 1, '/setting/user', '2', 'user', '2024-07-04', '2024-07-04',
         '用户管理菜单', 0),
-       (4, '角色管理', 'peoples', 1, 2, '/setting/role', '/setting/role/index', '2', 'role', '2024-07-04',
+       (4, '角色管理', 'peoples', 1, 2, '/setting/role', '2', 'role', '2024-07-04',
         '2024-07-04', '角色管理菜单', 0),
-       (5, '菜单管理', 'treetable', 1, 3, '/setting/menu', '/setting/menu/index', '2', 'menu', '2024-07-04',
+       (5, '菜单管理', 'treetable', 1, 3, '/setting/menu', '2', 'menu', '2024-07-04',
         '2024-07-04', '菜单管理菜单', 0),
-       (6, '部门管理', 'tree', 2, 1, '/basicData/department', '/basicData/department/index', '2', 'department', '2024-07-04', '2024-07-04',
+       (6, '部门管理', 'tree', 2, 1, '/basicData/department', '2', 'department', '2024-07-04', '2024-07-04',
         '部门管理菜单', 0),
-       (7, '岗位管理', 'post', 2, 2, '/basicData/position', '/basicData/position/index', '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0);
-       (7, '公司管理', 'post', 2, 3, '/basicData/company', '/basicData/company/index', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
+       (7, '岗位管理', 'post', 2, 2, '/basicData/position',  '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0);
+       (7, '公司管理', 'post', 2, 3, '/basicData/company', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
 
 -- 角色表
 insert into `role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)

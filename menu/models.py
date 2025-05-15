@@ -13,9 +13,8 @@ class SysMenu(BaseModel):
     parent_id = models.IntegerField(null=True, verbose_name="父级菜单")
     order_num = models.IntegerField(null=True, verbose_name="显示顺序")
     path = models.CharField(max_length=200, null=True, verbose_name="路由地址")
-    component = models.CharField(max_length=200, null=True, verbose_name="组件路径")
     menu_type = models.CharField(max_length=1, null=True, verbose_name="菜单类型")
-    perms = models.CharField(max_length=100, null=True, verbose_name="权限标识")
+    code = models.CharField(max_length=100, null=True, verbose_name="权限标识")
 
     def __lt__(self, other):
         return self.order_num < other.order_num

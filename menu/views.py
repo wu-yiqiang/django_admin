@@ -12,7 +12,7 @@ class CreateView(View):
     def post(self, request):
         menu = json.loads(request.body)
         SysMenu.objects.create(name=menu['name'], icon="", parent_id=menu['parent_id'],
-                               path=menu['path'], component=menu['component'], order_num=menu['order_num'],
+                               path=menu['path'], order_num=menu['order_num'],
                                menu_type=menu['menu_type'], perms=menu['perms'])
         return ResponseSuccess()
 
@@ -64,7 +64,7 @@ class UpdateView(View):
         menu = json.loads(request.body)
         id = menu.get('id')
         menu = SysMenu.objects.filter(id=id).update(name=menu['name'], icon="", parent_id=menu['parent_id'],
-                                                    path=menu['path'], component=menu['component'],
+                                                    path=menu['path'],
                                                     order_num=menu['order_num'],
                                                     menu_type=menu['menu_type'], perms=menu['perms'])
         return ResponseSuccess()
