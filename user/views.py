@@ -34,18 +34,15 @@ class LoginView(View):
             return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
         try:
             user = User.objects.get(email=email, password=password)
-            print('user', user)
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
             jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
             payload = jwt_payload_handler(user)
             token = jwt_encode_handler(payload)
-            role_list = SysRole.objects.raw(
-                "SELECT id, name,FROM sys_role WHERE id IN (SELECT role_id FROM sys_uer_role WHERE user_id = " + str(
-                    user.id) + ")")
         except Exception as e:
             print(e)
             return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
         roles = list(SysUserRole.objects.filter(user_id=user.id).all().values_list('role_id', flat=True))
+        print("role_list", roles)
         menus = []
         rolesDetails = []
         for role in roles:
