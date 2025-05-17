@@ -152,7 +152,8 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 
-PROTOCOL = 'http'
+# PROTOCOL = 'http'
+PROTOCOL = 'https'
 # IP = '192.168.1.222'
 IP = '185.198.166.245'
 PORT = '8000'
