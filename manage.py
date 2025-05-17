@@ -7,6 +7,7 @@ from django.core.management.commands.runserver import Command as Runserver
 
 def main():
     """Run administrative tasks."""
+    # local dev test prod 四种环境
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_admin.settings.prod')
     try:
         from django.core.management import execute_from_command_line

@@ -1,6 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 DEBUG = False
 PROTOCOL = 'https'
 IP = '185.198.166.245'
