@@ -42,7 +42,6 @@ class LoginView(View):
             print(e)
             return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
         roles = list(SysUserRole.objects.filter(user_id=user.id).all().values_list('role_id', flat=True))
-        print("role_list", roles)
         menus = []
         rolesDetails = []
         for role in roles:
