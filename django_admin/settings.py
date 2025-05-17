@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': 'django_admin',
         "USER": 'mydjango',
         "PASSWORD": 'mydjango@mydjango',
-        "HOST": '185.198.166.245',
+        "HOST": '127.0.0.1',
         "PORT": '3306',
     }
     # 'default': {
