@@ -67,22 +67,22 @@ WSGI_APPLICATION = 'django_admin.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'django_admin',
-    #     "USER": 'mydjango',
-    #     "PASSWORD": 'mydjango@mydjango',
-    #     "HOST": '185.198.166.245',
-    #     "PORT": '3306',
-    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_admin',
-        "USER": 'root',
-        "PASSWORD": 'root@root',
-        "HOST": '127.0.0.1',
+        "USER": 'mydjango',
+        "PASSWORD": 'mydjango@mydjango',
+        "HOST": '185.198.166.245',
         "PORT": '3306',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'django_admin',
+    #     "USER": 'root',
+    #     "PASSWORD": 'root@root',
+    #     "HOST": '127.0.0.1',
+    #     "PORT": '3306',
+    # }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
