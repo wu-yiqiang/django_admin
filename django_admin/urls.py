@@ -1,7 +1,6 @@
-from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include, re_path
 from django.views.static import serve
-from django_admin.settings import base
 from django_admin.views import UploadView
 
 urlpatterns = [
@@ -10,5 +9,5 @@ urlpatterns = [
     path('menu/', include('menu.urls'), name='menu'),
     path('maintain/', include('maintains.urls'), name='menu'),
     path('upload', UploadView.as_view(), name='upload'),
-    re_path('media/(?P<path>.*)', serve, {"document_root": base.MEDIA_ROOT}, name="media"),
+    re_path('media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}, name="media"),
 ]

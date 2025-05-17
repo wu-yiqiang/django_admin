@@ -8,8 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&o+ozke2rp@q3k@5t$jyfbgo^f)h4td4)xc07c-5vjyqai)0v2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ["*", ]
+# DEBUG = True
+# ALLOWED_HOSTS = ["*", ]
 
 # Application definition
 
@@ -128,3 +128,36 @@ JWT_AUTH = {
     # 反爬小措施前缀
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
+# DEV
+ALLOWED_HOSTS = ['*', ]
+DEBUG = True
+PROTOCOL = 'http'
+IP = '192.168.1.222'
+PORT = '8000'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_admin',
+        "USER": 'root',
+        "PASSWORD": 'root@root',
+        "HOST": '127.0.0.1',
+        "PORT": '3306',
+    }
+}
+
+# PROD
+# ALLOWED_HOSTS = ['*']
+# DEBUG = False
+# PROTOCOL = 'https'
+# IP = '185.198.166.245'
+# PORT = '8000'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_admin',
+#         "USER": 'mydjango',
+#         "PASSWORD": 'mydjango@mydjango',
+#         "HOST": '127.0.0.1',
+#         "PORT": '3306',
+#     }
+# }
