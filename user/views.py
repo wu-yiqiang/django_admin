@@ -33,7 +33,9 @@ class LoginView(View):
         if email is None or password is None:
             return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
         try:
+            print("password:", email, password)
             user = User.objects.get(email=email, password=password)
+            print("email:", email, password)
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
             jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
             payload = jwt_payload_handler(user)
