@@ -128,8 +128,9 @@ JWT_AUTH = {
     # 反爬小措施前缀
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
+ALLOWED_HOSTS = ['*', ]
+
 # DEV
-# ALLOWED_HOSTS = ['*', ]
 # DEBUG = True
 # PROTOCOL = 'http'
 # IP = '192.168.1.222'
@@ -146,7 +147,6 @@ JWT_AUTH = {
 # }
 
 # PROD
-ALLOWED_HOSTS = ['*']
 DEBUG = False
 PROTOCOL = 'https'
 IP = '185.198.166.245'
