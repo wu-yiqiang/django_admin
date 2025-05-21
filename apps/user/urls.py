@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from user.views import LoginView, CreateView, LogoutView, UpdateView, UpdatePasswordView, RegisterView, GetAssetsView, \
+from apps.user.views import LoginView, CreateView, LogoutView, UpdateView, UpdatePasswordView, RegisterView, \
+    GetAssetsView, \
     SearchPageView, SearchListsView, DetailView, DeleteView, ExportView
 
 app_name = 'user'

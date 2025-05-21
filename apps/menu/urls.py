@@ -1,6 +1,5 @@
-from django.contrib import admin
 from django.urls import path
-from menu.views import CreateView, TreeListView, SearchPageView, UpdateView, DeleteView, DetailView
+from apps.menu.views import CreateView, TreeListView, SearchPageView, UpdateView, DeleteView, DetailView
 
 app_name = 'menu'
 urlpatterns = [

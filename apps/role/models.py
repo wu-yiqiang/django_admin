@@ -3,10 +3,11 @@ from math import trunc
 from django.db import models
 from rest_framework import serializers
 from common.db import BaseModel
-from user.models import User
+from apps.user.models import User
 
 
-# Create your models here.
+# from  apps.user.apps import User
+
 class SysRole(BaseModel):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, null=True, verbose_name="角色名")

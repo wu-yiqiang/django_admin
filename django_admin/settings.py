@@ -1,10 +1,15 @@
+import os
+import sys
 from datetime import timedelta
 from pathlib import Path
 import datetime
 from socket import socket
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from apps import user
+from apps.user.apps import UserConfig
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = 'django-insecure-&o+ozke2rp@q3k@5t$jyfbgo^f)h4td4)xc07c-5vjyqai)0v2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -23,9 +28,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_jwt",
     "corsheaders",
-    "user.apps.UserConfig",
-    "role.apps.RoleConfig",
-    "menu.apps.MenuConfig",
+    "apps.user.apps.UserConfig",
+    "apps.role.apps.RoleConfig",
+    "apps.menu.apps.MenuConfig",
     "maintains.apps.MaintainsConfig",
 ]
 
@@ -131,33 +136,33 @@ JWT_AUTH = {
 ALLOWED_HOSTS = ['*', ]
 
 # DEV
-# DEBUG = True
-# PROTOCOL = 'http'
-# IP = '192.168.1.222'
-# PORT = '8000'
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django_admin',
-#         "USER": 'root',
-#         "PASSWORD": 'root@root',
-#         "HOST": '127.0.0.1',
-#         "PORT": '3306',
-#     }
-# }
-
-# PROD
-DEBUG = False
-PROTOCOL = 'https'
-IP = '185.198.166.245'
+DEBUG = True
+PROTOCOL = 'http'
+IP = '192.168.1.222'
 PORT = '8000'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_admin',
-        "USER": 'mydjango',
-        "PASSWORD": 'mydjango@mydjango',
+        "USER": 'root',
+        "PASSWORD": 'root@root',
         "HOST": '127.0.0.1',
         "PORT": '3306',
     }
 }
+
+# PROD
+# DEBUG = False
+# PROTOCOL = 'https'
+# IP = '185.198.166.245'
+# PORT = '8000'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_admin',
+#         "USER": 'mydjango',
+#         "PASSWORD": 'mydjango@mydjango',
+#         "HOST": '127.0.0.1',
+#         "PORT": '3306',
+#     }
+# }

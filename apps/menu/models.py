@@ -2,7 +2,7 @@ from math import trunc
 from django.db import models
 from rest_framework import serializers
 from common.db import BaseModel
-from role.models import SysRole
+from apps.role.models import SysRole
 
 
 # Create your models here.

@@ -4,15 +4,15 @@ from datetime import datetime
 
 from django.core.paginator import Paginator
 from django.http import JsonResponse
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import HttpResponse
 from django.views import View
 from rest_framework_jwt.settings import api_settings
 
-from menu.models import SysRoleMenu, SysMenu
-from role.models import SysRole, SysUserRole, SysRoleSerializer
+from apps.menu.models import SysRoleMenu, SysMenu
+from apps.role.models import SysRole, SysUserRole, SysRoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
-from user.models import User, SysUserSerializer
+from .models import User, SysUserSerializer
 from common.response import ResponseSuccess, ResponseError
 
 

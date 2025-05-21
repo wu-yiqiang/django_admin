@@ -2,7 +2,7 @@ import json
 
 from django.core.paginator import Paginator
 from django.views import View
-from menu.models import SysMenu, SysMenuSerializer
+from apps.menu.models import SysMenu, SysMenuSerializer
 from common.response import ResponseSuccess, ResponseError
 from service_error.common import COMMON_RERROR
 from service_error.menu import MENU_RERROR
