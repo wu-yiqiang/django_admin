@@ -17,7 +17,6 @@ class CreateView(View):
         menus = role['menus']
         roleId = rol.id
         for menu in menus:
-            print('roleId', menu)
             SysRoleMenu.objects.create(menu_id=menu, role_id=roleId)
         return ResponseSuccess()
 

@@ -17,6 +17,8 @@ class User(BaseModel):
     login_date = models.DateField(null=True, verbose_name="登陆时间")
     status = models.IntegerField(null=True, verbose_name="状态值")
 
+    # roles = models.ManyToManyField('SysRole', related_name='name')
+
     class Meta:
         db_table = 'user'
         verbose_name = "用户表"
@@ -26,7 +28,8 @@ class SysUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         field_order = [
-            'id', 'username', 'password', 'avatar', 'email', 'phone_number', 'login_date', 'status', 'is_deleted',
+            'id', 'username', 'password', 'avatar', 'roles', 'email', 'phone_number', 'login_date', 'status',
+            'is_deleted',
             'remark',
             'create_time', 'update_time']
         # fields = '__all__'

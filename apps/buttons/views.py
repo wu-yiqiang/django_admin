@@ -1,10 +1,6 @@
 import json
 from django.core.paginator import Paginator
-from django.http import JsonResponse
 from django.views import View
-from rest_framework_jwt.settings import api_settings
-from apps.menu.models import SysRoleMenu, SysMenu
-from apps.role.models import SysRole, SysUserRole, SysRoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from .models import Button, SysButtonSerializer
@@ -27,7 +23,6 @@ class SearchPageView(View):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         buttonLists = Paginator(Button.objects.filter(is_deleted=0), pageSize).page(pageNo)
         total = Button.objects.filter(is_deleted=0).count()
-        print('sdsd', buttonLists.object_list)
         buttons = SysButtonSerializer(buttonLists.object_list.values(), many=True).data
         data = {'lists': buttons, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
@@ -61,5 +56,4 @@ class DeleteView(View):
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
         button = Button.objects.get(id=button_id)
         button.delete()
-        button.save()
         return ResponseSuccess()

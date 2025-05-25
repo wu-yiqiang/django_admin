@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse
 from django.views import View
+from openpyxl.styles.builtins import total
 from rest_framework_jwt.settings import api_settings
 
 from apps.menu.models import SysRoleMenu, SysMenu
@@ -81,11 +82,16 @@ class SearchPageView(View):
         pageNo = params.get('pageNo')
         if not all([pageSize, pageNo]):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
-        userLists = Paginator(User.objects.filter(is_deleted=0), pageSize).page(pageNo)
-        total = User.objects.filter(is_deleted=0).count()
-        users = SysUserSerializer(userLists.object_list.values(), many=True).data
-        # roles = list(SysUserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
-        data = {'lists': users, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
+        users = User.objects.filter(is_deleted=0)
+        total = users.count()
+        userPages = Paginator(users, pageSize).page(pageNo)
+        # users = list(userLists.object_list.values())
+
+        useLists = []
+        for user in userPages:
+            roles = SysUserRole.objects.filter(user_id=user.get('id')).all().values_list('role_id', flat=True)
+            useLists.append({**user, 'roles': list(roles)})
+        data = {'lists': useLists, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
 
 
