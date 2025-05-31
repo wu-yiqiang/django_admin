@@ -64,7 +64,7 @@ class UpdateView(View):
         menu = json.loads(request.body)
         id = menu.get('id')
         menu = SysMenu.objects.filter(id=id).update(name=menu['name'], icon="", parent_id=menu['parent_id'],
-                                                    path=menu['path'],
+                                                    # path=menu['path'],
                                                     order_num=menu['order_num'],
                                                     menu_type=menu['menu_type'], code=menu['code'])
         return ResponseSuccess()

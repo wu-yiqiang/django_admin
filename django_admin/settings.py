@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "apps.role.apps.RoleConfig",
     "apps.menu.apps.MenuConfig",
     "apps.buttons.apps.ButtonsConfig",
+    "apps.inteface.apps.IntefaceConfig",
     "maintains.apps.MaintainsConfig",
 ]
 

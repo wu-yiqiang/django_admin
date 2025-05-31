@@ -30,7 +30,9 @@ class SearchPageView(View):
 
 class SearchListsView(View):
     def post(self, request):
-        return ResponseSuccess()
+        buttons = Button.objects.filter(is_deleted=0)
+        buttonsLists = SysButtonSerializer(buttons.values(), many=True).data
+        return ResponseSuccess(data=buttonsLists)
 
 
 class UpdateView(View):

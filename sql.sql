@@ -41,18 +41,19 @@ values ('18', 'sutter.wu', '1234@Abcd', 'default.jpg', 'sutter.wu@outlook.com', 
 -- 菜单表
 insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `menu_type`, `code`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values (1, '系统管理', 'system', 0, 1, '/setting', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0),
-       (2, '业务管理', 'monitor', 0, 2, '/basicData',1', 'BasicData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
-       (3, '用户管理', 'user', 1, 1, '/setting/user', '2', 'user', '2024-07-04', '2024-07-04',
+values (1, '个人中心', 'personal', 0, 1, '', '1', 'setting', '2024-07-04', '2024-07-04', '个人中心目录', 0),
+       (2, '系统管理', 'system', 0, 2, '/setting', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0)
+       (3, '业务管理', 'monitor', 0, 3, '/basicData',1', 'BasicData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
+       (4, '用户管理', 'user', 1, 1, '/setting/user', '2', 'user', '2024-07-04', '2024-07-04',
         '用户管理菜单', 0),
-       (4, '角色管理', 'peoples', 1, 2, '/setting/role', '2', 'role', '2024-07-04',
+       (5, '角色管理', 'peoples', 1, 2, '/setting/role', '2', 'role', '2024-07-04',
         '2024-07-04', '角色管理菜单', 0),
-       (5, '菜单管理', 'treetable', 1, 3, '/setting/menu', '2', 'menu', '2024-07-04',
+       (6, '菜单管理', 'treetable', 1, 3, '/setting/menu', '2', 'menu', '2024-07-04',
         '2024-07-04', '菜单管理菜单', 0),
-       (6, '部门管理', 'tree', 2, 1, '/basicData/department', '2', 'department', '2024-07-04', '2024-07-04',
+       (7, '部门管理', 'tree', 2, 1, '/basicData/department', '2', 'department', '2024-07-04', '2024-07-04',
         '部门管理菜单', 0),
-       (7, '岗位管理', 'post', 2, 2, '/basicData/position',  '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0);
-       (7, '公司管理', 'post', 2, 3, '/basicData/company', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
+       (8, '岗位管理', 'post', 2, 2, '/basicData/position',  '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0);
+       (9, '公司管理', 'post', 2, 3, '/basicData/company', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
 
 -- 角色表
 insert into `role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
@@ -95,6 +96,8 @@ values (1, 1, 1),
        (25, 3, 3),
        (26, 4, 3),
        (27, 2, 15);
+
+
 
 --维修表--
 insert into `maintains` (`id`, `device_name`, `applyer`, `maintainer`, `subject`,
