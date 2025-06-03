@@ -1,7 +1,7 @@
 -- user表数据
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values ('1', 'python222', '123456', '20240906202303.jpg', 'caofeng2014@126.com', '18862857104', '2024-08-08', '1',
+values ('1', 'Administrator', '1234@Abcd', '20240906202303.jpg', 'Administrator@outlook.com', '18862857104', '2024-08-08', '1',
         '2024-08-08', '2024-08-08', '超级管理员', FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
@@ -38,64 +38,89 @@ insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_numb
                         `create_time`, `update_time`, `remark`,`is_deleted`)
 values ('18', 'sutter.wu', '1234@Abcd', 'default.jpg', 'sutter.wu@outlook.com', '15586521012', NULL, '1', '2024-09-05', NULL, '555',FALSE);
 
--- 菜单表
-insert into `sys_menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `menu_type`, `code`,
-                        `create_time`, `update_time`, `remark`, `is_deleted`)
-values (1, '个人中心', 'personal', 0, 1, '', '1', 'setting', '2024-07-04', '2024-07-04', '个人中心目录', 0),
-       (2, '系统管理', 'system', 0, 2, '/setting', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0)
-       (3, '业务管理', 'monitor', 0, 3, '/basicData',1', 'BasicData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
-       (4, '用户管理', 'user', 1, 1, '/setting/user', '2', 'user', '2024-07-04', '2024-07-04',
-        '用户管理菜单', 0),
-       (5, '角色管理', 'peoples', 1, 2, '/setting/role', '2', 'role', '2024-07-04',
-        '2024-07-04', '角色管理菜单', 0),
-       (6, '菜单管理', 'treetable', 1, 3, '/setting/menu', '2', 'menu', '2024-07-04',
-        '2024-07-04', '菜单管理菜单', 0),
-       (7, '部门管理', 'tree', 2, 1, '/basicData/department', '2', 'department', '2024-07-04', '2024-07-04',
-        '部门管理菜单', 0),
-       (8, '岗位管理', 'post', 2, 2, '/basicData/position',  '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0);
-       (9, '公司管理', 'post', 2, 3, '/basicData/company', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
+
 
 -- 角色表
-insert into `role`(`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
-values (1, '超级管理员', 'super_admin', '2024-07-04', '2024-07-04', '拥有系统最高权限',0),
+insert into `role` (`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, '超级管理员', 'administrator', '2024-07-04', '2024-07-04', '拥有系统最高权限',0),
        (2, '普通角色', 'user', '2024-07-04', '2024-07-04', '普通角色',0),
        (3, '测试角色', 'test', '2024-07-04', '2024-07-04', '测试角色', 0),
        (4, '系统部管理员', 'system_admin', '2024-07-04', '2024-07-04', NULL, 0),
        (5, '运维部管理员', 'maintenance_admin', '2024-07-04', '2024-07-04', NULL, 0),
        (6, '开发部管理员', 'develop_admin', '2024-07-04', '2024-07-04', NULL, 0);
 
+-- 菜单表
+insert into `menu` (`id`, `name`, `icon`, `parent_id`, `order_num`, `path`, `menu_type`, `code`,
+                        `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, '个人中心', 'personal', 0, 1, '/personal', '1', 'setting', '2024-07-04', '2024-07-04', '个人中心目录', 0),
+       (2, '系统管理', 'system', 0, 2, '/setting', '1', 'setting', '2024-07-04', '2024-07-04', '系统管理目录', 0),
+       (3, '业务管理', 'monitor', 0, 3, '/mainData','1', 'mainData', '2024-07-04', '2024-07-04', '业务管理目录', 0),
+       (4, '用户管理', 'user', 1, 1, '/setting/user', '2', 'user', '2024-07-04', '2024-07-04',
+        '用户管理菜单', 0),
+       (5, '角色管理', 'peoples', 1, 2, '/setting/role', '2', 'role', '2024-07-04',
+        '2024-07-04', '角色管理菜单', 0),
+       (6, '菜单管理', 'treetable', 1, 3, '/setting/menu', '2', 'menu', '2024-07-04',
+        '2024-07-04', '菜单管理菜单', 0),
+       (7, '部门管理', 'tree', 2, 1, '/mainData/department', '2', 'department', '2024-07-04', '2024-07-04',
+        '部门管理菜单', 0),
+       (8, '岗位管理', 'post', 2, 2, '/mainData/position',  '2', 'position', '2024-07-04', '2024-07-04', '岗位管理菜单', 0),
+       (9, '公司管理', 'post', 2, 3, '/mainData/company', '2', 'company', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
 
-insert into `sys_role_menu`(`id`, `menu_id`, `role_id`)
-values (102, 2, 2),
-       (103, 6, 2),
-       (104, 7, 2),
-       (106, 1, 1),
-       (107, 3, 1),
-       (108, 4, 1),
-       (109, 5, 1),
-       (110, 2, 1),
-       (111, 6, 1),
-       (112, 7, 1),
-       (114, 1, 6),
-       (115, 5, 6),
-       (116, 2, 6),
-       (117, 6, 6),
-       (118, 7, 6);
-insert into `user_role`(`id`, `role_id`, `user_id`)
+ -- 按钮表
+insert into `button` (`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, '查询', '1', '2024-07-04', '2024-07-04', '查询权限', 0),
+       (2, '导出', '10', '2024-07-04', '2024-07-04', '导出权限', 0),
+       (3, '创建', '100', '2024-07-04', '2024-07-04', '创建权限', 0),
+       (4, '编辑', '1000', '2024-07-04', '2024-07-04', '编辑权限', 0),
+       (5, '删除','10000', '2024-07-04', '2024-07-04', '删除权限', 0);
+
+
+ -- 接口表
+insert into `inteface`(`id`, `name`, `type`, `path`, `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, '查询用户列表', 1, '/user/page','2024-07-04', '2024-07-04', '查询用户列表', 0),
+       (2, '添加用户', 2,'/user/create', '2024-07-04', '2024-07-04', '添加用户', 0),
+       (3, '删除用户', 3, '/user/delete','2024-07-04', '2024-07-04', '删除用户', 0),
+       (4, '编辑用户', 2,'/user/update', '2024-07-04', '2024-07-04', '编辑用户', 0),
+       (5, '查询用户详情',1,'/user/detail', '2024-07-04', '2024-07-04', '查询用户详情', 0);
+
+-- 用户角色表
+insert into `user_roles`(`id`, `role_id`, `user_id`)
 values (1, 1, 1),
        (2, 2, 1),
-       (13, 5, 6),
-       (17, 2, 6),
-       (18, 3, 6),
-       (19, 20, 6),
-       (20, 2, 8),
-       (21, 20, 8),
-       (22, 5, 8),
-       (23, 2, 17),
-       (24, 2, 3),
-       (25, 3, 3),
-       (26, 4, 3),
-       (27, 2, 15);
+       (3, 3, 1),
+       (4, 4, 1),
+       (5, 5, 1),
+       (6, 6, 1);
+
+-- 角色菜单表
+insert into `role_menus`(`id`, `menu_id`, `role_id`)
+values (1, 1, 1),
+       (2, 2, 1),
+       (3, 3, 1),
+       (4, 4, 1),
+       (5, 5, 1),
+       (6, 6, 1),
+       (7, 7, 1),
+       (8, 8, 1),
+       (9, 9, 1);
+
+-- 角色按钮表
+insert into `role_buttons`(`id`, `button_id`, `role_id`)
+values (1, 1, 1),
+       (2, 2, 1),
+       (3, 3, 1),
+       (4, 4, 1),
+       (5, 5, 1);
+
+
+-- 角色接口表
+insert into `role_intefaces`(`id`, `inteface_id`, `role_id`)
+values (1, 1, 1),
+       (2, 2, 1),
+       (3, 3, 1),
+       (4, 4, 1),
+       (5, 5, 1);
+
 
 
 

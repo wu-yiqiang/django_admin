@@ -1,7 +1,7 @@
 from django.urls import path
 from apps.inteface.views import CreateView, SearchPageView, UpdateView, DeleteView, DetailView
 
-app_name = 'menu'
+app_name = 'inteface'
 urlpatterns = [
     path('create', CreateView.as_view(), name='inteface_create'),
     path('page', SearchPageView.as_view(), name='inteface_page_lists'),

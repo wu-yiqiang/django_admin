@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from apps.buttons.views import CreateView, UpdateView, SearchPageView, SearchListsView, DetailView, DeleteView
+from apps.button.views import CreateView, UpdateView, SearchPageView, SearchListsView, DetailView, DeleteView
 
 app_name = 'button'
 urlpatterns = [

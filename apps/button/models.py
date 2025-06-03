@@ -16,7 +16,7 @@ class Button(BaseModel):
         verbose_name = "按钮表"
 
 
-class SysButtonSerializer(serializers.ModelSerializer):
+class ButtonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Button
         field_order = ['id', 'name', 'code', 'is_deleted', 'remark', 'create_time', 'update_time']

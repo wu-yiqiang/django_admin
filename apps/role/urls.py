@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path
 from .views import CreateView, UpdateView, SearchPageView, SearchListsView, DetailView, DeleteView
 
-app_name = 'user'
 app_name = 'role'
 urlpatterns = [
     path('create', CreateView.as_view(), name='role_create'),

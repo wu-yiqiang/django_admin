@@ -7,7 +7,7 @@ from common.db import BaseModel
 class Inteface(BaseModel):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, null=True, verbose_name="接口名")
-    type = models.IntegerField(max_length=1, null=True, verbose_name="接口类型")
+    type = models.IntegerField(null=True, verbose_name="接口类型")
     path = models.CharField(max_length=200, null=True, verbose_name="接口路径")
 
     # def __lt__(self, other):

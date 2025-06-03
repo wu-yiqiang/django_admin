@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.views import View
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
-from .models import Button, SysButtonSerializer
+from .models import Button, ButtonSerializer
 from common.response import ResponseSuccess, ResponseError
 
 
@@ -23,7 +23,7 @@ class SearchPageView(View):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         buttonLists = Paginator(Button.objects.filter(is_deleted=0), pageSize).page(pageNo)
         total = Button.objects.filter(is_deleted=0).count()
-        buttons = SysButtonSerializer(buttonLists.object_list.values(), many=True).data
+        buttons = ButtonSerializer(buttonLists.object_list.values(), many=True).data
         data = {'lists': buttons, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
         return ResponseSuccess(data=data)
 
@@ -31,7 +31,7 @@ class SearchPageView(View):
 class SearchListsView(View):
     def post(self, request):
         buttons = Button.objects.filter(is_deleted=0)
-        buttonsLists = SysButtonSerializer(buttons.values(), many=True).data
+        buttonsLists = ButtonSerializer(buttons.values(), many=True).data
         return ResponseSuccess(data=buttonsLists)
 
 
@@ -48,7 +48,7 @@ class DetailView(View):
         if button_id is None:
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
         button = Button.objects.get(id=button_id)
-        buttonDetails = SysButtonSerializer(button).data
+        buttonDetails = ButtonSerializer(button).data
         return ResponseSuccess(data=buttonDetails)
 
 

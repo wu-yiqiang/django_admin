@@ -1,40 +1,59 @@
 from math import trunc
-
 from django.db import models
 from rest_framework import serializers
 from common.db import BaseModel
-from apps.user.models import User
+from apps.menu.models import Menu, MenuSerializer
+from apps.inteface.models import Inteface, IntefaceSerializer
+from apps.button.models import Button, ButtonSerializer
 
 
-# from  apps.user.apps import User
+# from apps.user.models import User
 
-class SysRole(BaseModel):
+
+class Role(BaseModel):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, null=True, verbose_name="角色名")
     code = models.CharField(max_length=100, null=True, verbose_name="角色权限字符串")
+    menus = models.ManyToManyField(Menu, related_name='roles')
+    buttons = models.ManyToManyField(Button, related_name='roles')
+    intefaces = models.ManyToManyField(Inteface, related_name='roles')
+
+    # class Meta:
+    #     db_table = 'role'
+    #     verbose_name = "角色表"
+    #
+    # def get_menu_permission(self):
+    #     return list(Menu.objects.values_list('id', flat=True))
+    #
+    # def get_button_permission(self):
+    #     return list(self.roles.values_list('buttons', flat=True))
+    #
+    # def get_inteface_permission(self):
+    #     return list(self.roles.values_list('intefaces', flat=True))
+
+
+class RoleSerializer(serializers.ModelSerializer):
+    menus = MenuSerializer(many=True, read_only=True)
+    buttons = ButtonSerializer(many=True, read_only=True)
+    intefaces = IntefaceSerializer(many=True, read_only=True)
 
     class Meta:
-        db_table = 'role'
-        verbose_name = "角色表"
-
-
-class SysRoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SysRole
+        model = Role
         fields = '__all__'
-        field_order = ['id', 'name', 'code', 'is_deleted', 'remark', 'create_time', 'update_time']
+        field_order = ['id', 'name', 'code', 'menus', 'intefaces', 'buttons', 'is_deleted', 'remark', 'create_time',
+                       'update_time']
+
+#
+# class UserRole(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     role = models.ForeignKey(Role, on_delete=models.PROTECT)
+#     user = models.ForeignKey(User, on_delete=models.PROTECT)
+#
+#     class Meta:
+#         db_table = 'user_role'
 
 
-class SysUserRole(models.Model):
-    id = models.AutoField(primary_key=True)
-    role = models.ForeignKey(SysRole, on_delete=models.PROTECT)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
-
-    class Meta:
-        db_table = 'sys_user_role'
-
-
-class SysUserRoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SysUserRole
-        fields = '__all__'
+# class UserRoleSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = UserRole
+#         fields = '__all__'

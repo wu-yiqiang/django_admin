@@ -31,9 +31,8 @@ INSTALLED_APPS = [
     "apps.user.apps.UserConfig",
     "apps.role.apps.RoleConfig",
     "apps.menu.apps.MenuConfig",
-    "apps.buttons.apps.ButtonsConfig",
+    "apps.button.apps.ButtonsConfig",
     "apps.inteface.apps.IntefaceConfig",
-    "maintains.apps.MaintainsConfig",
 ]
 
 MIDDLEWARE = [
@@ -138,33 +137,33 @@ JWT_AUTH = {
 ALLOWED_HOSTS = ['*', ]
 
 # DEV
-# DEBUG = True
-# PROTOCOL = 'http'
-# IP = '192.168.1.222'
-# PORT = '8000'
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django_admin',
-#         "USER": 'root',
-#         "PASSWORD": 'root@root',
-#         "HOST": '127.0.0.1',
-#         "PORT": '3306',
-#     }
-# }
-
-# PROD
-DEBUG = False
-PROTOCOL = 'https'
-IP = '185.198.166.245'
+DEBUG = True
+PROTOCOL = 'http'
+IP = '192.168.1.222'
 PORT = '8000'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_admin',
-        "USER": 'mydjango',
-        "PASSWORD": 'mydjango@mydjango',
+        "USER": 'root',
+        "PASSWORD": 'root@root',
         "HOST": '127.0.0.1',
         "PORT": '3306',
     }
 }
+
+# PROD
+# DEBUG = False
+# PROTOCOL = 'https'
+# IP = '185.198.166.245'
+# PORT = '8000'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_admin',
+#         "USER": 'mydjango',
+#         "PASSWORD": 'mydjango@mydjango',
+#         "HOST": '127.0.0.1',
+#         "PORT": '3306',
+#     }
+# }

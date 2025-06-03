@@ -8,13 +8,15 @@ from django.shortcuts import HttpResponse
 from django.views import View
 from openpyxl.styles.builtins import total
 from rest_framework_jwt.settings import api_settings
-
-from apps.menu.models import SysRoleMenu, SysMenu
-from apps.role.models import SysRole, SysUserRole, SysRoleSerializer
+#
+# from apps.menu.models import RoleMenu, Menu
+# from apps.role.models import Role, UserRole, RoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
-from .models import User, SysUserSerializer
+from .models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError
+from ..button.models import ButtonSerializer
+from ..role.models import RoleSerializer, Role
 
 
 class RegisterView(View):
@@ -33,31 +35,24 @@ class LoginView(View):
         password = params.get('password')
         if email is None or password is None:
             return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
+        user = User.objects.get(email=email, password=password)
         try:
-            print("password:", email, password)
-            user = User.objects.get(email=email, password=password)
-            print("email:", email, password)
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
             jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
             payload = jwt_payload_handler(user)
             token = jwt_encode_handler(payload)
         except Exception as e:
-            print(e)
             return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
-        roles = list(SysUserRole.objects.filter(user_id=user.id).all().values_list('role_id', flat=True))
-        menus = []
-        rolesDetails = []
-        for role in roles:
-            menu = list(SysRoleMenu.objects.filter(role_id=role).all().values_list('menu_id', flat=True))
-            menus = list(set(menus + menu))
-            roleDetail = SysRole.objects.filter(id=role).all().values()
-            rolesDetails = list(rolesDetails + list(roleDetail))
-        menusDetails = []
-        for menu in menus:
-            detail = SysMenu.objects.filter(id=menu).all().values()
-            menusDetails = list(menusDetails + list(detail))
-        data = {**SysUserSerializer(user).data, 'token': token, 'roles': rolesDetails, 'menus': menusDetails}
-        return ResponseSuccess(data=data)
+        try:
+            # roles = user.roles.values()
+
+            # userinfos = user.get_user_permissions()
+            print('roles')
+            # data = {**userinfos, 'token': token}
+            # return ResponseSuccess(data=data)
+        except Exception as e:
+            print(e)
+            return ResponseError()
 
 
 class CreateView(View):
@@ -71,7 +66,7 @@ class CreateView(View):
         usrID = usr.id
         for roleId in role_list:
             print('roleId', roleId)
-            SysUserRole.objects.create(user_id=usrID, role_id=roleId)
+            # UserRole.objects.create(user_id=usrID, role_id=roleId)
         return ResponseSuccess()
 
 
@@ -82,17 +77,19 @@ class SearchPageView(View):
         pageNo = params.get('pageNo')
         if not all([pageSize, pageNo]):
             return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
-        users = User.objects.filter(is_deleted=0)
-        total = users.count()
-        userPages = Paginator(users, pageSize).page(pageNo)
-        # users = list(userLists.object_list.values())
-
-        useLists = []
-        for user in userPages:
-            roles = SysUserRole.objects.filter(user_id=user.get('id')).all().values_list('role_id', flat=True)
-            useLists.append({**user, 'roles': list(roles)})
-        data = {'lists': useLists, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
-        return ResponseSuccess(data=data)
+        try:
+            users = User.objects.filter(is_deleted=0)
+            total = users.count()
+            userPages = Paginator(users, pageSize).page(pageNo)
+            # users = list(userLists.object_list.values())
+            # useLists = []
+            # for user in userPages:
+            #     roles = UserRole.objects.filter(user_id=user.get('id')).all().values_list('role_id', flat=True)
+            #     useLists.append({**user, 'roles': list(roles)})
+            # data = {'lists': useLists, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
+            # return ResponseSuccess(data=data)
+        except Exception as e:
+            return ResponseError()
 
 
 class SearchListsView(View):
@@ -123,10 +120,10 @@ class UpdateView(View):
         user = User.objects.filter(id=id).update(username=data['username'], password='1234@Abcd',
                                                  avatar=data['avatar'], phone_number=data['phone_number'],
                                                  email=data['email'], status=data['status'])
-        SysUserRole.objects.filter(user_id=id).delete()
-        for roleId in data['role']:
-            SysUserRole.objects.update_or_create(user_id=id, role_id=roleId)
-        return ResponseSuccess()
+        # UserRole.objects.filter(user_id=id).delete()
+        # for roleId in data['role']:
+        #     UserRole.objects.update_or_create(user_id=id, role_id=roleId)
+        # return ResponseSuccess()
 
 
 class DetailView(View):
@@ -134,10 +131,10 @@ class DetailView(View):
         if user_id is None:
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
         user = User.objects.get(id=user_id)
-        users = SysUserSerializer(user).data
-        roles = list(SysUserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
-        data = {**users, 'role': roles}
-        return ResponseSuccess(data=data)
+        users = UserSerializer(user).data
+        # roles = list(UserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
+        # data = {**users, 'role': roles}
+        # return ResponseSuccess(data=data)
 
 
 class DeleteView(View):
@@ -147,8 +144,8 @@ class DeleteView(View):
         user = User.objects.get(id=user_id)
         user.is_deleted = 1
         user.save()
-        SysUserRole.objects.filter(user_id=user_id).delete()
-        return ResponseSuccess()
+        # UserRole.objects.filter(user_id=user_id).delete()
+        # return ResponseSuccess()
 
 
 class LogoutView(View):
