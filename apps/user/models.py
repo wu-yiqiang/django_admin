@@ -20,49 +20,9 @@ class User(BaseModel):
     status = models.IntegerField(null=True, verbose_name="状态值")
     roles = models.ManyToManyField(Role, related_name='users')
 
-    # class Meta:
-    #     db_table = 'user'
-    #     verbose_name = "用户表"
-    #
-    # def get_role_permission(self):
-    #     return RoleSerializer(self.roles.values(), many=True).data
-    #
-    # def get_role_permission_id(self):
-    #     return list(self.roles.values_list('id', flat=True))
-    #
-    # def get_menu_permission(self):
-    #     roleIds = self.get_role_permission_id()
-    #     menuLists = []
-    #     for roleId in roleIds:
-    #         roleItem = RoleSerializer(Role.objects.filter(id=roleId).values(), many=True).data
-    #         print('sssss', roleItem)
-    #         # for menu in menus:
-    #         #     menuItem = Role.objects.filter(id=menu.id)
-    #         #     menuLists.append(menuItem)
-    #     # return menus.distinct()
-    #
-    # def get_button_permission(self):
-    #     buttons = [x for x in self.roles.values_list('buttons', flat=True) if x]
-    #     return list(ButtonSerializer(buttons, many=True).data)
-    #
-    # def get_inteface_permission(self):
-    #     intefaces = [x for x in self.roles.values_list('intefaces', flat=True) if x]
-    #     return list(IntefaceSerializer(intefaces, many=True).data)
-    #
-    # def get_user_permissions(self):
-    #     return {
-    #         'id': self.id,
-    #         'username': self.username,
-    #         'email': self.email,
-    #         'phone_number': self.phone_number,
-    #         'avatar': self.avatar,
-    #         'status': self.status,
-    #         'login_date': self.login_date,
-    #         'roles': self.get_role_permission(),
-    #         'menus': self.get_menu_permission(),
-    #         # 'buttons': self.get_button_permission(),
-    #         # 'inteface': self.get_inteface_permission(),
-    #     }
+    class Meta:
+        db_table = 'user'
+        verbose_name = "用户表"
 
 
 class UserSerializer(serializers.ModelSerializer):

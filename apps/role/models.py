@@ -18,18 +18,9 @@ class Role(BaseModel):
     buttons = models.ManyToManyField(Button, related_name='roles')
     intefaces = models.ManyToManyField(Inteface, related_name='roles')
 
-    # class Meta:
-    #     db_table = 'role'
-    #     verbose_name = "角色表"
-    #
-    # def get_menu_permission(self):
-    #     return list(Menu.objects.values_list('id', flat=True))
-    #
-    # def get_button_permission(self):
-    #     return list(self.roles.values_list('buttons', flat=True))
-    #
-    # def get_inteface_permission(self):
-    #     return list(self.roles.values_list('intefaces', flat=True))
+    class Meta:
+        db_table = 'role'
+        verbose_name = "角色表"
 
 
 class RoleSerializer(serializers.ModelSerializer):

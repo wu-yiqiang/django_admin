@@ -1,8 +1,9 @@
 import json
 import math
 from datetime import datetime
-
+from django.core import serializers
 from django.core.paginator import Paginator
+from django.core.serializers import serialize
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse
 from django.views import View
@@ -33,8 +34,6 @@ class LoginView(View):
             return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
         email = params.get("email")
         password = params.get('password')
-        if email is None or password is None:
-            return ResponseError(USER_RERROR.USER_AND_PASSWORD_IS_REQUIRED)
         user = User.objects.get(email=email, password=password)
         try:
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
@@ -44,14 +43,28 @@ class LoginView(View):
         except Exception as e:
             return ResponseError(USER_RERROR.USER_OR_PASSWORD_ERROR)
         try:
-            # roles = user.roles.values()
-
-            # userinfos = user.get_user_permissions()
-            print('roles')
-            # data = {**userinfos, 'token': token}
-            # return ResponseSuccess(data=data)
+            userInfos = UserSerializer(user).data
+            roles = user.roles.values()
+            menus = []
+            buttons = []
+            intefaces = []
+            permissions = user.roles.prefetch_related('menus').all()
+            userPermissions = RoleSerializer(permissions, many=True).data
+            for userPermission in userPermissions:
+                menu = userPermission.get('menus')
+                button = userPermission.get('buttons')
+                inteface = userPermission.get('intefaces')
+                if (len(menu) > 0 and menu not in menus):
+                    menus = menus + menu
+                if (len(button) > 0 and button not in buttons):
+                    buttons = buttons + button
+                if (len(inteface) > 0 and inteface not in intefaces):
+                    intefaces = intefaces + inteface
+            data = {**userInfos, 'token': token, 'roles': list(roles), 'menus': menus,
+                    'buttons': buttons,
+                    'intefaces': intefaces}
+            return ResponseSuccess(data=data)
         except Exception as e:
-            print(e)
             return ResponseError()
 
 
