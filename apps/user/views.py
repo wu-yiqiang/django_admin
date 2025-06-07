@@ -9,13 +9,13 @@ from django.shortcuts import HttpResponse
 from django.views import View
 from openpyxl.styles.builtins import total
 from rest_framework_jwt.settings import api_settings
-#
+from django.db import transaction
 # from apps.menu.models import RoleMenu, Menu
 # from apps.role.models import Role, UserRole, RoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from .models import User, UserSerializer
-from common.response import ResponseSuccess, ResponseError
+from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from ..button.models import ButtonSerializer
 from ..role.models import RoleSerializer, Role
 
@@ -54,11 +54,11 @@ class LoginView(View):
                 menu = userPermission.get('menus')
                 button = userPermission.get('buttons')
                 inteface = userPermission.get('intefaces')
-                if (len(menu) > 0 and menu not in menus):
+                if (menu and menu not in menus):
                     menus = menus + menu
-                if (len(button) > 0 and button not in buttons):
+                if (buttons and button not in buttons):
                     buttons = buttons + button
-                if (len(inteface) > 0 and inteface not in intefaces):
+                if (inteface and inteface not in intefaces):
                     intefaces = intefaces + inteface
             data = {**userInfos, 'token': token, 'roles': list(roles), 'menus': menus,
                     'buttons': buttons,
@@ -69,18 +69,18 @@ class LoginView(View):
 
 
 class CreateView(View):
-    # def get(self, request):
-    #     return HttpResponse("获取用户列表")
     def post(self, request):
-        user = json.loads(request.body)
-        usr = User.objects.create(username=user['username'], password=user['password'], avatar=user['avatar'],
-                                  email=user['email'], phone_number=user['phone_number'], status=user['status'])
-        role_list = user['role']
-        usrID = usr.id
-        for roleId in role_list:
-            print('roleId', roleId)
-            # UserRole.objects.create(user_id=usrID, role_id=roleId)
-        return ResponseSuccess()
+        data = json.loads(request.body)
+        try:
+            with transaction.atomic():
+                user = User.objects.create(username=data['username'], password='1234@Abcd', avatar=data['avatar'],
+                                           email=data['email'], phone_number=data['phone_number'],
+                                           status=data['status'])
+                user.roles.set(data.get('roles'))
+            return ResponseSuccess()
+        except Exception as e:
+            print(e)
+            return ResponseError()
 
 
 class SearchPageView(View):
@@ -93,15 +93,10 @@ class SearchPageView(View):
         try:
             users = User.objects.filter(is_deleted=0)
             total = users.count()
-            userPages = Paginator(users, pageSize).page(pageNo)
-            # users = list(userLists.object_list.values())
-            # useLists = []
-            # for user in userPages:
-            #     roles = UserRole.objects.filter(user_id=user.get('id')).all().values_list('role_id', flat=True)
-            #     useLists.append({**user, 'roles': list(roles)})
-            # data = {'lists': useLists, 'total': total, 'pageSize': pageSize, 'pageNo': pageNo}
-            # return ResponseSuccess(data=data)
+            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
+            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
         except Exception as e:
+            print(e)
             return ResponseError()
 
 
@@ -129,36 +124,44 @@ class UpdatePasswordView(View):
 class UpdateView(View):
     def post(self, request):
         data = json.loads(request.body)
-        id = data.get('id')
-        user = User.objects.filter(id=id).update(username=data['username'], password='1234@Abcd',
-                                                 avatar=data['avatar'], phone_number=data['phone_number'],
-                                                 email=data['email'], status=data['status'])
-        # UserRole.objects.filter(user_id=id).delete()
-        # for roleId in data['role']:
-        #     UserRole.objects.update_or_create(user_id=id, role_id=roleId)
-        # return ResponseSuccess()
+        user_id = data.get('id')
+        try:
+            user = User.objects.get(id=user_id)
+            with transaction.atomic():
+                User.objects.filter(id=user_id).update(username=data['username'], avatar=data['avatar'],
+                                                       phone_number=data['phone_number'],
+                                                       email=data['email'], status=data['status'])
+                user.roles.set(data.get('roles'))
+            return ResponseSuccess()
+        except Exception as e:
+            print(e)
+            return ResponseError()
 
 
 class DetailView(View):
     def post(self, request, user_id):
         if user_id is None:
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
-        user = User.objects.get(id=user_id)
-        users = UserSerializer(user).data
-        # roles = list(UserRole.objects.filter(user=user_id).all().values_list('role_id', flat=True))
-        # data = {**users, 'role': roles}
-        # return ResponseSuccess(data=data)
+        try:
+            user = User.objects.get(id=user_id)
+            roles = user.roles.values_list('id', flat=True)
+            userInfo = UserSerializer(user).data
+            data = {**userInfo, "roles": list(roles)}
+            return ResponseSuccess(data=data)
+        except Exception as e:
+            return ResponseError()
 
 
 class DeleteView(View):
     def delete(self, request, user_id):
         if user_id is None:
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
-        user = User.objects.get(id=user_id)
-        user.is_deleted = 1
-        user.save()
-        # UserRole.objects.filter(user_id=user_id).delete()
-        # return ResponseSuccess()
+        try:
+            user = User.objects.filter(id=user_id)
+            user.delete()
+            return ResponseSuccess()
+        except Exception as e:
+            return ResponseError()
 
 
 class LogoutView(View):

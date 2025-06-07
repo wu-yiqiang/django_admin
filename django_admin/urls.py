@@ -8,6 +8,7 @@ urlpatterns = [
     path('role/', include('role.urls'), name='role'),
     path('menu/', include('menu.urls'), name='menu'),
     path('button/', include('button.urls'), name='button'),
+    path('dictionary/', include('dictionary.urls'), name='dictionary'),
     path('inteface/', include('inteface.urls'), name='inteface'),
     path('upload', UploadView.as_view(), name='upload'),
     re_path('media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}, name="media"),

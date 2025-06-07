@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "apps.menu.apps.MenuConfig",
     "apps.button.apps.ButtonsConfig",
     "apps.inteface.apps.IntefaceConfig",
+    "apps.dictionary.apps.DictionaryConfig",
 ]
 
 MIDDLEWARE = [
