@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework",
     "rest_framework_jwt",
+    "drf_spectacular",
     "corsheaders",
     "apps.user.apps.UserConfig",
     "apps.role.apps.RoleConfig",
@@ -137,8 +138,68 @@ JWT_AUTH = {
 }
 ALLOWED_HOSTS = ['*', ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': '项目 API',
+    'DESCRIPTION': '接口文档详细说明',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+LOGS_DIR = BASE_DIR / 'logs'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {},
+    'formatters': {
+        'standard': {
+            'format': '[%(asctime)s][%(levelname)s][%(filename)s:%(lineno)d:%(funcName)s]：%(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '[%(asctime)s][%(levelname)s]：%(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'default': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOGS_DIR, 'debug.log'),
+            'maxBytes': 1024 * 1024 * 50,  # 日志大小50M
+            'backupCount': 5,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'default'],
+            'level': 'INFO',
+            'propagate': True
+        },
+    },
+    'time_handler': {
+        'level': 'INFO',
+        'class': 'logging.handlers.TimedRotatingFileHandler',
+        'filename': os.path.join(LOGS_DIR, "time.log"),
+        'when': 'D',
+        'interval': 1,
+        'backupCount': 5,
+        'formatter': 'standard',
+        'encoding': 'utf-8',
+    }
+}
+
 # DEV
-DEBUG = True
+DEBUG = False
 PROTOCOL = 'http'
 IP = '192.168.1.222'
 PORT = '8000'

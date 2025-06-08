@@ -10,14 +10,17 @@ from django.views import View
 from openpyxl.styles.builtins import total
 from rest_framework_jwt.settings import api_settings
 from django.db import transaction
-# from apps.menu.models import RoleMenu, Menu
-# from apps.role.models import Role, UserRole, RoleSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from .models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from ..button.models import ButtonSerializer
 from ..role.models import RoleSerializer, Role
+
+
+# import logging
+# 
+# logger = logging.getLogger('django')
 
 
 class RegisterView(View):
@@ -65,6 +68,7 @@ class LoginView(View):
                     'intefaces': intefaces}
             return ResponseSuccess(data=data)
         except Exception as e:
+            # # logger.error()
             return ResponseError()
 
 
@@ -79,7 +83,7 @@ class CreateView(View):
                 user.roles.set(data.get('roles'))
             return ResponseSuccess()
         except Exception as e:
-            print(e)
+            # logger.error(e)
             return ResponseError()
 
 
@@ -96,7 +100,7 @@ class SearchPageView(View):
             userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
             return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
         except Exception as e:
-            print(e)
+            # logger.error(e)
             return ResponseError()
 
 
@@ -116,9 +120,10 @@ class UpdatePasswordView(View):
             user = User.objects.get(id=params['id'])
             user.password = params['password']
             user.save()
+            return ResponseSuccess()
         except Exception as e:
+            # logger.error(e)
             return ResponseError(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
-        return ResponseSuccess()
 
 
 class UpdateView(View):
@@ -134,7 +139,7 @@ class UpdateView(View):
                 user.roles.set(data.get('roles'))
             return ResponseSuccess()
         except Exception as e:
-            print(e)
+            # logger.error(e)
             return ResponseError()
 
 
@@ -149,6 +154,7 @@ class DetailView(View):
             data = {**userInfo, "roles": list(roles)}
             return ResponseSuccess(data=data)
         except Exception as e:
+            # logger.error(e)
             return ResponseError()
 
 
@@ -161,6 +167,7 @@ class DeleteView(View):
             user.delete()
             return ResponseSuccess()
         except Exception as e:
+            # logger.error(e)
             return ResponseError()
 
 

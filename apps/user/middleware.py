@@ -12,7 +12,7 @@ class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
         white_list = ['/user/login', '/user/register']
         path = request.path
-        if path not in white_list and not path.startswith('/media'):
+        if path not in white_list and not path.startswith('/media', '/swagger', '/schema'):
             try:
                 token = request.META.get('HTTP_AUTHORIZATION')
                 jwt_decode_handler = api_settings.JWT_DECODE_HANDLER

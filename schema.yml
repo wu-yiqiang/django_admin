@@ -1,0 +1,7 @@
+openapi: 3.0.3
+info:
+  title: 项目 API
+  version: 1.0.0
+  description: 接口文档详细说明
+paths: {}
+components: {}

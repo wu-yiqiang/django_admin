@@ -11,6 +11,9 @@ from service_error.common import COMMON_RERROR
 from service_error.role import ROLE_RERROR
 from apps.role.models import RoleSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
+import logging
+
+logger = logging.getLogger('django')
 
 
 class CreateView(View):
@@ -23,7 +26,8 @@ class CreateView(View):
                 role.intefaces.set(roleData.get('intefaces'))
                 role.buttons.set(roleData.get('buttons'))
             return ResponseSuccess()
-        except IntegrityError:
+        except IntegrityError as e:
+            logger.error(e)
             return ResponseError()
 
 
@@ -39,7 +43,8 @@ class SearchPageView(View):
             total = Role.objects.filter(is_deleted=0).count()
             roles = RoleSerializer(roleLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=roles, total=total, pageSize=pageSize, pageNo=pageNo)
-        except IntegrityError:
+        except IntegrityError as e:
+            logger.error(e)
             return ResponseError()
 
 
@@ -49,7 +54,8 @@ class SearchListsView(View):
             roleLists = Role.objects.filter(is_deleted=0)
             roles = RoleSerializer(roleLists.all(), many=True).data
             return ResponseSuccess(data=roles)
-        except IntegrityError:
+        except IntegrityError as e:
+            logger.error(e)
             return ResponseError()
 
 
@@ -74,7 +80,8 @@ class DetailView(View):
             roleinfo = RoleSerializer(role).data
             print(role, roleinfo)
             return ResponseSuccess()
-        except IntegrityError:
+        except IntegrityError as e:
+            logger.error(e)
             return ResponseError()
         # roleinfo = RoleSerializer(role).data
         # menus = list(RoleMenu.objects.filter(role_id=role_id).all().values_list('menu_id', flat=True))
@@ -91,5 +98,6 @@ class DeleteView(View):
             role.is_deleted = 1
             role.save()
             return ResponseSuccess()
-        except Role.DoesNotExist:
+        except IntegrityError as e:
+            logger.error(e)
             return ResponseError()
