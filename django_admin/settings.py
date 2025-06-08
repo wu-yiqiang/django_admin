@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "user.middleware.JwtAuthMiddleware"
+    "apps.user.middleware.JwtAuthMiddleware"
 ]
 
 ROOT_URLCONF = 'django_admin.urls'
@@ -143,8 +143,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': '项目 API',
-    'DESCRIPTION': '接口文档详细说明',
+    'TITLE': 'EAMS',
+    'DESCRIPTION': '接口文档',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }

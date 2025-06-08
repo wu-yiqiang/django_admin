@@ -10,9 +10,10 @@ from service_error.user import USER_RERROR
 
 class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        white_list = ['/user/login', '/user/register']
+        white_list = ['/user/login', '/user/register', '/swagger', '/schema']
         path = request.path
-        if path not in white_list and not path.startswith('/media', '/swagger', '/schema'):
+        print("sss", path in white_list)
+        if path not in white_list and not path.startswith('/media'):
             try:
                 token = request.META.get('HTTP_AUTHORIZATION')
                 jwt_decode_handler = api_settings.JWT_DECODE_HANDLER
