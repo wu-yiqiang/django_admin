@@ -14,6 +14,7 @@ from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from .models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
+from .validate import LoginRegistrationFormValidate
 from ..button.models import ButtonSerializer
 from ..role.models import RoleSerializer, Role
 
@@ -30,13 +31,12 @@ class RegisterView(View):
 
 class LoginView(View):
     def post(self, request):
-        params = json.loads(request.body)
-        if params['email'] is None:
-            return JsonResponse(USER_RERROR.USERNAME_IS_EMPTY)
-        if params['password'] is None:
-            return JsonResponse(USER_RERROR.PASSWORD_IS_EMPTY)
-        email = params.get("email")
-        password = params.get('password')
+        data = LoginRegistrationFormValidate(json.loads(request.body))
+        print("json.loads(request.body)", data)
+        if data.is_valid() is False:
+            return
+        email = data.get("email")
+        password = data.get('password')
         user = User.objects.get(email=email, password=password)
         try:
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER

@@ -12,7 +12,6 @@ class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
         white_list = ['/user/login', '/user/register', '/swagger', '/schema']
         path = request.path
-        print("sss", path in white_list)
         if path not in white_list and not path.startswith('/media'):
             try:
                 token = request.META.get('HTTP_AUTHORIZATION')
