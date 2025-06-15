@@ -1,3 +1,4 @@
+use django_admin;
 -- user表数据
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
@@ -70,7 +71,11 @@ values (1, '个人中心', 'personal', NULL, 1, '/personal', 2, 'personal', '202
        (10, '部门管理', 'tree', 3, 1, '/datas/departments', 2, 'departments', '2024-07-04', '2024-07-04',
         '部门管理菜单', 0),
        (11, '岗位管理', 'post', 3, 2, '/datas/positions',  2, 'positions', '2024-07-04', '2024-07-04', '岗位管理菜单', 0),
-       (12, '公司管理', 'post', 3, 3, '/datas/companys', 2, 'companys', '2024-07-04', '2024-07-04', '公司管理菜单', 0);
+       (12, '公司管理', 'post', 3, 3, '/datas/companys', 2, 'companys', '2024-07-04', '2024-07-04', '公司管理菜单', 0),
+       (13, '文件管理', 'files', NULL, 3, '/files',1, 'files', '2024-07-04', '2024-07-04', '文件管理目录', 0),
+       (14, '文档管理', 'documents', 13, 3, '/files/documents',1, 'documents', '2024-07-04', '2024-07-04', '文件管理菜单', 0);
+
+
 
  -- 按钮表
 insert into `button` (`id`, `name`, `code`, `create_time`, `update_time`, `remark`, `is_deleted`)
@@ -108,7 +113,14 @@ values (1, 1, 1),
        (6, 1, 6),
        (7, 1, 7),
        (8, 1, 8),
-       (9, 1, 9);
+       (9, 1, 9),
+       (10, 1, 10),
+       (11, 1, 11),
+       (12, 1, 12),
+       (13, 1, 13),
+       (14, 1, 14);
+
+
 
 -- 菜单按钮表
 insert into `menu_buttons`(`id`, `menu_id`,`button_id`)

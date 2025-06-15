@@ -15,6 +15,7 @@ class UploadView(View):
             new_file_name = datetime.now().strftime('%Y%m%d%H%M%S') + suffixName
             file_path = str(settings.MEDIA_ROOT) + "/avatar/" + new_file_name
         try:
+            print("sss", file)
             with open(file_path, 'wb') as f:
                 for chunk in file.chunks():
                     f.write(chunk)

@@ -198,7 +198,6 @@ LOGGING = {
     }
 }
 
-# DEV
 DEBUG = False
 PROTOCOL = 'http'
 IP = '192.168.1.222'
