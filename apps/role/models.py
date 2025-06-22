@@ -15,6 +15,8 @@ class Role(BaseModel):
     name = models.CharField(max_length=30, null=True, verbose_name="角色名")
     code = models.CharField(max_length=100, null=True, verbose_name="角色权限字符串")
     menus = models.ManyToManyField(Menu, related_name='roles')
+    buttons = models.ManyToManyField(Button, related_name='roles')
+    intefaces = models.ManyToManyField(Inteface, related_name='roles')
 
     class Meta:
         db_table = 'role'
@@ -23,9 +25,11 @@ class Role(BaseModel):
 
 class RoleSerializer(serializers.ModelSerializer):
     menus = MenuSerializer(many=True, read_only=True)
+    buttons = ButtonSerializer(many=True, read_only=True)
+    intefaces = IntefaceSerializer(many=True, read_only=True)
 
     class Meta:
         model = Role
         fields = '__all__'
-        field_order = ['id', 'name', 'code', 'menus', 'is_deleted', 'remark', 'create_time',
+        field_order = ['id', 'name', 'code', 'menus', 'buttons', 'intefaces', 'is_deleted', 'remark', 'create_time',
                        'update_time']

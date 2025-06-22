@@ -1,9 +1,12 @@
 import json
+from code import interact
 from sqlite3 import IntegrityError
 
 from django.core.paginator import Paginator
 from django.db import transaction
 from django.views import View
+
+from apps.inteface.models import Inteface
 from apps.menu.models import Menu, MenuSerializer, MenuTreeSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from service_error.common import COMMON_RERROR
@@ -12,11 +15,16 @@ from service_error.menu import MENU_RERROR
 
 class CreateView(View):
     def post(self, request):
-        menu = json.loads(request.body)
+        menuData = json.loads(request.body)
         try:
-            Menu.objects.create(name=menu['name'], icon="", parent_id=menu['parent_id'], order_num=menu['order_num'],
-                                menu_type=menu['menu_type'], code=menu['code'])
-            return ResponseSuccess()
+            with transaction.atomic():
+                menu = Menu.objects.create(name=menuData['name'], icon="", parent_id=menuData['parent_id'],
+                                           order_num=menuData['order_num'],
+                                           menu_type=menuData['menu_type'], code=menuData['code'])
+                print("新增", menu)
+                menu.intefaces.add(*menuData['intefaces'])
+                menu.buttons.add(*menuData['buttons'])
+                return ResponseSuccess()
         except IntegrityError:
             return ResponseError()
 
@@ -66,13 +74,18 @@ class SearchPageView(View):
 
 class UpdateView(View):
     def post(self, request):
-        menu = json.loads(request.body)
-        id = menu.get('id')
+        menuData = json.loads(request.body)
+        id = menuData.get('id')
         try:
-            Menu.objects.filter(id=id).update(name=menu['name'], icon="", parent_id=menu['parent_id'],
-                                              order_num=menu['order_num'],
-                                              menu_type=menu['menu_type'], code=menu['code'])
-            return ResponseSuccess()
+            with transaction.atomic():
+                menu = Menu.objects.filter(id=id).update(name=menuData['name'], icon="",
+                                                         parent_id=menuData['parent_id'],
+                                                         order_num=menuData['order_num'],
+                                                         menu_type=menuData['menu_type'], code=menuData['code'])
+                menuobj = Menu.objects.get(id=id)
+                menuobj.intefaces.set(menuData.get('intefaces'))
+                menuobj.buttons.set(menuData.get('buttons'))
+                return ResponseSuccess()
         except IntegrityError:
             return ResponseError()
 

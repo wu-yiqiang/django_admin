@@ -63,12 +63,17 @@ class UpdateView(View):
     def post(self, request):
         data = json.loads(request.body)
         id = data.get('id')
-        role = Role.objects.filter(id=id).update(name=data['name'], code=data['code'],
-                                                 remark=data['remark'])
-        # RoleMenu.objects.filter(role_id=id).delete()
-        # for menu in data['menus']:
-        #     RoleMenu.objects.update_or_create(menu_id=menu, role_id=id)
-        # return ResponseSuccess()
+        try:
+            with transaction.atomic():
+                role = Role.objects.filter(id=id).update(name=data['name'], code=data['code'],
+                                                         remark=data['remark'])
+                roleobj = Role.objects.get(id=id)
+                roleobj.menus.set(data.get('menus'))
+                roleobj.intefaces.set(data.get('intefaces'))
+                roleobj.buttons.set(data.get('buttons'))
+                return ResponseSuccess()
+        except IntegrityError:
+            return ResponseError()
 
 
 class DetailView(View):
@@ -79,7 +84,7 @@ class DetailView(View):
             role = Role.objects.get(id=role_id)
             roleinfo = RoleSerializer(role).data
             print(role, roleinfo)
-            return ResponseSuccess()
+            return ResponseSuccess(data=roleinfo)
         except IntegrityError as e:
             logger.error(e)
             return ResponseError()

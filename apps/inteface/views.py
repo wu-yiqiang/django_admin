@@ -35,6 +35,16 @@ class SearchPageView(View):
             return ResponseError()
 
 
+class SearchListsView(View):
+    def post(self, request):
+        try:
+            intefaces = Inteface.objects.filter(is_deleted=0)
+            intefaceLists = IntefaceSerializer(intefaces.values(), many=True).data
+            return ResponseSuccess(data=intefaceLists)
+        except IntegrityError:
+            return ResponseError()
+
+
 class UpdateView(View):
     def post(self, request):
         menu = json.loads(request.body)

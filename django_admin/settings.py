@@ -116,8 +116,8 @@ CORS_ALLOW_METHODS = [
     "PUT"
 ]  # 允许请求的方法
 
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'storage'
+MEDIA_URL = 'storage/'
 
 JWT_AUTH = {
     # user => payload
