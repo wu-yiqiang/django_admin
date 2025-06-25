@@ -2,7 +2,7 @@ use django_admin;
 -- user表数据
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values ('1', 'Administrator', '1234@Abcd', '20240906202303.jpg', 'Administrator@outlook.com', '18862857104', '2024-08-08', '1',
+values ('1', 'Administrator', '1234@Abcd', 'http://192.168.1.2222:8000/storage/avatar/20240906202303.jpg', 'Administrator@outlook.com', '18862857104', '2024-08-08', '1',
         '2024-08-08', '2024-08-08', '超级管理员', FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)
@@ -159,20 +159,30 @@ values (1, 1, 1),
 
 -- 菜单按钮表
 insert into `menu_buttons`(`id`, `menu_id`,`button_id`)
-values (1, 1, 1),
-       (2, 1, 2),
-       (3, 1, 3),
-       (4, 1, 4),
-       (5, 1, 5);
+values (1, 4, 1),
+       (2, 4, 2),
+       (3, 4, 3),
+       (4, 4, 4),
+       (5, 4, 5),
+       (6, 5, 6),
+       (7, 5, 7),
+       (8, 5, 8),
+       (9, 5, 9),
+       (10, 5, 10);
 
 
 -- 菜单接口表
 insert into `menu_intefaces`(`id`, `menu_id`,`inteface_id`)
-values (1, 1, 1),
-       (2, 1, 2),
-       (3, 1, 3),
-       (4, 1, 4),
-       (5, 1, 5);
+values (1, 4, 1),
+       (2, 4, 2),
+       (3, 4, 3),
+       (4, 4, 4),
+       (5, 4, 5),
+       (6, 5, 6),
+       (7, 5, 7),
+       (8, 5, 8),
+       (9, 5, 9),
+       (10, 5, 10);
 
  -- 字典表
 insert into `dictionary` (`id`, `type`,`code`,  `label`,   `color`, `bgcolor`, `create_time`, `update_time`, `remark`, `is_deleted`)
