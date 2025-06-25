@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from sqlite3 import IntegrityError
 
 from django.core.paginator import Paginator
@@ -21,7 +22,8 @@ class CreateView(View):
         roleData = json.loads(request.body)
         try:
             with transaction.atomic():
-                role = Role.objects.create(name=roleData['name'], code=roleData['code'], remark=roleData['remark'])
+                role = Role.objects.create(name=roleData['name'], code=roleData['code'], remark=roleData['remark'],
+                                           create_time=datetime.now())
                 role.menus.set(roleData.get('menus'))
                 role.intefaces.set(roleData.get('intefaces'))
                 role.buttons.set(roleData.get('buttons'))
