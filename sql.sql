@@ -2,7 +2,7 @@ use django_admin;
 -- user表数据
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`, `is_deleted`)
-values ('1', 'Administrator', '1234@Abcd', 'http://192.168.1.2222:8000/storage/avatar/20240906202303.jpg', 'Administrator@outlook.com', '18862857104', '2024-08-08', '1',
+values ('1', 'Administrator', '1234@Abcd', 'http://192.168.1.222:8000/storage/avatar/20250625173831.jpeg', 'Administrator@outlook.com', '18862857104', '2024-08-08', '1',
         '2024-08-08', '2024-08-08', '超级管理员', FALSE);
 insert into `user` (`id`, `username`, `password`, `avatar`, `email`, `phone_number`, `login_date`, `status`,
                         `create_time`, `update_time`, `remark`,`is_deleted`)

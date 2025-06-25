@@ -8504,3 +8504,49 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 [2025-06-25 17:33:40][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
 [2025-06-25 17:33:40][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 16915
 [2025-06-25 17:33:40][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:35:22][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-25 17:35:26][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8729
+[2025-06-25 17:35:26][INFO][basehttp.py:212:log_message]："POST /role/detail/1 HTTP/1.1" 200 13061
+[2025-06-25 17:35:54][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:35:54][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 16915
+[2025-06-25 17:35:54][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:35:57][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:35:57][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:35:57][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-25 17:35:57][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:36:30][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:36:30][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-25 17:36:30][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:37:21][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:37:21][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-25 17:37:21][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:37:25][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:37:25][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-25 17:37:25][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:37:34][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:37:34][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 17:37:34][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-25 17:37:34][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 17:38:05][WARNING][log.py:241:log_response]：Not Found: /storage/avatar/20240906202303.jpg
+[2025-06-25 17:38:05][WARNING][basehttp.py:212:log_message]："GET /storage/avatar/20240906202303.jpg HTTP/1.1" 404 179
+[2025-06-25 17:38:05][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
+[2025-06-25 17:38:05][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
+[2025-06-25 17:38:31][INFO][basehttp.py:212:log_message]："POST /upload HTTP/1.1" 200 113
+[2025-06-25 17:38:31][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 17:38:32][INFO][basehttp.py:212:log_message]："POST /user/update_avatar HTTP/1.1" 200 55
+[2025-06-25 17:38:32][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 17:38:50][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 304 0
+[2025-06-25 17:38:50][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
+[2025-06-25 17:38:50][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
+[2025-06-25 17:40:19][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-25 17:41:20][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 304 0
+[2025-06-25 17:41:20][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
+[2025-06-25 17:41:20][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
+[2025-06-25 17:41:22][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
+[2025-06-25 17:41:22][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
+[2025-06-25 17:42:07][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-25 17:42:50][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-25 17:43:17][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 304 0
+[2025-06-25 17:43:17][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
+[2025-06-25 17:43:17][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
+[2025-06-25 17:45:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
