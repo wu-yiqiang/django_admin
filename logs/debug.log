@@ -8550,3 +8550,32 @@ AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
 [2025-06-25 17:43:17][WARNING][log.py:241:log_response]：Unauthorized: /favicon.ico
 [2025-06-25 17:43:17][WARNING][basehttp.py:212:log_message]："GET /favicon.ico HTTP/1.1" 401 68
 [2025-06-25 17:45:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-25 18:00:29][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:32][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:32][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-25 18:00:39][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 18:00:39][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 16915
+[2025-06-25 18:00:39][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 18:00:46][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-25 18:00:47][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-25 18:00:47][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-25 18:00:48][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-06-25 18:00:50][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2174
+[2025-06-25 18:00:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-06-25 18:00:50][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-06-25 18:00:51][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-25 18:00:51][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-25 18:00:52][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-25 18:00:53][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 18:00:53][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 16915
+[2025-06-25 18:00:53][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 18:01:06][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-25 18:01:10][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 18:01:10][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 16915
+[2025-06-25 18:01:10][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 18:01:15][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-25 18:01:15][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 14188
+[2025-06-25 18:08:03][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
