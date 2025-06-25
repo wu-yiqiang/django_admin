@@ -213,7 +213,7 @@ LOGGING = {
 #     }
 # }
 
-PROD
+# PROD
 DEBUG = False
 PROTOCOL = 'https'
 IP = '185.198.166.245'
