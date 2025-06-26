@@ -64,7 +64,6 @@ class LoginView(View):
                 if (menu and menu not in menus):
                     menus = menus + menu
                 if (button and button not in buttons):
-                    print("buttons", button)
                     buttons = buttons + button
                 if (inteface and inteface not in intefaces):
                     intefaces = intefaces + inteface
