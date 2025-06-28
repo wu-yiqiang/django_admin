@@ -1,22 +1,17 @@
 import json
-import math
-from datetime import datetime
-from django.core import serializers
 from django.core.paginator import Paginator
-from django.core.serializers import serialize
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse
 from django.views import View
-from openpyxl.styles.builtins import total
-from rest_framework.viewsets import ViewSetMixin
 from rest_framework_jwt.settings import api_settings
 from django.db import transaction
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from .models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
-from ..button.models import ButtonSerializer
 from ..role.models import RoleSerializer, Role
+from django.core.cache import cache
+from utils.redisTool import set_cache
 
 
 # import logging
@@ -70,8 +65,10 @@ class LoginView(View):
             data = {**userInfos, 'token': token, 'roles': list(roles), 'menus': menus,
                     'buttons': buttons,
                     'intefaces': intefaces}
+            set_cache(token, data)
             return ResponseSuccess(data=data)
         except Exception as e:
+            print('sssss', e)
             return ResponseError()
 
 
@@ -129,7 +126,12 @@ class UpdateAvatarView(View):
 
 class LogoutView(View):
     def post(self, request):
-        return ResponseSuccess()
+        try:
+            token = request.META.get('HTTP_AUTHORIZATION')
+            cache.delete(token)
+            return ResponseSuccess()
+        except Exception as e:
+            return ResponseError()
 
 
 from openpyxl import Workbook

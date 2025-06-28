@@ -4,7 +4,6 @@ from datetime import timedelta
 from pathlib import Path
 import datetime
 from socket import socket
-
 from apps import user
 from apps.user.apps import UserConfig
 
@@ -85,9 +84,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -96,13 +92,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -118,6 +108,8 @@ CORS_ALLOW_METHODS = [
 
 MEDIA_ROOT = BASE_DIR / 'storage'
 MEDIA_URL = 'storage/'
+# redis token过期时间单位秒
+CACHE_TOKEN_EXPIRE = 60 * 60 * 24
 
 JWT_AUTH = {
     # user => payload
@@ -130,12 +122,25 @@ JWT_AUTH = {
     'JWT_DECODE_HANDLER':
         'rest_framework_jwt.utils.jwt_decode_handler',
     # token过期时间
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=CACHE_TOKEN_EXPIRE),
     # token刷新的过期时间
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
     # 反爬小措施前缀
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            # "PASSWORD": 暂不设置密码,
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
+        }
+    }
+}
+
 ALLOWED_HOSTS = ['*', ]
 
 REST_FRAMEWORK = {
