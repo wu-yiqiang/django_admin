@@ -10170,3 +10170,7 @@ TypeError: process_view() takes 3 positional arguments but 5 were given
 [2025-06-28 17:13:00][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
 [2025-06-28 17:13:43][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
 [2025-06-28 17:13:43][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-28 17:14:54][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-06-28 17:14:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-28 17:25:27][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 55
+[2025-06-28 17:25:43][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
