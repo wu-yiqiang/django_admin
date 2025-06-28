@@ -1,20 +1,19 @@
 from heapq import merge
 
 import jwt
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.utils.deprecation import MiddlewareMixin
 from rest_framework_jwt.settings import api_settings
-
-from apps.role.models import RoleSerializer
-from apps.user.models import UserSerializer, User
+from common.response import ResponseError, ResponseSuccess
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from django.core.cache import cache
+from utils.redisTool import get_cache
 
 
 class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        white_list = ['/user/login', '/user/register', '/swagger', '/schema']
+        white_list = ['/user/login', '/user/logout', '/user/register', '/swagger', '/schema']
         path = request.path
         if path not in white_list and not path.startswith('/storage'):
             try:
@@ -27,8 +26,8 @@ class JwtAuthMiddleware(MiddlewareMixin):
                 user_id = user_dict['user_id']
                 if (user_id is None or user_id == ""):
                     return JsonResponse(USER_RERROR.USER_IS_EMPTY)
-                # if (self.auth_api(user_id, path) is False):
-                #     return JsonResponse(COMMON_RERROR.IS_NOT_AUTH)
+                if (self.auth_api(token, path) is False):
+                    return ResponseError(COMMON_RERROR.IS_NOT_AUTH)
             except jwt.ExpiredSignatureError as e:
                 return JsonResponse(COMMON_RERROR.TOKEN_EXPIRED, status=401)
             except jwt.InvalidTokenError as e:
@@ -39,15 +38,11 @@ class JwtAuthMiddleware(MiddlewareMixin):
         else:
             return None
 
-    def auth_api(self, user_id, path):
-        user = User.objects.get(id=user_id)
-        intefaces = []
-        permissions = user.roles.prefetch_related('menus').all()
-        userPermissions = RoleSerializer(permissions, many=True).data
-        for userPermission in userPermissions:
-            inteface = userPermission.get('intefaces')
-            if (inteface and inteface not in intefaces):
-                intefaces = intefaces + [item['path'] for item in inteface]
-        if (path not in intefaces):
-            return False
-        return True
+    def auth_api(self, token, path):
+        userInfo = get_cache(token)
+        intefaces = userInfo.get('intefaces')
+        intefaceLists = [inteface.get('path') for inteface in intefaces]
+        for inteface_path in intefaceLists:
+            if inteface_path in path:
+                return True
+        return False
