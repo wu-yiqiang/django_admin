@@ -10174,3 +10174,915 @@ TypeError: process_view() takes 3 positional arguments but 5 were given
 [2025-06-28 17:14:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
 [2025-06-28 17:25:27][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 55
 [2025-06-28 17:25:43][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-06-29 13:32:13][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-29 13:32:46][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-06-29 13:32:50][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 55
+[2025-06-29 13:33:18][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19965
+[2025-06-29 13:33:19][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:33:19][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:33:21][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:33:21][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:33:24][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:33:24][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-06-29 13:33:24][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:33:34][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-29 13:33:36][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-29 13:33:36][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:33:37][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:33:37][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-06-29 13:33:37][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:33:40][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:34:03][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:34:03][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-06-29 13:34:03][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:34:05][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-29 13:34:47][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:34:47][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-06-29 13:34:47][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:34:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:34:50][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:34:50][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-29 13:34:50][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:34:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:34:54][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-29 13:34:55][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-29 13:34:55][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:34:59][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:34:59][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8729
+[2025-06-29 13:34:59][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 2106
+[2025-06-29 13:34:59][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8200
+[2025-06-29 13:35:05][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:35:05][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8729
+[2025-06-29 13:35:05][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 2106
+[2025-06-29 13:35:05][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8200
+[2025-06-29 13:40:27][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:40:27][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8729
+[2025-06-29 13:40:27][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 2106
+[2025-06-29 13:40:27][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8200
+[2025-06-29 13:48:00][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-06-29 13:48:01][INFO][basehttp.py:212:log_message]："POST /button/detail/1 HTTP/1.1" 200 254
+[2025-06-29 13:48:09][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-29 13:48:09][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:48:10][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-29 13:48:12][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8729
+[2025-06-29 13:48:12][INFO][basehttp.py:212:log_message]："POST /role/detail/6 HTTP/1.1" 200 273
+[2025-06-29 13:48:22][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:48:22][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-06-29 13:48:22][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:48:24][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:48:24][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-06-29 13:48:24][INFO][basehttp.py:212:log_message]："GET /user/detail/1 HTTP/1.1" 200 425
+[2025-06-29 13:48:24][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:48:24][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-06-29 13:48:55][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-06-29 13:48:57][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 13:49:03][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-06-29 13:49:03][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-06-29 13:49:05][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-06-29 13:49:07][INFO][basehttp.py:212:log_message]："POST /button/detail/4 HTTP/1.1" 200 253
+[2025-06-29 13:49:12][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2174
+[2025-06-29 13:49:12][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-06-29 13:49:14][INFO][basehttp.py:212:log_message]："GET /inteface/detail/4 HTTP/1.1" 200 248
+[2025-06-29 13:49:14][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-06-29 13:49:24][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1640
+[2025-06-29 13:59:50][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-06-29 14:29:14][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 14:29:21][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 14:29:25][ERROR][log.py:241:log_response]：Internal Server Error: /role/lists
+[2025-07-02 14:29:25][ERROR][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 500 71
+[2025-07-02 14:29:25][ERROR][log.py:241:log_response]：Internal Server Error: /user/page
+[2025-07-02 14:29:25][ERROR][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 500 71
+[2025-07-02 14:29:26][ERROR][log.py:241:log_response]：Internal Server Error: /role/page
+[2025-07-02 14:29:26][ERROR][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 500 71
+[2025-07-02 14:29:28][ERROR][log.py:241:log_response]：Internal Server Error: /menu/page
+[2025-07-02 14:29:28][ERROR][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 500 71
+[2025-07-02 14:29:51][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 304 0
+[2025-07-02 14:29:52][WARNING][log.py:241:log_response]：Unauthorized: /user/page
+[2025-07-02 14:29:52][WARNING][log.py:241:log_response]：Unauthorized: /role/lists
+[2025-07-02 14:29:52][WARNING][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 401 56
+[2025-07-02 14:29:52][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 401 56
+[2025-07-02 14:29:54][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19965
+[2025-07-02 14:29:57][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-07-02 14:29:57][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-07-02 14:29:58][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-02 14:30:03][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-02 15:01:03][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 66
+[2025-07-02 15:05:42][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:05:42][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:07:04][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:07:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:07:55][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:07:56][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:08:38][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:08:39][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:08:55][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:08:55][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:09:43][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:09:43][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:11:45][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:11:50][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:11:50][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92183
+[2025-07-02 15:12:08][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:12:09][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:12:35][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:12:39][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:12:39][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92183
+[2025-07-02 15:13:20][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:13:23][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (28 bytes)
+[2025-07-02 15:13:23][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92163
+[2025-07-02 15:13:41][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:13:43][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:13:43][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92183
+[2025-07-02 15:14:41][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:14:43][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:14:43][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:14:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:14:52][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:14:52][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:15:17][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:15:19][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:15:19][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92218
+[2025-07-02 15:15:52][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/common/const.py changed, reloading.
+[2025-07-02 15:15:52][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:17:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:17:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:17:56][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:17:56][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:18:02][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/__init__.py changed, reloading.
+[2025-07-02 15:18:03][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:18:06][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (33 bytes)
+[2025-07-02 15:18:06][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:20:34][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/common/const.py changed, reloading.
+[2025-07-02 15:20:35][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:20:43][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 101, in _create_base_cipher
+    result = start_operation(c_uint8_ptr(key),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:20:43][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 96713
+[2025-07-02 15:20:50][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:20:52][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 101, in _create_base_cipher
+    result = start_operation(c_uint8_ptr(key),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:20:52][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 96713
+[2025-07-02 15:21:15][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:21:16][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 40, in post
+    password = aesStr.decrypt(aes_password)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 191, in decrypt
+    c_uint8_ptr(ciphertext),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:21:16][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 84251
+[2025-07-02 15:21:49][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:21:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:21:51][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:21:52][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 191, in decrypt
+    c_uint8_ptr(ciphertext),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:21:52][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 84261
+[2025-07-02 15:22:45][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:22:46][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:22:53][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:22:56][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:22:56][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:40:50][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/common/const.py changed, reloading.
+[2025-07-02 15:40:50][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:40:59][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (27 bytes)
+[2025-07-02 15:40:59][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:41:03][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (27 bytes)
+[2025-07-02 15:41:03][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92214
+[2025-07-02 15:41:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:42:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:42:17][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:42:32][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 91, in _create_base_cipher
+    raise ValueError("Incorrect AES key length (%d bytes)" % len(key))
+ValueError: Incorrect AES key length (34 bytes)
+[2025-07-02 15:42:32][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 92258
+[2025-07-02 15:42:51][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/common/const.py changed, reloading.
+[2025-07-02 15:42:51][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:42:56][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:42:56][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:38][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:46:44][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:44][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:47][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:47][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:48][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:48][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:49][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:49][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:50][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:50][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:50][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:50][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:46:50][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 41, in post
+    password = aesStr.decrypt(aes_password.encode('utf-8'))
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 196, in decrypt
+    raise ValueError("Data must be aligned to block boundary in ECB mode")
+ValueError: Data must be aligned to block boundary in ECB mode
+[2025-07-02 15:46:50][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 80622
+[2025-07-02 15:47:26][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/common/const.py changed, reloading.
+[2025-07-02 15:47:26][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:47:27][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 101, in _create_base_cipher
+    result = start_operation(c_uint8_ptr(key),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:47:27][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 96607
+[2025-07-02 15:47:33][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:47:34][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:47:39][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 39, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 101, in _create_base_cipher
+    result = start_operation(c_uint8_ptr(key),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:47:39][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 96633
+[2025-07-02 15:48:22][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:48:22][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:53:42][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:53:46][ERROR][log.py:241:log_response]：Internal Server Error: /user/login
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/user/views.py", line 40, in post
+    aesStr = AES.new(SECRETKEY, AES.MODE_ECB)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 229, in new
+    return _create_cipher(sys.modules[__name__], key, mode, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/__init__.py", line 49, in _create_cipher
+    res = _create_ecb_cipher(factory, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/_mode_ecb.py", line 216, in _create_ecb_cipher
+    cipher_state = factory._create_base_cipher(kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Cipher/AES.py", line 101, in _create_base_cipher
+    result = start_operation(c_uint8_ptr(key),
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/Crypto/Util/_raw_api.py", line 149, in c_uint8_ptr
+    raise TypeError("Object type %s cannot be passed to C code" % type(data))
+TypeError: Object type <class 'str'> cannot be passed to C code
+[2025-07-02 15:53:46][ERROR][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 500 96657
+[2025-07-02 15:55:28][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:55:28][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:55:30][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 66
+[2025-07-02 15:56:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:56:06][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 66
+[2025-07-02 15:57:25][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:57:29][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 66
+[2025-07-02 15:58:15][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:58:16][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:58:19][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19965
+[2025-07-02 15:58:20][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-02 15:58:20][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-02 15:58:22][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-02 15:58:22][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-02 15:58:24][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19616
+[2025-07-02 15:58:24][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22343
+[2025-07-02 15:58:24][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-02 15:58:50][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-02 15:58:51][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:59:26][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-02 15:59:26][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-02 15:59:30][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-02 15:59:30][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader

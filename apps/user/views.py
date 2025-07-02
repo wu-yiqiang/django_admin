@@ -1,3 +1,4 @@
+import base64
 import json
 from django.core.paginator import Paginator
 from django.http import JsonResponse
@@ -12,6 +13,8 @@ from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from ..role.models import RoleSerializer, Role
 from django.core.cache import cache
 from utils.redisTool import set_cache
+from Crypto.Cipher import AES
+from common.const import SECRETKEY
 
 
 # import logging
@@ -28,14 +31,16 @@ class LoginView(View):
     def post(self, request):
         data = json.loads(request.body)
         email = data.get("email")
-        password = data.get('password')
+        aes_password = data.get('password')
         if email is None:
             return ResponseError(USER_RERROR.EMAIL_IS_REQUIRED)
-        if password is None:
+        if aes_password is None:
             return ResponseError(USER_RERROR.PASSWORD_IS_REQUIRED)
         try:
-            user = User.objects.get(email=email, password=password)
-        except User.DoesNotExist:
+            aesStr = AES.new(SECRETKEY.encode('utf-8'), AES.MODE_ECB)
+            password = aesStr.decrypt(base64.b64decode(aes_password.encode('utf-8')))
+            user = User.objects.get(email=email, password=password.decode('utf-8'))
+        except User.DoesNotExist as e:
             return ResponseError(USER_RERROR.EMAIL_OR_PASSWORD_ERROR)
         try:
             jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
