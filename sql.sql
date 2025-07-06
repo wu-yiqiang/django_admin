@@ -72,8 +72,8 @@ values (1, '个人中心', 'personal', NULL, 1, '/personal', 2, 'personal', '202
         '部门管理菜单', 0),
        (11, '岗位管理', 'post', 3, 2, '/datas/positions',  2, 'positions', '2024-07-04', '2024-07-04', '岗位管理菜单', 0),
        (12, '公司管理', 'post', 3, 3, '/datas/companys', 2, 'companys', '2024-07-04', '2024-07-04', '公司管理菜单', 0),
-       (13, '文件管理', 'files', NULL, 3, '/files',1, 'files', '2024-07-04', '2024-07-04', '文件管理目录', 0),
-       (14, '文档管理', 'documents', 13, 3, '/files/documents',1, 'documents', '2024-07-04', '2024-07-04', '文件管理菜单', 0);
+       (13, '共享中心', 'shares', NULL, 3, '/shares',1, 'shares', '2024-07-04', '2024-07-04', '共享中心目录', 0),
+       (14, '文件共享', 'files', 13, 3, '/shares/files',1, 'files', '2024-07-04', '2024-07-04', '文件共享菜单', 0);
 
 
 
@@ -253,5 +253,11 @@ values (1, 'status', 0,'禁用', '','','2024-07-04', '2024-07-04', '禁用', 0),
        (6, 'intefaceType',2,'POST','','', '2024-07-04', '2024-07-04', 'POST', 0),
        (7, 'intefaceType',3,'DELETE','','', '2024-07-04', '2024-07-04', 'DELETE', 0),
        (8, 'intefaceType',4,'PUT','','', '2024-07-04', '2024-07-04', 'PUT', 0);
+
+ -- 文件表
+insert into `net_disk` (`id`, `url`,`parentId`,`fileName`,  `fileSize`,  `isFold`, `create_time`, `update_time`, `remark`, `is_deleted`)
+values (1, 'http://192.168.1.222:8000/storage/netdisk/2022_PDF.pdf',NULL, '2022_pdf.pdf','140kb', FALSE,'2024-07-04', '2024-07-04', '文件', 0),
+       (2, 'http://192.168.1.222:8000/storage/netdisk/物体的缩放.mp4', NULL,'物体的缩放.mp4', '200MB',FALSE, '2024-07-04', '2024-07-04', '文件', 0),
+       (3, 'http://192.168.1.222:8000/storage/netdisk/新建文件夹',NULL,'新建文件夹', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0);
 
 
