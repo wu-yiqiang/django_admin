@@ -48,5 +48,18 @@ class CreateFoldView(View):
         return ResponseSuccess()
 
 
+class DeleteFilesView(View):
+    def post(self, request):
+        params = json.loads(request.body)
+        files = params.get('files')
+        NetDisk.objects.filter(id__in=files).delete()
+        return ResponseSuccess()
+
+
+class BatchUpdateView(View):
+    def post(self, request):
+        pass
+
+
 def getAddr(path: str) -> str:
     return settings.PROTOCOL + '://' + settings.IP + ':' + settings.PORT + '/storage/netdisk/' + path

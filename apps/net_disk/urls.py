@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from apps.net_disk.views import UploadNetView, GetUploadView, CreateFoldView
+from apps.net_disk.views import UploadNetView, GetUploadView, CreateFoldView, DeleteFilesView
 
 app_name = 'net_disk'
 urlpatterns = [
@@ -12,5 +12,7 @@ urlpatterns = [
     # path("detail/<int:button_id>", DetailView.as_view(), name='button_detail'),
     path('upload', UploadNetView.as_view(), name='upload'),
     path('create_fold', CreateFoldView.as_view(), name='create_fold'),
+    path('delete', DeleteFilesView.as_view(), name='create_fold'),
+    path('batch_update', BatchUpdateView.as_view(), name='create_fold'),
     path('current_files', GetUploadView.as_view(), name='current_lists'),
 ]
