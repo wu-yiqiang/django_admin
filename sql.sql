@@ -255,9 +255,12 @@ values (1, 'status', 0,'禁用', '','','2024-07-04', '2024-07-04', '禁用', 0),
        (8, 'intefaceType',4,'PUT','','', '2024-07-04', '2024-07-04', 'PUT', 0);
 
  -- 文件表
-insert into `net_disk` (`id`, `url`,`parentId`,`fileName`,  `fileSize`,  `isFold`, `create_time`, `update_time`, `remark`, `is_deleted`)
+insert into `net_disk` (`id`, `url`,`parent_id`,`file_name`,  `file_size`,  `is_fold`, `create_time`, `update_time`, `remark`, `is_deleted`)
 values (1, 'http://192.168.1.222:8000/storage/netdisk/2022_PDF.pdf',NULL, '2022_pdf.pdf','140kb', FALSE,'2024-07-04', '2024-07-04', '文件', 0),
        (2, 'http://192.168.1.222:8000/storage/netdisk/物体的缩放.mp4', NULL,'物体的缩放.mp4', '200MB',FALSE, '2024-07-04', '2024-07-04', '文件', 0),
-       (3, 'http://192.168.1.222:8000/storage/netdisk/新建文件夹',NULL,'新建文件夹', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0);
+       (3, 'http://192.168.1.222:8000/storage/netdisk/开发部',NULL,'开发部', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0),
+       (4, 'http://192.168.1.222:8000/storage/netdisk/系统部',NULL,'系统部', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0),
+       (5, 'http://192.168.1.222:8000/storage/netdisk/安保部',NULL,'安保部', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0),
+       (6, 'http://192.168.1.222:8000/storage/netdisk/人事部',NULL,'人事部', '200MB',TRUE, '2024-07-04', '2024-07-04', '目录', 0);
 
 
