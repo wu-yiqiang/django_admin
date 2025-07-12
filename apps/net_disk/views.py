@@ -1,6 +1,8 @@
 import json
 import os
-from datetime import datetime
+import uuid
+from numbers import Number
+
 from django.views import View
 from django_admin import settings
 from common.response import ResponseSuccess, ResponseError
@@ -11,20 +13,22 @@ from apps.net_disk.models import NetDisk, NetDiskSerializer
 class UploadNetView(View):
     def post(self, request):
         file = request.FILES.get('file')
+        parent_id = request.POST.get('parent_id')
         if file:
             file_name = file.name
             file_size = file.size
             suffixName = file_name[file_name.rfind("."):]
-            new_file_name = datetime.now().strftime('%Y%m%d%H%M%S') + suffixName
+            new_file_name = str(uuid.uuid4()) + suffixName
             file_path = str(settings.MEDIA_ROOT) + "/netdisk/" + new_file_name
         try:
             with open(file_path, 'wb') as f:
                 for chunk in file.chunks():
                     f.write(chunk)
-            NetDisk.objects.create(file_name=file_name, file_size=file_size, is_fold=False, parent_id=None)
-            addr = getAddr(new_file_name)
-            return ResponseSuccess(data=addr)
+            NetDisk.objects.create(file_name=file_name, url=new_file_name, file_size=file_size, is_fold=False,
+                                   parent_id=parent_id)
+            return ResponseSuccess()
         except Exception as e:
+            print("file upload error", e)
             return ResponseError(COMMON_RERROR.FILE_UPLOAD_IS_FAILED)
 
 
@@ -40,19 +44,30 @@ class GetUploadView(View):
 class CreateFoldView(View):
     def post(self, request):
         params = json.loads(request.body)
-        file_name = params.get('fileName')
-        parent_id = params.get('parentId')
-        is_fold = params.get('isFold')
-        file_size = params.get('fileSize')
-        NetDisk.objects.create(file_name=file_name, file_size=file_size, is_fold=is_fold, parent_id=parent_id)
+        file_name = params.get('file_name')
+        parent_id = params.get('parent_id')
+        file_size = params.get('file_size')
+        NetDisk.objects.create(file_name=file_name, file_size=file_size, is_fold=True, parent_id=parent_id)
         return ResponseSuccess()
 
 
 class DeleteFilesView(View):
     def post(self, request):
         params = json.loads(request.body)
-        files = params.get('files')
-        NetDisk.objects.filter(id__in=files).delete()
+        fileIds = params.get('files')
+        deleteIds = fileIds
+        # 查询所有父ID为该ID的数据
+        for fileId in fileIds:
+            parentIds = NetDisk.objects.filter(parent_id=fileId)
+            parent_id = parentIds.values_list('id', flat=True)
+            deleteIds.extend(parent_id)
+        for id in deleteIds:
+            file = NetDisk.objects.filter(id=id).first()
+            file.delete()
+            if file.is_fold is False:
+                path = str(settings.MEDIA_ROOT) + "/netdisk/" + file.url
+                if os.path.exists(path):
+                    os.remove(path)
         return ResponseSuccess()
 
 
