@@ -1,6 +1,5 @@
 from django.db import models
 from rest_framework import serializers
-from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 
 from apps.button.models import ButtonSerializer
 from apps.inteface.models import IntefaceSerializer

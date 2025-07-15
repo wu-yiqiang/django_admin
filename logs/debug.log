@@ -18286,3 +18286,61 @@ ValueError: invalid literal for int() with base 10: 'null'
 [2025-07-13 02:54:58][INFO][basehttp.py:212:log_message]："GET /storage/netdisk/66876dff-e291-4dca-8c8b-5bc8ab9c081b.jpg HTTP/1.1" 200 39672
 [2025-07-13 03:42:07][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
 [2025-07-13 03:47:55][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-13 03:47:56][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:16:57][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:17:23][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:17:55][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:18:03][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:18:08][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:18:16][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:18:30][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:18:38][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:19:01][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:19:06][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:19:13][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:19:19][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:19:19][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:21:44][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:21:55][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:21:56][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:24:40][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:26:04][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:26:05][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:26:17][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:26:17][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:26:37][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:26:37][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:26:45][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:28:20][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-15 13:29:49][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-15 13:30:12][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-15 13:30:14][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 20597
+[2025-07-15 13:30:14][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-15 13:30:16][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:30:23][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 20248
+[2025-07-15 13:30:23][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22975
+[2025-07-15 13:30:23][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-15 13:30:24][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-15 13:30:25][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-07-15 13:30:25][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-15 13:30:25][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-07-15 13:30:26][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2174
+[2025-07-15 13:30:26][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-07-15 13:30:27][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2148
+[2025-07-15 13:30:28][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7429
+[2025-07-15 13:30:28][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-15 13:30:28][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-15 13:30:29][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 20248
+[2025-07-15 13:30:29][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 22975
+[2025-07-15 13:30:29][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-15 13:30:30][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:30:33][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 53
+[2025-07-15 13:30:34][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:30:34][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 53
+[2025-07-15 13:30:35][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:30:36][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 53
+[2025-07-15 13:30:37][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:30:38][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 53
+[2025-07-15 13:30:39][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-15 13:31:11][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-15 13:31:11][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
