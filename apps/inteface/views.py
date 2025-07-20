@@ -7,10 +7,19 @@ from apps.inteface.models import Inteface, IntefaceSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from service_error.common import COMMON_RERROR
 from service_error.menu import MENU_RERROR
+from rest_framework.viewsets import ViewSet
 
 
-class CreateView(View):
-    def post(self, request):
+class IntefaceViewSet(ViewSet):
+    def list(self, request):
+        try:
+            intefaces = Inteface.objects.filter(is_deleted=0)
+            intefaceLists = IntefaceSerializer(intefaces.values(), many=True).data
+            return ResponseSuccess(data=intefaceLists)
+        except IntegrityError:
+            return ResponseError()
+
+    def create(self, request):
         menu = json.loads(request.body)
         try:
             Inteface.objects.create(name=menu['name'], path=menu['path'], type=menu['type'])
@@ -18,9 +27,35 @@ class CreateView(View):
         except IntegrityError:
             return ResponseError()
 
+    def destroy(self, request, inteface_id):
+        if inteface_id is None:
+            return ResponseError(MENU_RERROR.MENU_ID_IS_EMPTY)
+        try:
+            Inteface.objects.filter(id=inteface_id).delete()
+            return ResponseSuccess()
+        except IntegrityError:
+            return ResponseError()
 
-class SearchPageView(View):
-    def post(self, request):
+    def update(self, request):
+        menu = json.loads(request.body)
+        id = menu.get('id')
+        try:
+            Inteface.objects.filter(id=id).update(name=menu['name'], path=menu['path'], type=menu['type'])
+            return ResponseSuccess()
+        except IntegrityError:
+            return ResponseError()
+
+    def details(self, request, inteface_id):
+        if inteface_id is None:
+            return ResponseError(MENU_RERROR.MENU_ID_IS_EMPTY)
+        try:
+            inteface = Inteface.objects.get(id=inteface_id)
+            intefaceInfo = IntefaceSerializer(inteface).data
+            return ResponseSuccess(data=intefaceInfo)
+        except IntegrityError:
+            return ResponseError()
+
+    def retrieve(self, request):
         params = json.loads(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
@@ -31,49 +66,5 @@ class SearchPageView(View):
             total = Inteface.objects.filter(is_deleted=0).count()
             intefaces = IntefaceSerializer(roleLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=intefaces, total=total, pageSize=pageSize, pageNo=pageNo)
-        except IntegrityError:
-            return ResponseError()
-
-
-class SearchListsView(View):
-    def post(self, request):
-        try:
-            intefaces = Inteface.objects.filter(is_deleted=0)
-            intefaceLists = IntefaceSerializer(intefaces.values(), many=True).data
-            return ResponseSuccess(data=intefaceLists)
-        except IntegrityError:
-            return ResponseError()
-
-
-class UpdateView(View):
-    def post(self, request):
-        menu = json.loads(request.body)
-        id = menu.get('id')
-        try:
-            Inteface.objects.filter(id=id).update(name=menu['name'], path=menu['path'], type=menu['type'])
-            return ResponseSuccess()
-        except IntegrityError:
-            return ResponseError()
-
-
-class DetailView(View):
-    def get(self, request, inteface_id):
-        if inteface_id is None:
-            return ResponseError(MENU_RERROR.MENU_ID_IS_EMPTY)
-        try:
-            inteface = Inteface.objects.get(id=inteface_id)
-            intefaceInfo = IntefaceSerializer(inteface).data
-            return ResponseSuccess(data=intefaceInfo)
-        except IntegrityError:
-            return ResponseError()
-
-
-class DeleteView(View):
-    def delete(self, request, inteface_id):
-        if inteface_id is None:
-            return ResponseError(MENU_RERROR.MENU_ID_IS_EMPTY)
-        try:
-            Inteface.objects.filter(id=inteface_id).delete()
-            return ResponseSuccess()
         except IntegrityError:
             return ResponseError()

@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from .views import CreateView, UpdateView, SearchPageView, SearchListsView, DetailView, DeleteView
+from . import views
 
 app_name = 'role'
 urlpatterns = [
-    path('create', CreateView.as_view(), name='role_create'),
-    path('page', SearchPageView.as_view(), name='role_page_list'),
-    path('lists', SearchListsView.as_view(), name='role_list'),
-    path('update', UpdateView.as_view(), name='role_update'),
-    path('delete/<int:role_id>', DeleteView.as_view(), name='role_delete'),
-    path("detail/<int:role_id>", DetailView.as_view(), name='role_detail'),
+    path('create', views.RoleViewSet.as_view({"post": "create"}), name='role_create'),
+    path('page', views.RoleViewSet.as_view({"post": "retrieve"}), name='role_pages'),
+    path('lists', views.RoleViewSet.as_view({"get": "list"}), name='role_list'),
+    path('update', views.RoleViewSet.as_view({"post": "update"}), name='role_update'),
+    path('delete/<int:role_id>', views.RoleViewSet.as_view({"delete": "destroy"}), name='role_delete'),
+    path('detail/<int:role_id>', views.RoleViewSet.as_view({"post": "details"}), name='role_detail'),
 ]

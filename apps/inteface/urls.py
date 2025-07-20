@@ -1,12 +1,12 @@
 from django.urls import path
-from apps.inteface.views import CreateView, SearchPageView, UpdateView, DeleteView, DetailView, SearchListsView
+from . import views
 
 app_name = 'inteface'
 urlpatterns = [
-    path('create', CreateView.as_view(), name='inteface_create'),
-    path('page', SearchPageView.as_view(), name='inteface_page_lists'),
-    path('lists', SearchListsView.as_view(), name='inteface_lists'),
-    path('update', UpdateView.as_view(), name='inteface_update'),
-    path('delete/<int:inteface_id>', DeleteView.as_view(), name='inteface_delete'),
-    path('detail/<int:inteface_id>', DetailView.as_view(), name='inteface_detail'),
+    path('create', views.IntefaceViewSet.as_view({"post": "create"}), name='inteface_create'),
+    path('page', views.IntefaceViewSet.as_view({"post": "retrieve"}), name='inteface_pages'),
+    path('lists', views.IntefaceViewSet.as_view({"get": "list"}), name='inteface_list'),
+    path('update', views.IntefaceViewSet.as_view({"post": "update"}), name='inteface_update'),
+    path('delete/<int:inteface_id>', views.IntefaceViewSet.as_view({"delete": "destroy"}), name='inteface_delete'),
+    path('detail/<int:inteface_id>', views.IntefaceViewSet.as_view({"get": "details"}), name='inteface_detail'),
 ]
