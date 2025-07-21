@@ -1,16 +1,19 @@
 import json
 from sqlite3 import IntegrityError
-
+from apps.dictionary.models import Dictionary, DictionarySerializer
 from django.core.paginator import Paginator
 from django.views import View
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
-from .models import Dictionary, DictionarySerializer
+from rest_framework.viewsets import ViewSet
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 
 
-class CreateView(View):
-    def post(self, request):
+class DictionaryViewSet(ViewSet):
+    def list(self, request):
+        pass
+
+    def create(self, request):
         dictionary = json.loads(request.body)
         try:
             Dictionary.objects.create(type=dictionary['type'], code=dictionary['code'], label=dictionary['label'])
@@ -18,9 +21,27 @@ class CreateView(View):
         except IntegrityError:
             return ResponseError()
 
+    def update(self, request):
+        dictionary = json.loads(request.body)
+        id = dictionary.get('id')
+        try:
+            Dictionary.objects.filter(id=id).update(type=dictionary['type'], code=dictionary['code'],
+                                                    label=dictionary['label'])
+            return ResponseSuccess()
+        except IntegrityError:
+            return ResponseError()
 
-class SearchPageView(View):
-    def post(self, request):
+    def destroy(self, request, dictionary_id):
+        if dictionary_id is None:
+            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+        try:
+            dictionary = Dictionary.objects.get(id=dictionary_id)
+            dictionary.delete()
+            return ResponseSuccess()
+        except IntegrityError:
+            return ResponseError()
+
+    def retrieve(self, request):
         params = json.loads(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
@@ -34,33 +55,7 @@ class SearchPageView(View):
         except IntegrityError:
             return ResponseError()
 
-
-class SearchTypeListsView(View):
-    def post(self, request):
-        data = json.loads(request.body)
-        type = data['type']
-        try:
-            dictionarys = Dictionary.objects.filter(is_deleted=0).filter(type=type)
-            dictionaryLists = DictionarySerializer(dictionarys.values(), many=True).data
-            return ResponseSuccess(data=dictionaryLists)
-        except IntegrityError:
-            return ResponseError()
-
-
-class UpdateView(View):
-    def post(self, request):
-        dictionary = json.loads(request.body)
-        id = dictionary.get('id')
-        try:
-            Dictionary.objects.filter(id=id).update(type=dictionary['type'], code=dictionary['code'],
-                                                    label=dictionary['label'])
-            return ResponseSuccess()
-        except IntegrityError:
-            return ResponseError()
-
-
-class DetailView(View):
-    def get(self, request, dictionary_id):
+    def details(self, request, dictionary_id):
         if dictionary_id is None:
             return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
         try:
@@ -70,14 +65,12 @@ class DetailView(View):
         except IntegrityError:
             return ResponseError()
 
-
-class DeleteView(View):
-    def delete(self, request, dictionary_id):
-        if dictionary_id is None:
-            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+    def types(self, request):
+        data = json.loads(request.body)
+        type = data['type']
         try:
-            dictionary = Dictionary.objects.get(id=dictionary_id)
-            dictionary.delete()
-            return ResponseSuccess()
+            dictionarys = Dictionary.objects.filter(is_deleted=0).filter(type=type)
+            dictionaryLists = DictionarySerializer(dictionarys.values(), many=True).data
+            return ResponseSuccess(data=dictionaryLists)
         except IntegrityError:
             return ResponseError()

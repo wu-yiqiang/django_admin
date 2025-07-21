@@ -1,8 +1,6 @@
 import json
 from sqlite3 import IntegrityError
-
 from django.core.paginator import Paginator
-from django.views import View
 from apps.inteface.models import Inteface, IntefaceSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from service_error.common import COMMON_RERROR

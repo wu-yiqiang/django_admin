@@ -1,13 +1,12 @@
-from django.contrib import admin
 from django.urls import path
-from apps.button.views import CreateView, UpdateView, SearchPageView, SearchListsView, DetailView, DeleteView
+from . import views
 
 app_name = 'button'
 urlpatterns = [
-    path('create', CreateView.as_view(), name='button_create'),
-    path('page', SearchPageView.as_view(), name='button_page_list'),
-    path('lists', SearchListsView.as_view(), name='button_list'),
-    path('update', UpdateView.as_view(), name='button_update'),
-    path('delete/<int:button_id>', DeleteView.as_view(), name='button_delete'),
-    path("detail/<int:button_id>", DetailView.as_view(), name='button_detail'),
+    path('create', views.ButtonViewSet.as_view({"post": "create"}), name='button_create'),
+    path('page', views.ButtonViewSet.as_view({"post": "retrieve"}), name='button_pages'),
+    path('lists', views.ButtonViewSet.as_view({"get": "list"}), name='button_lists'),
+    path('update', views.ButtonViewSet.as_view({"post": "update"}), name='button_update'),
+    path('delete/<int:button_id>', views.ButtonViewSet.as_view({"delete": "destroy"}), name='button_delete'),
+    path('detail/<int:button_id>', views.ButtonViewSet.as_view({"post": "details"}), name='button_detail'),
 ]

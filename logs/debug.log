@@ -20120,3 +20120,213 @@ TypeError: details() got an unexpected keyword argument 'role_id'
 [2025-07-20 16:28:14][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
 [2025-07-20 16:28:15][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1640
 [2025-07-20 16:29:02][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-20 17:19:42][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-20 17:19:44][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 14:31:28][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 14:54:04][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 14:54:06][ERROR][log.py:241:log_response]：Internal Server Error: /role/page
+[2025-07-21 14:54:06][ERROR][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 500 71
+[2025-07-21 14:54:11][ERROR][log.py:241:log_response]：Internal Server Error: /role/lists
+[2025-07-21 14:54:11][ERROR][log.py:241:log_response]：Internal Server Error: /user/page
+[2025-07-21 14:54:11][ERROR][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 500 71
+[2025-07-21 14:54:11][ERROR][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 500 71
+[2025-07-21 14:54:11][ERROR][log.py:241:log_response]：Internal Server Error: /role/page
+[2025-07-21 14:54:11][ERROR][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 500 71
+[2025-07-21 14:54:12][ERROR][log.py:241:log_response]：Internal Server Error: /menu/page
+[2025-07-21 14:54:12][ERROR][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 500 71
+[2025-07-21 14:54:16][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-21 14:54:33][WARNING][log.py:241:log_response]：Unauthorized: /user/page
+[2025-07-21 14:54:33][WARNING][log.py:241:log_response]：Unauthorized: /role/lists
+[2025-07-21 14:54:33][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 401 56
+[2025-07-21 14:54:33][WARNING][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 401 56
+[2025-07-21 14:54:35][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19798
+[2025-07-21 14:54:37][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19449
+[2025-07-21 14:54:37][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 40447
+[2025-07-21 14:54:37][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-21 15:04:38][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-21 15:04:41][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19449
+[2025-07-21 15:04:41][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 40447
+[2025-07-21 15:04:41][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-21 15:04:42][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-21 15:04:42][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-21 15:04:44][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2077
+[2025-07-21 15:04:45][INFO][basehttp.py:212:log_message]："POST /button/detail/3 HTTP/1.1" 200 255
+[2025-07-21 15:04:48][INFO][basehttp.py:212:log_message]："POST /button/detail/5 HTTP/1.1" 200 255
+[2025-07-21 15:04:51][INFO][basehttp.py:212:log_message]："POST /button/detail/11 HTTP/1.1" 200 180
+[2025-07-21 15:04:56][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 15:04:56][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-07-21 15:05:01][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1640
+[2025-07-21 15:05:06][INFO][basehttp.py:212:log_message]："GET /dictionary/detail/3 HTTP/1.1" 200 249
+[2025-07-21 15:05:12][INFO][basehttp.py:212:log_message]："GET /dictionary/detail/1 HTTP/1.1" 200 247
+[2025-07-21 15:05:16][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 15:05:16][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 803
+[2025-07-21 15:27:49][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/button/urls.py changed, reloading.
+[2025-07-21 15:27:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:32:35][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:33:23][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:34:07][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:34:59][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:55:13][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:57:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:58:37][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:58:40][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/button/models.py changed, reloading.
+[2025-07-21 15:58:41][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:59:04][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:59:06][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/button/models.py changed, reloading.
+[2025-07-21 15:59:07][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:59:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:59:56][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 15:59:59][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-21 15:59:59][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 16:04:28][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 16:04:41][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-21 16:04:42][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:06:52][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:07:24][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:07:29][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/settings.py changed, reloading.
+[2025-07-21 17:07:29][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:09:28][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:10:44][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:18:20][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/dictionary/views.py changed, reloading.
+[2025-07-21 17:18:21][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:18:22][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:18:32][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1640
+[2025-07-21 17:18:39][INFO][basehttp.py:212:log_message]："POST /dictionary/create HTTP/1.1" 200 55
+[2025-07-21 17:18:39][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1815
+[2025-07-21 17:18:42][ERROR][log.py:241:log_response]：Internal Server Error: /dictionary/delete/9
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: destroy() got an unexpected keyword argument 'role_id'
+[2025-07-21 17:18:42][ERROR][basehttp.py:212:log_message]："DELETE /dictionary/delete/9 HTTP/1.1" 500 88360
+[2025-07-21 17:18:59][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/dictionary/urls.py changed, reloading.
+[2025-07-21 17:19:00][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:19:02][INFO][basehttp.py:212:log_message]："DELETE /dictionary/delete/9 HTTP/1.1" 200 55
+[2025-07-21 17:19:02][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1640
+[2025-07-21 17:19:04][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/detail/8
+[2025-07-21 17:19:04][WARNING][basehttp.py:212:log_message]："GET /dictionary/detail/8 HTTP/1.1" 405 40
+[2025-07-21 17:19:23][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/detail/8
+[2025-07-21 17:19:23][WARNING][basehttp.py:212:log_message]："GET /dictionary/detail/8 HTTP/1.1" 405 40
+[2025-07-21 17:19:33][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/detail/8
+[2025-07-21 17:19:33][WARNING][basehttp.py:212:log_message]："GET /dictionary/detail/8 HTTP/1.1" 405 40
+[2025-07-21 17:19:49][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/dictionary/urls.py changed, reloading.
+[2025-07-21 17:19:49][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:19:50][INFO][basehttp.py:212:log_message]："GET /dictionary/detail/8 HTTP/1.1" 200 235
+[2025-07-21 17:19:55][INFO][basehttp.py:212:log_message]："POST /dictionary/update HTTP/1.1" 200 55
+[2025-07-21 17:19:55][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1644
+[2025-07-21 17:19:57][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 17:19:57][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/types
+[2025-07-21 17:19:57][WARNING][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 405 41
+[2025-07-21 17:20:19][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2077
+[2025-07-21 17:20:20][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 17:20:20][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/types
+[2025-07-21 17:20:20][WARNING][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 405 41
+[2025-07-21 17:20:33][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2077
+[2025-07-21 17:20:36][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 17:20:36][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/types
+[2025-07-21 17:20:36][WARNING][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 405 41
+[2025-07-21 17:21:30][ERROR][log.py:241:log_response]：Internal Server Error: /dictionary/types
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/dictionary/views.py", line 69, in types
+    data = json.loads(request.body)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2025-07-21 17:21:30][ERROR][basehttp.py:212:log_message]："GET /dictionary/types HTTP/1.1" 500 104011
+[2025-07-21 17:21:31][ERROR][log.py:241:log_response]：Internal Server Error: /dictionary/types
+Traceback (most recent call last):
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/atlas/django_admin/.venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/atlas/django_admin/apps/dictionary/views.py", line 69, in types
+    data = json.loads(request.body)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2025-07-21 17:21:31][ERROR][basehttp.py:212:log_message]："GET /dictionary/types HTTP/1.1" 500 104011
+[2025-07-21 17:21:43][WARNING][log.py:241:log_response]：Method Not Allowed: /dictionary/types
+[2025-07-21 17:21:43][WARNING][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 405 41
+[2025-07-21 17:22:02][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/dictionary/urls.py changed, reloading.
+[2025-07-21 17:22:02][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-21 17:22:03][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:03][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:03][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2197
+[2025-07-21 17:22:04][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:07][INFO][basehttp.py:212:log_message]："DELETE /inteface/delete/11 HTTP/1.1" 200 55
+[2025-07-21 17:22:07][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2199
+[2025-07-21 17:22:07][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:09][INFO][basehttp.py:212:log_message]："GET /inteface/detail/12 HTTP/1.1" 200 273
+[2025-07-21 17:22:09][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:09][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:11][INFO][basehttp.py:212:log_message]："POST /inteface/update HTTP/1.1" 200 55
+[2025-07-21 17:22:11][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2202
+[2025-07-21 17:22:13][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-21 17:22:18][INFO][basehttp.py:212:log_message]："POST /inteface/create HTTP/1.1" 200 55
+[2025-07-21 17:22:18][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2202
+[2025-07-21 17:22:20][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2077
+[2025-07-21 17:22:22][INFO][basehttp.py:212:log_message]："POST /button/detail/10 HTTP/1.1" 200 256
+[2025-07-21 17:22:24][INFO][basehttp.py:212:log_message]："POST /button/detail/11 HTTP/1.1" 200 180
+[2025-07-21 17:22:26][INFO][basehttp.py:212:log_message]："POST /button/update HTTP/1.1" 200 55
+[2025-07-21 17:22:26][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2080
+[2025-07-21 17:22:29][INFO][basehttp.py:212:log_message]："DELETE /button/delete/11 HTTP/1.1" 200 55
+[2025-07-21 17:22:29][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
+[2025-07-21 17:22:31][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-21 17:22:31][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-21 17:22:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
