@@ -3,16 +3,17 @@ import json
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.shortcuts import HttpResponse
-from django.views import View
+from rest_framework.viewsets import ViewSet
 from rest_framework_jwt.settings import api_settings
 from django.db import transaction
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
-from .models import User, UserSerializer
+from apps.user.models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
-from ..role.models import RoleSerializer, Role
+from apps.role.models import RoleSerializer
 from django.core.cache import cache
 from utils.redisTool import set_cache
+from openpyxl import Workbook
 from Crypto.Cipher import AES
 from common.const import SECRETKEY
 
@@ -22,13 +23,39 @@ from common.const import SECRETKEY
 # logger = logging.getLogger('django')
 
 
-class RegisterView(View):
-    def post(self, request):
-        pass
+class UserViewSet(ViewSet):
 
+    def list(self, request):
+        params = json.loads(request.body)
+        pageSize = params.get('pageSize')
+        pageNo = params.get('pageNo')
+        if not all([pageSize, pageNo]):
+            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
+        try:
+            users = User.objects.filter(is_deleted=0)
+            total = users.count()
+            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
+            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
+        except Exception as e:
+            # logger.error(e)
+            return ResponseError()
 
-class LoginView(View):
-    def post(self, request):
+    def retrieve(self, request):
+        params = json.loads(request.body)
+        pageSize = params.get('pageSize')
+        pageNo = params.get('pageNo')
+        if not all([pageSize, pageNo]):
+            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
+        try:
+            users = User.objects.filter(is_deleted=0)
+            total = users.count()
+            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
+            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
+        except Exception as e:
+            # logger.error(e)
+            return ResponseError()
+
+    def login(self, request):
         data = json.loads(request.body)
         email = data.get("email")
         aes_password = data.get('password')
@@ -76,31 +103,70 @@ class LoginView(View):
             print('sssss', e)
             return ResponseError()
 
+    def register(self, request):
+        pass
 
-class SearchPageView(View):
-    def post(self, request):
-        params = json.loads(request.body)
-        pageSize = params.get('pageSize')
-        pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
+    def logout(self, request):
         try:
-            users = User.objects.filter(is_deleted=0)
-            total = users.count()
-            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
-            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
+            token = request.META.get('HTTP_AUTHORIZATION')
+            cache.delete(token)
+            return ResponseSuccess()
+        except Exception as e:
+            return ResponseError()
+
+    def create(self, request):
+        data = json.loads(request.body)
+        try:
+            with transaction.atomic():
+                user = User.objects.create(username=data['username'], password='1234@Abcd', avatar=data['avatar'],
+                                           email=data['email'], phone_number=data['phone_number'],
+                                           status=data['status'])
+                user.roles.set(data.get('roles'))
+            return ResponseSuccess()
         except Exception as e:
             # logger.error(e)
             return ResponseError()
 
+    def update(self, request):
+        data = json.loads(request.body)
+        user_id = data.get('id')
+        try:
+            user = User.objects.get(id=user_id)
+            with transaction.atomic():
+                User.objects.filter(id=user_id).update(username=data['username'], avatar=data['avatar'],
+                                                       phone_number=data['phone_number'],
+                                                       email=data['email'], status=data['status'])
+                user.roles.set(data.get('roles'))
+            return ResponseSuccess()
+        except Exception as e:
+            # logger.error(e)
+            return ResponseError()
 
-class SearchListsView(View):
-    def post(self, request):
-        return ResponseSuccess()
+    def destroy(self, request, user_id):
+        if user_id is None:
+            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+        try:
+            user = User.objects.filter(id=user_id)
+            user.delete()
+            return ResponseSuccess()
+        except Exception as e:
+            # logger.error(e)
+            return ResponseError()
 
+    def details(self, request, user_id):
+        if user_id is None:
+            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
+        try:
+            user = User.objects.get(id=user_id)
+            roles = user.roles.values_list('id', flat=True)
+            userInfo = UserSerializer(user).data
+            data = {**userInfo, "roles": list(roles)}
+            return ResponseSuccess(data=data)
+        except Exception as e:
+            # logger.error(e)
+            return ResponseError()
 
-class UpdatePasswordView(View):
-    def post(self, request):
+    def update_password(self, request):
         params = json.loads(request.body)
         if params['id'] is None:
             return JsonResponse(USER_RERROR.USER_IS_EMPTY)
@@ -115,9 +181,7 @@ class UpdatePasswordView(View):
             # logger.error(e)
             return ResponseError(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
 
-
-class UpdateAvatarView(View):
-    def post(self, request):
+    def update_avatar(self, request):
         params = json.loads(request.body)
         user_id = int(params['id'])
         if user_id is None:
@@ -128,22 +192,7 @@ class UpdateAvatarView(View):
         except Exception as e:
             return ResponseError(USER_RERROR.USER_PASSWORD_UPDATE_FAILED)
 
-
-class LogoutView(View):
-    def post(self, request):
-        try:
-            token = request.META.get('HTTP_AUTHORIZATION')
-            cache.delete(token)
-            return ResponseSuccess()
-        except Exception as e:
-            return ResponseError()
-
-
-from openpyxl import Workbook
-
-
-class ExportView(View):
-    def get(self, request):
+    def export(self, request):
         response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         response['Content-Disposition'] = 'attachment;filename=user.xlsx'
         # 创建Workbook和Sheet
@@ -163,78 +212,3 @@ class ExportView(View):
             worksheet.cell(row=i, column=4, value=user.remark)
         workbook.save(response)
         return response
-
-
-class UserViewSet(View):
-    model = User
-
-    def get_queryset(self):
-        return self.model.objects.all()
-
-    def user_list(self, request):
-        print("是多少")
-        params = json.loads(request.body)
-        pageSize = params.get('pageSize')
-        pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
-        try:
-            users = User.objects.filter(is_deleted=0)
-            total = users.count()
-            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
-            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
-        except Exception as e:
-            # logger.error(e)
-            return ResponseError()
-
-    def post(self, request):
-        data = json.loads(request.body)
-        try:
-            with transaction.atomic():
-                user = User.objects.create(username=data['username'], password='1234@Abcd', avatar=data['avatar'],
-                                           email=data['email'], phone_number=data['phone_number'],
-                                           status=data['status'])
-                user.roles.set(data.get('roles'))
-            return ResponseSuccess()
-        except Exception as e:
-            # logger.error(e)
-            return ResponseError()
-
-    def delete(self, request, user_id):
-        if user_id is None:
-            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
-        try:
-            user = User.objects.filter(id=user_id)
-            user.delete()
-            return ResponseSuccess()
-        except Exception as e:
-            # logger.error(e)
-            return ResponseError()
-
-    def put(self, request):
-        data = json.loads(request.body)
-        user_id = data.get('id')
-        try:
-            user = User.objects.get(id=user_id)
-            with transaction.atomic():
-                User.objects.filter(id=user_id).update(username=data['username'], avatar=data['avatar'],
-                                                       phone_number=data['phone_number'],
-                                                       email=data['email'], status=data['status'])
-                user.roles.set(data.get('roles'))
-            return ResponseSuccess()
-        except Exception as e:
-            # logger.error(e)
-            return ResponseError()
-
-    def get(self, request, user_id):
-        if user_id is None:
-            return ResponseError(USER_RERROR.USER_ID_IS_NOT_EXIST)
-        try:
-            user = User.objects.get(id=user_id)
-            roles = user.roles.values_list('id', flat=True)
-            userInfo = UserSerializer(user).data
-            data = {**userInfo, "roles": list(roles)}
-            return ResponseSuccess(data=data)
-        except Exception as e:
-            # logger.error(e)
-            return ResponseError()

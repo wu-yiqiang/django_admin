@@ -20330,3 +20330,74 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 [2025-07-21 17:22:31][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
 [2025-07-21 17:22:31][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
 [2025-07-21 17:22:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 15:55:15][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 15:55:29][WARNING][log.py:241:log_response]：Unauthorized: /role/page
+[2025-07-22 15:55:29][WARNING][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 401 56
+[2025-07-22 15:55:31][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19579
+[2025-07-22 15:55:35][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 15:55:37][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 15:55:37][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 16:21:54][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-22 16:21:54][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:33:14][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:33:53][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:33:59][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:35:28][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-22 16:35:29][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:35:31][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:35:54][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/views.py changed, reloading.
+[2025-07-22 16:35:55][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:35:59][WARNING][log.py:241:log_response]：Method Not Allowed: /user/page
+[2025-07-22 16:35:59][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 405 41
+[2025-07-22 16:35:59][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:36:20][WARNING][log.py:241:log_response]：Method Not Allowed: /user/page
+[2025-07-22 16:36:20][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 405 41
+[2025-07-22 16:36:26][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/urls.py changed, reloading.
+[2025-07-22 16:36:26][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:36:29][WARNING][log.py:241:log_response]：Method Not Allowed: /user/page
+[2025-07-22 16:36:29][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 405 41
+[2025-07-22 16:36:33][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 16:36:33][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 16:36:33][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 16:36:33][WARNING][log.py:241:log_response]：Method Not Allowed: /user/page
+[2025-07-22 16:36:33][WARNING][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 405 41
+[2025-07-22 16:36:33][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:36:53][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/user/urls.py changed, reloading.
+[2025-07-22 16:36:53][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 16:36:56][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 40009
+[2025-07-22 16:36:56][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:37:10][INFO][basehttp.py:212:log_message]："POST /user/update/password HTTP/1.1" 200 55
+[2025-07-22 16:37:11][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:37:11][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:37:11][INFO][basehttp.py:212:log_message]："GET /user/detail/17 HTTP/1.1" 200 303
+[2025-07-22 16:37:12][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:37:16][INFO][basehttp.py:212:log_message]："PUT /user/update HTTP/1.1" 200 55
+[2025-07-22 16:37:17][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 40465
+[2025-07-22 16:37:18][INFO][basehttp.py:212:log_message]："DELETE /user/delete/17 HTTP/1.1" 200 55
+[2025-07-22 16:37:18][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 39762
+[2025-07-22 16:37:21][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:37:21][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:37:43][INFO][basehttp.py:212:log_message]："POST /user/create HTTP/1.1" 200 55
+[2025-07-22 16:37:43][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 58049
+[2025-07-22 16:37:43][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:37:48][INFO][basehttp.py:212:log_message]："GET /user/download HTTP/1.1" 200 5334
+[2025-07-22 16:38:05][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 16:38:06][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 16:38:06][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 16:38:07][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
+[2025-07-22 16:38:09][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2202
+[2025-07-22 16:38:09][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-22 16:38:10][INFO][basehttp.py:212:log_message]："POST /dictionary/page HTTP/1.1" 200 1644
+[2025-07-22 16:38:12][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:38:12][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 58049
+[2025-07-22 16:38:12][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:38:18][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 16:38:39][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 16:38:39][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 16:38:40][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 16:38:41][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 16:38:41][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 58049
+[2025-07-22 16:38:41][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 16:38:42][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 16:38:42][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 16:38:43][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
