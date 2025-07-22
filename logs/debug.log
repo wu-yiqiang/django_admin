@@ -20401,3 +20401,138 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 [2025-07-22 16:38:42][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
 [2025-07-22 16:38:42][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
 [2025-07-22 16:38:43][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
+[2025-07-22 16:39:24][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2202
+[2025-07-22 16:39:24][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-22 16:49:24][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:00:18][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:00:19][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:00:19][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:00:19][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:00:19][INFO][basehttp.py:212:log_message]："POST /inteface/page HTTP/1.1" 200 2202
+[2025-07-22 17:00:19][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-22 17:17:45][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/net_disk/views.py changed, reloading.
+[2025-07-22 17:17:46][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:17:51][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:17:58][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
+[2025-07-22 17:18:00][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 17:18:00][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:18:02][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 1367
+[2025-07-22 17:18:02][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:18:04][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:18:04][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:18:04][WARNING][log.py:241:log_response]：Method Not Allowed: /button/lists
+[2025-07-22 17:18:04][WARNING][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 405 41
+[2025-07-22 17:18:19][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:18:19][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:18:19][WARNING][log.py:241:log_response]：Method Not Allowed: /button/lists
+[2025-07-22 17:18:19][WARNING][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 405 41
+[2025-07-22 17:18:42][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:18:42][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:18:42][WARNING][log.py:241:log_response]：Method Not Allowed: /button/lists
+[2025-07-22 17:18:42][WARNING][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 405 41
+[2025-07-22 17:19:19][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/menu/urls.py changed, reloading.
+[2025-07-22 17:19:19][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:19:23][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:19:24][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:19:24][WARNING][log.py:241:log_response]：Method Not Allowed: /button/lists
+[2025-07-22 17:19:24][WARNING][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 405 41
+[2025-07-22 17:19:37][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/menu/urls.py changed, reloading.
+[2025-07-22 17:19:38][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:19:47][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/button/urls.py changed, reloading.
+[2025-07-22 17:19:48][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:19:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:19:50][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:19:50][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 1904
+[2025-07-22 17:19:50][WARNING][log.py:241:log_response]：Method Not Allowed: /inteface/lists
+[2025-07-22 17:19:50][WARNING][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 405 41
+[2025-07-22 17:20:15][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/inteface/urls.py changed, reloading.
+[2025-07-22 17:20:15][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 1904
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8067
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："GET /menu/detail/12 HTTP/1.1" 200 369
+[2025-07-22 17:20:19][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 1904
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8067
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："GET /menu/detail/14 HTTP/1.1" 200 366
+[2025-07-22 17:20:26][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:20:50][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 17:20:51][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 17:20:51][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 58049
+[2025-07-22 17:20:51][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 17:20:53][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:22:16][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 1945
+[2025-07-22 17:22:32][INFO][basehttp.py:212:log_message]："POST /button/create HTTP/1.1" 200 55
+[2025-07-22 17:22:32][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2110
+[2025-07-22 17:22:50][INFO][basehttp.py:212:log_message]："POST /button/create HTTP/1.1" 200 55
+[2025-07-22 17:22:50][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2110
+[2025-07-22 17:23:03][INFO][basehttp.py:212:log_message]："POST /button/create HTTP/1.1" 200 55
+[2025-07-22 17:23:03][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2110
+[2025-07-22 17:23:15][INFO][basehttp.py:212:log_message]："POST /button/create HTTP/1.1" 200 55
+[2025-07-22 17:23:15][INFO][basehttp.py:212:log_message]："POST /button/page HTTP/1.1" 200 2110
+[2025-07-22 17:23:16][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 17:23:18][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 19230
+[2025-07-22 17:23:18][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 58049
+[2025-07-22 17:23:18][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 17:23:23][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-22 17:23:24][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 19579
+[2025-07-22 17:23:24][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:25][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:25][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:25][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:27][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:23:31][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:31][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:31][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:23:31][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:23:36][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 17:23:38][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:23:38][INFO][basehttp.py:212:log_message]："POST /role/detail/1 HTTP/1.1" 200 18103
+[2025-07-22 17:23:40][INFO][basehttp.py:212:log_message]："GET /menu/detail/14 HTTP/1.1" 200 366
+[2025-07-22 17:23:43][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 17:23:43][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:23:45][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 1367
+[2025-07-22 17:23:45][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 8320
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："POST /button/lists HTTP/1.1" 200 2558
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："POST /inteface/lists HTTP/1.1" 200 8067
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："GET /menu/detail/14 HTTP/1.1" 200 366
+[2025-07-22 17:23:50][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:24:13][INFO][basehttp.py:212:log_message]："POST /menu/update HTTP/1.1" 200 55
+[2025-07-22 17:24:13][INFO][basehttp.py:212:log_message]："POST /menu/page HTTP/1.1" 200 7028
+[2025-07-22 17:24:13][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 451
+[2025-07-22 17:24:14][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 17:24:16][INFO][basehttp.py:212:log_message]："GET /menu/treeLists HTTP/1.1" 200 9243
+[2025-07-22 17:24:16][INFO][basehttp.py:212:log_message]："POST /role/detail/1 HTTP/1.1" 200 19026
+[2025-07-22 17:24:18][INFO][basehttp.py:212:log_message]："GET /menu/detail/14 HTTP/1.1" 200 1289
+[2025-07-22 17:24:18][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 807
+[2025-07-22 17:24:23][INFO][basehttp.py:212:log_message]："POST /role/update HTTP/1.1" 200 55
+[2025-07-22 17:24:23][INFO][basehttp.py:212:log_message]："POST /role/page HTTP/1.1" 200 1211
+[2025-07-22 17:24:25][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 20643
+[2025-07-22 17:24:25][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 62288
+[2025-07-22 17:24:25][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 17:24:28][INFO][basehttp.py:212:log_message]："POST /user/logout HTTP/1.1" 200 55
+[2025-07-22 17:24:30][INFO][basehttp.py:212:log_message]："POST /user/login HTTP/1.1" 200 20992
+[2025-07-22 17:24:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:24:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:24:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:24:30][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-07-22 17:24:35][INFO][basehttp.py:212:log_message]："GET /role/lists HTTP/1.1" 200 20643
+[2025-07-22 17:24:35][INFO][basehttp.py:212:log_message]："POST /user/page HTTP/1.1" 200 62288
+[2025-07-22 17:24:35][INFO][basehttp.py:212:log_message]："POST /dictionary/types HTTP/1.1" 200 447
+[2025-07-22 17:24:37][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:24:41][WARNING][log.py:241:log_response]：Method Not Allowed: /net_disk/tree_list
+[2025-07-22 17:24:41][WARNING][basehttp.py:212:log_message]："GET /net_disk/tree_list HTTP/1.1" 405 40
+[2025-07-22 17:24:50][WARNING][log.py:241:log_response]：Method Not Allowed: /net_disk/tree_list
+[2025-07-22 17:24:50][WARNING][basehttp.py:212:log_message]："GET /net_disk/tree_list HTTP/1.1" 405 40
+[2025-07-22 17:25:34][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/apps/net_disk/urls.py changed, reloading.
+[2025-07-22 17:25:34][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
+[2025-07-22 17:25:39][INFO][basehttp.py:212:log_message]："GET /net_disk/tree_list HTTP/1.1" 200 1171
+[2025-07-22 17:25:42][INFO][basehttp.py:212:log_message]："POST /net_disk/batch_update HTTP/1.1" 200 55
+[2025-07-22 17:25:42][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1753
+[2025-07-22 17:25:49][INFO][basehttp.py:212:log_message]："POST /net_disk/delete HTTP/1.1" 200 55
+[2025-07-22 17:25:49][INFO][basehttp.py:212:log_message]："POST /net_disk/current_files HTTP/1.1" 200 1473
