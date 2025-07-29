@@ -2,7 +2,9 @@ import json
 from sqlite3 import IntegrityError
 from django.core.paginator import Paginator
 from apps.inteface.models import Inteface, IntefaceSerializer
+from common.request import requestSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
+from common.validate import request_verify
 from service_error.common import COMMON_RERROR
 from service_error.menu import MENU_RERROR
 from rest_framework.viewsets import ViewSet
@@ -53,14 +55,14 @@ class IntefaceViewSet(ViewSet):
         except IntegrityError:
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
+        params = requestSerializer(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         try:
-            roleLists = Paginator(Inteface.objects.filter(is_deleted=0), pageSize).page(pageNo)
+            roleLists = Paginator(Inteface.objects.filter(is_deleted=0, name__icontains=params.get('search')),
+                                  pageSize).page(pageNo)
             total = Inteface.objects.filter(is_deleted=0).count()
             intefaces = IntefaceSerializer(roleLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=intefaces, total=total, pageSize=pageSize, pageNo=pageNo)

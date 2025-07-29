@@ -6,6 +6,8 @@ from django.shortcuts import HttpResponse
 from rest_framework.viewsets import ViewSet
 from rest_framework_jwt.settings import api_settings
 from django.db import transaction
+from common.validate import request_verify
+from common.request import requestSerializer
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from apps.user.models import User, UserSerializer
@@ -24,7 +26,6 @@ from common.const import SECRETKEY
 
 
 class UserViewSet(ViewSet):
-
     def list(self, request):
         params = json.loads(request.body)
         pageSize = params.get('pageSize')
@@ -40,29 +41,25 @@ class UserViewSet(ViewSet):
             # logger.error(e)
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
-        pageSize = params.get('pageSize')
-        pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
+        params = requestSerializer(request.body)
         try:
-            users = User.objects.filter(is_deleted=0)
+            users = User.objects.filter(is_deleted=0, username__icontains=params.get('search'))
             total = users.count()
-            userLists = UserSerializer(Paginator(users, pageSize).page(pageNo), many=True).data
-            return ResponseSuccessPage(data=userLists, total=total, pageSize=pageSize, pageNo=pageNo)
+            userLists = UserSerializer(Paginator(users, params.get('pageSize')).page(params.get('pageNo')),
+                                       many=True).data
+            return ResponseSuccessPage(data=userLists, total=total, pageSize=params.get('pageSize'),
+                                       pageNo=params.get('pageNo'))
         except Exception as e:
             # logger.error(e)
             return ResponseError()
 
+    @request_verify('post', ['email', 'password'])
     def login(self, request):
         data = json.loads(request.body)
         email = data.get("email")
         aes_password = data.get('password')
-        if email is None:
-            return ResponseError(USER_RERROR.EMAIL_IS_REQUIRED)
-        if aes_password is None:
-            return ResponseError(USER_RERROR.PASSWORD_IS_REQUIRED)
         try:
             aesStr = AES.new(SECRETKEY.encode('utf-8'), AES.MODE_ECB)
             password = aesStr.decrypt(base64.b64decode(aes_password.encode('utf-8')))

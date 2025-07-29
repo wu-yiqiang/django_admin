@@ -2,6 +2,9 @@ import json
 from sqlite3 import IntegrityError
 from rest_framework.viewsets import ViewSet
 from django.core.paginator import Paginator
+
+from common.request import requestSerializer
+from common.validate import request_verify
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from apps.button.models import Button, ButtonSerializer
@@ -17,14 +20,14 @@ class ButtonViewSet(ViewSet):
         except IntegrityError:
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
+        params = requestSerializer(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         try:
-            buttonLists = Paginator(Button.objects.filter(is_deleted=0), pageSize).page(pageNo)
+            buttonLists = Paginator(Button.objects.filter(is_deleted=0, name__icontains=params.get('search')),
+                                    pageSize).page(pageNo)
             total = Button.objects.filter(is_deleted=0).count()
             buttons = ButtonSerializer(buttonLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=buttons, total=total, pageSize=pageSize, pageNo=pageNo)

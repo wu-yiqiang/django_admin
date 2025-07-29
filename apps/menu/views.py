@@ -6,7 +6,9 @@ from django.core.paginator import Paginator
 from django.db import transaction
 from django.views import View
 from apps.menu.models import Menu, MenuSerializer, MenuTreeSerializer
+from common.request import requestSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
+from common.validate import request_verify
 from service_error.common import COMMON_RERROR
 from service_error.menu import MENU_RERROR
 
@@ -54,14 +56,13 @@ class MenuViewSet(ViewSet):
         except IntegrityError:
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
+        params = requestSerializer(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         try:
-            menus = Menu.objects.filter(is_deleted=0)
+            menus = Menu.objects.filter(is_deleted=0, name__icontains=params.get('search'))
             menuLists = MenuSerializer(Paginator(menus, pageSize).page(pageNo), many=True).data
             total = menus.count()
             return ResponseSuccessPage(data=menuLists, total=total, pageSize=pageSize, pageNo=pageNo)

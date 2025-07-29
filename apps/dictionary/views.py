@@ -3,6 +3,9 @@ from sqlite3 import IntegrityError
 from apps.dictionary.models import Dictionary, DictionarySerializer
 from django.core.paginator import Paginator
 from django.views import View
+
+from common.request import requestSerializer
+from common.validate import request_verify
 from service_error.common import COMMON_RERROR
 from service_error.user import USER_RERROR
 from rest_framework.viewsets import ViewSet
@@ -41,18 +44,19 @@ class DictionaryViewSet(ViewSet):
         except IntegrityError:
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
+        params = requestSerializer(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         try:
-            dictLists = Paginator(Dictionary.objects.filter(is_deleted=0), pageSize).page(pageNo)
+            dictLists = Paginator(Dictionary.objects.filter(is_deleted=0, type__icontains=params.get('search')),
+                                  pageSize).page(pageNo)
             total = Dictionary.objects.filter(is_deleted=0).count()
             dicts = DictionarySerializer(dictLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=dicts, total=total, pageSize=pageSize, pageNo=pageNo)
-        except IntegrityError:
+        except Exception as e:
+            print(e)
             return ResponseError()
 
     def details(self, request, dictionary_id):

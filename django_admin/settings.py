@@ -46,9 +46,9 @@ MIDDLEWARE = [
     # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     # 'django.contrib.messages.middleware.MessageMiddleware',
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "middlewares.JwtAuthMiddleware.JwtAuthMiddleware"
+    "middlewares.JwtAuthMiddleware.JwtAuthMiddleware",
 ]
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 ROOT_URLCONF = 'django_admin.urls'
 
 TEMPLATES = [
@@ -144,9 +144,9 @@ CACHES = {
 
 ALLOWED_HOSTS = ['*', ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
-}
+# REST_FRAMEWORK = {
+#     'EXCEPTION_HANDLER': 'utils.exception.BusinessException',
+# }
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'EAMS',

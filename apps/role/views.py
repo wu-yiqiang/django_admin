@@ -6,6 +6,8 @@ from django.db import transaction
 from django.views import View
 from rest_framework.viewsets import ViewSet
 from apps.role.models import Role
+from common.request import requestSerializer
+from common.validate import request_verify
 from service_error.common import COMMON_RERROR
 from service_error.role import ROLE_RERROR
 from apps.role.models import RoleSerializer
@@ -66,14 +68,14 @@ class RoleViewSet(ViewSet):
         except IntegrityError:
             return ResponseError()
 
+    @request_verify('post', ['pageSize', 'pageNo'])
     def retrieve(self, request):
-        params = json.loads(request.body)
+        params = requestSerializer(request.body)
         pageSize = params.get('pageSize')
         pageNo = params.get('pageNo')
-        if not all([pageSize, pageNo]):
-            return ResponseError(COMMON_RERROR.PAGENATE_PARAMS_IS_EMPTY)
         try:
-            roleLists = Paginator(Role.objects.filter(is_deleted=0), pageSize).page(pageNo)
+            roleLists = Paginator(Role.objects.filter(is_deleted=0, name__icontains=params.get('search')),
+                                  pageSize).page(pageNo)
             total = Role.objects.filter(is_deleted=0).count()
             roles = RoleSerializer(roleLists.object_list.values(), many=True).data
             return ResponseSuccessPage(data=roles, total=total, pageSize=pageSize, pageNo=pageNo)
