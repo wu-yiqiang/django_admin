@@ -8,8 +8,8 @@ from rest_framework.viewsets import ViewSet
 from apps.role.models import Role
 from common.request import requestSerializer
 from common.validate import request_verify
-from service_error.common import COMMON_RERROR
-from service_error.role import ROLE_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import ROLE_RERROR
 from apps.role.models import RoleSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 import logging

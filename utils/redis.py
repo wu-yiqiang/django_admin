@@ -4,8 +4,8 @@ from django.core.cache import cache
 from django_admin import settings
 
 
-def set_cache(key, data, timeout=settings.CACHE_TOKEN_EXPIRE):
-    cache.set(key, json.dumps(data, cls=DjangoJSONEncoder), timeout)
+def set_cache(key, data, expire_time=settings.CACHE_TOKEN_EXPIRE):
+    cache.set(key, json.dumps(data, cls=DjangoJSONEncoder), expire_time)
 
 
 def get_cache(key):

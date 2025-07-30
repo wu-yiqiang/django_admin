@@ -8,13 +8,13 @@ from rest_framework_jwt.settings import api_settings
 from django.db import transaction
 from common.validate import request_verify
 from common.request import requestSerializer
-from service_error.common import COMMON_RERROR
-from service_error.user import USER_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import USER_RERROR
 from apps.user.models import User, UserSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from apps.role.models import RoleSerializer
 from django.core.cache import cache
-from utils.redisTool import set_cache
+from utils.redis import set_cache
 from openpyxl import Workbook
 from Crypto.Cipher import AES
 from common.const import SECRETKEY

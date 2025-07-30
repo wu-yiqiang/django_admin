@@ -5,8 +5,8 @@ from django.core.paginator import Paginator
 
 from common.request import requestSerializer
 from common.validate import request_verify
-from service_error.common import COMMON_RERROR
-from service_error.user import USER_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import USER_RERROR
 from apps.button.models import Button, ButtonSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 

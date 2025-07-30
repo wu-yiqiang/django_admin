@@ -3,7 +3,7 @@ from functools import wraps
 import json
 from django.http import HttpResponse
 
-from service_error.common import COMMON_RERROR
+from common.errors import COMMON_RERROR
 from utils.exception import BusinessException
 
 

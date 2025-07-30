@@ -5,7 +5,7 @@ from rest_framework.viewsets import ViewSet
 from django.views import View
 from django_admin import settings
 from common.response import ResponseSuccess, ResponseError
-from service_error.common import COMMON_RERROR
+from common.errors import COMMON_RERROR
 from apps.net_disk.models import NetDisk, NetDiskSerializer
 
 

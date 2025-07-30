@@ -1,4 +1,4 @@
-from service_error.common import COMMON_RERROR
+from common.errors import COMMON_RERROR
 import json
 
 

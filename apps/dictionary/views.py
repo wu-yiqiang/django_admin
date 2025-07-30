@@ -6,8 +6,8 @@ from django.views import View
 
 from common.request import requestSerializer
 from common.validate import request_verify
-from service_error.common import COMMON_RERROR
-from service_error.user import USER_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import USER_RERROR
 from rest_framework.viewsets import ViewSet
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 

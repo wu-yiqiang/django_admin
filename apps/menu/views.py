@@ -9,8 +9,8 @@ from apps.menu.models import Menu, MenuSerializer, MenuTreeSerializer
 from common.request import requestSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from common.validate import request_verify
-from service_error.common import COMMON_RERROR
-from service_error.menu import MENU_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import MENU_RERROR
 
 
 class MenuViewSet(ViewSet):

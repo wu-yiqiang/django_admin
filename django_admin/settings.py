@@ -111,6 +111,7 @@ MEDIA_ROOT = BASE_DIR / 'storage'
 MEDIA_URL = 'storage/'
 # redis token过期时间单位秒
 CACHE_TOKEN_EXPIRE = 60 * 60 * 24
+REQUEST_LIMIT_EXPIRE = 60
 
 JWT_AUTH = {
     # user => payload
@@ -133,7 +134,7 @@ JWT_AUTH = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "redis://127.0.0.1:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # "PASSWORD": 暂不设置密码,
@@ -204,32 +205,32 @@ LOGGING = {
     }
 }
 
-DEBUG = True
-PROTOCOL = 'http'
-IP = '192.168.1.222'
-PORT = '8000'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_admin',
-        "USER": 'root',
-        "PASSWORD": 'root@root',
-        "HOST": '127.0.0.1',
-        "PORT": '3306',
+DEBUG = False
+if DEBUG:
+    PROTOCOL = 'http'
+    IP = '192.168.1.222'
+    PORT = '8000'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django_admin',
+            "USER": 'root',
+            "PASSWORD": 'root@root',
+            "HOST": '127.0.0.1',
+            "PORT": '3306',
+        }
     }
-}
-
-# DEBUG = False
-# PROTOCOL = 'https'
-# IP = '185.198.166.245'
-# PORT = '8000'
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django_admin',
-#         "USER": 'mydjango',
-#         "PASSWORD": 'mydjango@mydjango',
-#         "HOST": '127.0.0.1',
-#         "PORT": '3306',
-#     }
-# }
+else:
+    PROTOCOL = 'https'
+    IP = '185.198.166.245'
+    PORT = '8000'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django_admin',
+            "USER": 'mydjango',
+            "PASSWORD": 'mydjango@mydjango',
+            "HOST": '127.0.0.1',
+            "PORT": '3306',
+        }
+    }

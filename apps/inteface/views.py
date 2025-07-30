@@ -5,8 +5,8 @@ from apps.inteface.models import Inteface, IntefaceSerializer
 from common.request import requestSerializer
 from common.response import ResponseSuccess, ResponseError, ResponseSuccessPage
 from common.validate import request_verify
-from service_error.common import COMMON_RERROR
-from service_error.menu import MENU_RERROR
+from common.errors import COMMON_RERROR
+from common.errors import MENU_RERROR
 from rest_framework.viewsets import ViewSet
 
 

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from service_error.common import COMMON_RERROR
+from common.errors import COMMON_RERROR
 
 
 def ResponseSuccess(code=200, data=None, msg='Operation Success'):

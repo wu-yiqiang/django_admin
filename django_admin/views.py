@@ -5,7 +5,7 @@ from django.views import View
 
 from django_admin import settings
 from common.response import ResponseSuccess, ResponseError
-from service_error.common import COMMON_RERROR
+from common.errors import COMMON_RERROR
 
 
 class UploadView(View):
