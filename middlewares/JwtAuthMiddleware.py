@@ -12,7 +12,7 @@ from utils.redis import get_cache, set_cache
 
 class JwtAuthMiddleware(MiddlewareMixin):
     def process_request(self, request):
-        white_list = ['/user/login', '/user/logout', '/user/register', '/swagger', '/schema']
+        white_list = ['/user/login', '/user/logout', '/user/register', '/swagger', '/schema', '/sse']
         path = request.path
         if path not in white_list and not path.startswith('/storage'):
             try:

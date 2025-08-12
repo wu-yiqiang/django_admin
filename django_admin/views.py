@@ -1,11 +1,13 @@
 import json
 import os
+import random
 from datetime import datetime
 from django.views import View
-
+import time
 from django_admin import settings
 from common.response import ResponseSuccess, ResponseError
 from common.errors import COMMON_RERROR
+from django.http import HttpResponse
 
 
 class UploadView(View):
@@ -68,3 +70,19 @@ class GetUploadView(View):
         #         files.append(entry)
         # print("get", path, file_path)
         return ResponseSuccess()
+
+
+class SSEView(View):
+
+    def get(self, request):
+        response = HttpResponse(content_type='text/event-stream')
+        response['Cache-Control'] = 'no-cache'
+        response['Access-Control-Allow-Origin'] = '*'
+        # response['Connection'] = 'keep-alive'
+        while True:
+            response.write('event: message\n')
+            response.write(f'data: {random.randint(1, 100)}\n\n')
+            response.flush()
+            time.sleep(2)
+
+        return response

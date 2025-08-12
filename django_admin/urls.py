@@ -3,6 +3,7 @@ from django.urls import path, include, re_path
 from django.views.static import serve
 from django_admin.views import UploadView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from .views import SSEView
 
 urlpatterns = [
     path('schema', SpectacularAPIView.as_view(), name='schema'),
@@ -19,5 +20,5 @@ urlpatterns = [
     # path('upload/netdisk', UploadNetView.as_view(), name='upload_netdisk'),
     # path('netdisk/get', GetUploadView.as_view(), name='get_netdisk'),
     re_path('storage/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}, name="storage"),
-
+    path('sse', SSEView.as_view(), name='sse'),
 ]

@@ -145,10 +145,6 @@ CACHES = {
 
 ALLOWED_HOSTS = ['*', ]
 
-# REST_FRAMEWORK = {
-#     'EXCEPTION_HANDLER': 'utils.exception.BusinessException',
-# }
-
 SPECTACULAR_SETTINGS = {
     'TITLE': 'EAMS',
     'DESCRIPTION': '接口文档',
@@ -205,7 +201,7 @@ LOGGING = {
     }
 }
 
-DEBUG = False
+DEBUG = True
 if DEBUG:
     PROTOCOL = 'http'
     IP = '192.168.1.222'
