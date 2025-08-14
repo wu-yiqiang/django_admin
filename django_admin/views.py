@@ -8,6 +8,7 @@ from django_admin import settings
 from common.response import ResponseSuccess, ResponseError
 from common.errors import COMMON_RERROR
 from django.http import HttpResponse
+from django.http import StreamingHttpResponse
 
 
 class UploadView(View):
@@ -72,17 +73,15 @@ class GetUploadView(View):
         return ResponseSuccess()
 
 
+def event_stream():
+    while True:
+        yield f"data: {random.randint(0, 130)}\n\n"
+        time.sleep(settings.SSESENDINTERVAL)
+
+
 class SSEView(View):
 
     def get(self, request):
-        response = HttpResponse(content_type='text/event-stream')
+        response = StreamingHttpResponse(event_stream(), content_type='text/event-stream')
         response['Cache-Control'] = 'no-cache'
-        response['Access-Control-Allow-Origin'] = '*'
-        # response['Connection'] = 'keep-alive'
-        while True:
-            response.write('event: message\n')
-            response.write(f'data: {random.randint(1, 100)}\n\n')
-            response.flush()
-            time.sleep(2)
-
         return response

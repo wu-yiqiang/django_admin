@@ -200,7 +200,7 @@ LOGGING = {
         'encoding': 'utf-8',
     }
 }
-
+SSESENDINTERVAL = 3
 DEBUG = True
 if DEBUG:
     PROTOCOL = 'http'
