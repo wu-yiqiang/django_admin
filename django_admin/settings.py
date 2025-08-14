@@ -201,7 +201,7 @@ LOGGING = {
     }
 }
 SSESENDINTERVAL = 3
-DEBUG = True
+DEBUG = False
 if DEBUG:
     PROTOCOL = 'http'
     IP = '192.168.1.222'

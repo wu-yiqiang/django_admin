@@ -24973,3 +24973,5 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 [2025-08-14 16:19:37][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
 [2025-08-14 16:19:37][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
 [2025-08-14 16:19:37][INFO][basehttp.py:212:log_message]："GET /storage/avatar/20250625173831.jpeg HTTP/1.1" 200 46653
+[2025-08-14 16:36:00][INFO][autoreload.py:266:trigger_reload]：/Users/atlas/django_admin/django_admin/views.py changed, reloading.
+[2025-08-14 16:36:01][INFO][autoreload.py:668:run_with_reloader]：Watching for file changes with StatReloader
